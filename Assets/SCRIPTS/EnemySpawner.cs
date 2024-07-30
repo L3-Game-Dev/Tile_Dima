@@ -22,6 +22,8 @@ public class EnemySpawner : MonoBehaviour
     {
         iconSpawner = GameObject.Find("MinimapIcons").GetComponent<MinimapIconSpawner>();
 
+        spawnLocations.Clear();
+
         foreach (Transform location in GameObject.Find("EnemySpawnLocations").transform)
             spawnLocations.Add(location);
     }

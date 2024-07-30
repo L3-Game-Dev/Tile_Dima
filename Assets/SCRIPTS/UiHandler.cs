@@ -24,7 +24,6 @@ public class UiHandler : MonoBehaviour
     public GameObject uiCanvas;
     public GameObject interactPrompt;
     public GameObject crosshair;
-    public GameObject doorConsolePanel;
     public GameObject hitmarker;
     public GameObject victoryScreen;
     public GameObject defeatScreen;
@@ -39,6 +38,10 @@ public class UiHandler : MonoBehaviour
     public TMP_InputField sensitivityField;
     public Toggle fullscreenToggle;
     public Slider volumeSlider;
+
+    [Header("Interactable References")]
+    public GameObject doorConsolePanel;
+    public GameObject passwordPanel;
 
     [Header("Upgrader References")]
     public GameObject weaponUpgraderPanel;
@@ -118,7 +121,7 @@ public class UiHandler : MonoBehaviour
         ToggleMultiUI(false, new GameObject[] { interactPrompt, doorConsolePanel, hitmarker,
                                                 pauseMenu, victoryScreen, defeatScreen,
                                                 statisticsScreen, highscoresScreen, weaponUpgraderPanel,
-                                                enterNameScreen, bossBar });
+                                                enterNameScreen, bossBar, passwordPanel });
 
         GameStateHandler.Resume();
     }

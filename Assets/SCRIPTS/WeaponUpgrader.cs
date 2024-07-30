@@ -12,8 +12,6 @@ public class WeaponUpgrader : MonoBehaviour
     [HideInInspector] public UiHandler uiHandler;
     [HideInInspector] public PlayerInteract interact;
     [HideInInspector] public PlayerInventory inventory;
-
-    public bool upgraderEnabled;
     
     private void Awake()
     {
