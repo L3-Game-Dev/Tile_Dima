@@ -56,6 +56,10 @@ public class UiHandler : MonoBehaviour
     public Button upgradeButton3;
     public Button upgradeButton4;
 
+    [Header("Note References")]
+    public GameObject noteImage;
+    public GameObject code1Image;
+
     [Header("EnterName Screen References")]
     public GameObject enterNameScreen;
     public TextMeshProUGUI enteredName;
@@ -121,7 +125,7 @@ public class UiHandler : MonoBehaviour
         ToggleMultiUI(false, new GameObject[] { interactPrompt, doorConsolePanel, hitmarker,
                                                 pauseMenu, victoryScreen, defeatScreen,
                                                 statisticsScreen, highscoresScreen, weaponUpgraderPanel,
-                                                enterNameScreen, bossBar, passwordPanel });
+                                                enterNameScreen, bossBar, passwordPanel, noteImage });
 
         GameStateHandler.Resume();
     }
@@ -263,6 +267,7 @@ public class UiHandler : MonoBehaviour
 
     public void DisableBossBar()
     {
+        activeBoss = null;
         ToggleUI(false, bossBar);
     }
 
@@ -273,8 +278,7 @@ public class UiHandler : MonoBehaviour
 
     public void MinibossDeath()
     {
-        Invoke("DisableBossBar", 1f);
-        VictoryScreen();
+        DisableBossBar();
     }
 
     public void ResumeButton()
@@ -325,7 +329,7 @@ public class UiHandler : MonoBehaviour
 
     private void Resume()
     {
-        ToggleMultiUI(false, new GameObject[] { pauseMenu, doorConsolePanel, weaponUpgraderPanel });
+        ToggleMultiUI(false, new GameObject[] { pauseMenu, doorConsolePanel, weaponUpgraderPanel, noteImage, passwordPanel });
         GameStateHandler.Resume();
     }
 

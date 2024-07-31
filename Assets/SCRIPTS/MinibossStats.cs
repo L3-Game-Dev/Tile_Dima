@@ -22,6 +22,8 @@ public class MinibossStats : MonoBehaviour
     [HideInInspector] public bool isDead;
     [HideInInspector] public UiHandler uiHandler;
 
+    public GameObject notePrefab;
+
     private void Awake()
     {
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
@@ -63,8 +65,8 @@ public class MinibossStats : MonoBehaviour
                 GameObject.Find("PlayerCapsule").GetComponent<PlayerInventory>().heldCredits += creditValue;
                 health = 0;
                 isDead = true;
-                GameStateHandler.Victory();
                 uiHandler.MinibossDeath();
+                Instantiate(notePrefab, transform);
             }
         }
     }

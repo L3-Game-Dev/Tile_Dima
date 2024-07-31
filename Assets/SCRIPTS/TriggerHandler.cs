@@ -26,7 +26,13 @@ public class TriggerHandler : MonoBehaviour
 
     public void AwakenMiniboss(MinibossController miniboss)
     {
-        miniboss.anim.SetBool("movementEnabled", true);
-        uiHandler.EnableBossBar(miniboss);
+        if (miniboss != null)
+        {
+            if (!miniboss.GetComponent<MinibossStats>().isDead)
+            {
+                miniboss.anim.SetBool("movementEnabled", true);
+                uiHandler.EnableBossBar(miniboss);
+            }
+        }
     }
 }

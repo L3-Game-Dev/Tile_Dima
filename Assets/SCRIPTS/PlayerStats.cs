@@ -27,11 +27,13 @@ public class PlayerStats : MonoBehaviour
     [Header("References")]
     [HideInInspector] public UiHandler uiHandler;
     [HideInInspector] public FirstPersonController controller;
+    [HideInInspector] public StarterAssetsInputs input;
 
     private void Awake()
     {
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
         controller = gameObject.GetComponent<FirstPersonController>();
+        input = gameObject.GetComponent<StarterAssetsInputs>();
     }
 
     private void Start()
@@ -97,7 +99,7 @@ public class PlayerStats : MonoBehaviour
 
     public void UpdateStamina()
     {
-        if (controller.sprinting)
+        if (controller.sprinting && (input.move.x != 0 || input.move.y != 0))
         {
             CancelInvoke("RegainStamina");
             if (stamina - 1 * staminaDrainSpeed * Time.deltaTime > 0)
