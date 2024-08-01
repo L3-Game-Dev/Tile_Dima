@@ -502,6 +502,11 @@ MonoBehaviour:
   anim: {fileID: 4361594560161573015}
   minibossStats: {fileID: 522083443703975614}
   minibossCombat: {fileID: 0}
+  angle: 50
+  canSeePlayer: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &1522944955387532144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +542,7 @@ MonoBehaviour:
   meleeRange: 3
   isDead: 0
   uiHandler: {fileID: 0}
+  notePrefab: {fileID: 4651012201978398966, guid: 394f4492f1b514bfea083c01abbcdde8, type: 3}
 --- !u!95 &4361594560161573015
 Animator:
   serializedVersion: 5

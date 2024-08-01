@@ -41,10 +41,9 @@ public class PlayerInteract : MonoBehaviour
 
         if (hit.collider != null) // If raycast hits an interactable
         {
-            Debug.Log("Player looking at " + hit.transform.gameObject.ToString());
             return hit.transform.gameObject;
         }
-        else // If raycast does not hit the console
+        else // If raycast does not an interactable
         {
             return null;
         }

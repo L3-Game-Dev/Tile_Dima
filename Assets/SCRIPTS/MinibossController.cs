@@ -16,6 +16,10 @@ public class MinibossController : MonoBehaviour
     [HideInInspector] public MinibossStats minibossStats;
     [HideInInspector] public MinibossCombat minibossCombat;
 
+    [Header("Detection")]
+    [HideInInspector] public bool canSeePlayer;
+    public LayerMask targetMask;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -56,13 +60,25 @@ public class MinibossController : MonoBehaviour
             // Inside shootRange && !Inside meleeRange
             else
             {
-                Vector3 lookTarget = target.position;
-                lookTarget.y = transform.position.y;
-                transform.LookAt(lookTarget);
-                anim.SetBool("inMeleeRange", false);
-                anim.SetBool("inShootRange", true);
+                SightCheck();
 
-                Shooting();
+                if (canSeePlayer)
+                {
+                    Vector3 lookTarget = target.position;
+                    lookTarget.y = transform.position.y;
+                    transform.LookAt(lookTarget);
+                    anim.SetBool("inMeleeRange", false);
+                    anim.SetBool("inShootRange", true);
+
+                    Shooting();
+                }
+                else
+                {
+                    anim.SetBool("inShootRange", false);
+                    anim.SetBool("inMeleeRange", false);
+                    anim.SetBool("isShooting", false);
+                    MoveToTarget();
+                }
             }
         }
         else
@@ -82,8 +98,20 @@ public class MinibossController : MonoBehaviour
 
     private void Shooting()
     {
-        // if in sight (not behind wall)
         anim.SetBool("isShooting", true);
+    }
+
+    private void SightCheck()
+    {
+        // Check if line of sight is blocked
+        if (Physics.Linecast(minibossCombat.equippedWeapon.attackPoint.transform.position, new Vector3(target.position.x, target.position.y + 1, target.position.z), targetMask))
+        {
+            canSeePlayer = false;
+        }
+        else
+        {
+            canSeePlayer = true;
+        }
     }
 
     private void MoveToTarget()
@@ -106,4 +134,20 @@ public class MinibossController : MonoBehaviour
             }
         }
     }
+
+#if UNITY_EDITOR
+
+    private void OnDrawGizmosSelected()
+    {
+        if (canSeePlayer)
+            Gizmos.color = Color.green;
+        else
+            Gizmos.color = Color.red;
+
+        if (target)
+            Gizmos.DrawLine(minibossCombat.equippedWeapon.attackPoint.transform.position, new Vector3(target.position.x, target.position.y + 1, target.position.z));
+    }
+
+#endif
+
 }

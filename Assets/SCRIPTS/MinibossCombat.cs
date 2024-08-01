@@ -63,8 +63,6 @@ public class MinibossCombat : MonoBehaviour
         if (distanceToTarget <= minibossStats.meleeRange)
         {
             minibossController.target.GetComponent<PlayerStats>().ModifyHealth('-', equippedWeapon.damage);
-            // Knock player back
-
         }
     }
 }
