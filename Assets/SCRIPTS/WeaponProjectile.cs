@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WeaponProjectile : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class WeaponProjectile : MonoBehaviour
     public Weapon weapon;
     [HideInInspector] public PlayerCombat playerCombat;
     public float decayTime;
+
+    [Header("References")]
+    public GameObject hitmarkerObj;
 
     private void Awake()
     {
@@ -35,8 +39,6 @@ public class WeaponProjectile : MonoBehaviour
         {
             if (collision.CompareTag("Enemy"))
             {
-                Debug.Log("PlayerProjectile HIT Enemy");
-
                 if (collision.GetComponent<EnemyStats>())
                 {
                     collision.GetComponent<EnemyStats>().ModifyHealth('-', damage);
@@ -45,10 +47,8 @@ public class WeaponProjectile : MonoBehaviour
                 {
                     collision.GetComponent<MinibossStats>().ModifyHealth('-', damage);
                 }
-            }
-            else
-            {
-                Debug.Log("PlayerProjectile HIT Something");
+
+                SpawnHitmarker(collision.gameObject);
             }
         }
         else if (gameObject.CompareTag("EnemyProjectile"))
@@ -57,21 +57,24 @@ public class WeaponProjectile : MonoBehaviour
             {
                 collision.GetComponent<PlayerStats>().ModifyHealth('-', damage);
             }
-            else
-            {
-                Debug.Log("EnemyProjectile HIT Something");
-            }
         }
-        else
-        {
-            Debug.Log("NON-TAGGED PROJECTILE COLLISION");
-        }
-
         DestroyProjectile();
     }
 
     private void DestroyProjectile()
     {
         Destroy(gameObject);
+    }
+
+    private void SpawnHitmarker(GameObject hit)
+    {
+        // Add some random variation to location
+        Vector3 loc = hit.transform.position;
+        loc.x += UnityEngine.Random.value * 0.5f;
+        loc.y += UnityEngine.Random.value * 0.5f + 1f;
+        loc.z += UnityEngine.Random.value * 0.5f;
+        GameObject hitmarker = Instantiate(hitmarkerObj, loc, new Quaternion(0, 0, 0, 0), hit.transform);
+
+        hitmarker.GetComponent<HitmarkerHandler>().SetNumber(damage);
     }
 }

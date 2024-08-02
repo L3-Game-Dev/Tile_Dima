@@ -168,6 +168,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   playerCombat: {fileID: 0}
   decayTime: 20
+  hitmarkerObj: {fileID: 103320235733959383, guid: ab44683a443de4a1e9695a217c2b1ea5, type: 3}
 --- !u!54 &-3922626637473475037
 Rigidbody:
   m_ObjectHideFlags: 0
