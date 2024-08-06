@@ -19,6 +19,8 @@ namespace StarterAssets
 	{
 		public PlayerStats playerStats;
 
+		private EventInstance playerFootsteps;
+
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 4.0f;
@@ -105,6 +107,8 @@ namespace StarterAssets
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 			playerStats = GetComponent<PlayerStats>();
+
+			playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsMetal);
 		}
 
 		private void Start()
@@ -130,9 +134,11 @@ namespace StarterAssets
 				GroundedCheck();
 				Move();
 			}
+
+			UpdateSound();
 		}
 
-		private void LateUpdate()
+        private void LateUpdate()
 		{
 			if (GameStateHandler.gameState == "PLAYING" && !playerStats.isDead)
 			{
@@ -277,6 +283,35 @@ namespace StarterAssets
 			if (lfAngle < -360f) lfAngle += 360f;
 			if (lfAngle > 360f) lfAngle -= 360f;
 			return Mathf.Clamp(lfAngle, lfMin, lfMax);
+		}
+
+		private void UpdateSound()
+        {
+			if (Grounded && _speed > 0)
+			{
+				PLAYBACK_STATE playback_state;
+
+				playerFootsteps.getPlaybackState(out playback_state);
+
+				// If playbackstate is stopped, start it
+				if (playback_state.Equals(PLAYBACK_STATE.STOPPED))
+					playerFootsteps.start();
+			}
+			else
+			{
+				// Stop the playbackstate
+				playerFootsteps.stop(STOP_MODE.IMMEDIATE);
+			}
+
+			// If sprinting, set FMOD sprinting parameter
+			if (sprinting)
+			{
+				playerFootsteps.setParameterByName("Sprinting", 1f);
+			}
+			else
+			{
+				playerFootsteps.setParameterByName("Sprinting", 0f);
+			}
 		}
 
 		private void OnDrawGizmosSelected()

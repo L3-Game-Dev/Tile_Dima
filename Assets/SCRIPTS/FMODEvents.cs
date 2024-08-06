@@ -9,8 +9,12 @@ using FMODUnity;
 
 public class FMODEvents : MonoBehaviour
 {
-    [field: Header("SFX")]
-    [field: SerializeField] public EventReference playerFootstepsMetal;
+    [Header("SFX")]
+    [SerializeField] public EventReference playerFootstepsMetal;
+
+    [Header("Music")]
+    [SerializeField] public EventReference musicTrack1;
+    [SerializeField] public EventReference mainMenuTrack;
 
     // Singleton functionality
     public static FMODEvents instance { get; private set; }

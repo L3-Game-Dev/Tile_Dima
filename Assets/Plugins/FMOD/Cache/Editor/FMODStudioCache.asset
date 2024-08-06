@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6728597502504898575
+--- !u!114 &-8461626297098052985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,9 +10,64 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MinibossARReload
+  m_Name: event:/Music/MusicTrack1
   m_EditorClassIdentifier: 
-  Path: event:/MinibossARReload
+  Path: event:/Music/MusicTrack1
+  Guid:
+    Data1: -620810491
+    Data2: 1196008679
+    Data3: -1227072622
+    Data4: 1188766181
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3864141237057838175}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8308717308378879506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainMenuTrack
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainMenuTrack
+  Guid:
+    Data1: 1697813670
+    Data2: 1342086016
+    Data3: 1439593356
+    Data4: 134220567
+  Banks:
+  - {fileID: -4497279288300979409}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 219382
+--- !u!114 &-7642281327331299867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/MinibossARReload
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/MinibossARReload
   Guid:
     Data1: 706920780
     Data2: 1159346482
@@ -27,7 +82,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-4048227515140847469
+--- !u!114 &-4954473642353629878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,24 +92,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PlayerFootstepsMetal
+  m_Name: event:/SFX/MinibossARShoot
   m_EditorClassIdentifier: 
-  Path: event:/PlayerFootstepsMetal
+  Path: event:/SFX/MinibossARShoot
   Guid:
-    Data1: -1128282648
-    Data2: 1198286097
-    Data3: -1540607323
-    Data4: -226217619
+    Data1: -2062809330
+    Data2: 1204963342
+    Data3: -1470238577
+    Data4: -1035210110
   Banks:
   - {fileID: 7989323617726389955}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 600
---- !u!114 &-2989159448257647958
+  Length: 0
+--- !u!114 &-4497279288300979409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/fmodproject.fspr/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638584647282528867
+  FileSizes:
+  - Name: Desktop
+    Value: 2112672
+  Exists: 1
+--- !u!114 &-3710973493996459741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,14 +139,68 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapon1Reload
+  m_Name: event:/SFX/Weapon2Shoot
   m_EditorClassIdentifier: 
-  Path: event:/Weapon1Reload
+  Path: event:/SFX/Weapon2Shoot
   Guid:
-    Data1: 1644079058
-    Data2: 1088152576
-    Data3: 1930570127
-    Data4: 1046039335
+    Data1: 938271369
+    Data2: 1321062282
+    Data3: -913895033
+    Data4: 277780272
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2904699789348640537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon1Shoot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon1Shoot
+  Guid:
+    Data1: -1075228687
+    Data2: 1125265201
+    Data3: 4026788
+    Data4: 11680991
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2779967491199080904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon2Reload
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon2Reload
+  Guid:
+    Data1: -1855247754
+    Data2: 1293551172
+    Data3: 1403858336
+    Data4: 1033086371
   Banks:
   - {fileID: 7989323617726389955}
   IsStream: 0
@@ -97,22 +226,25 @@ MonoBehaviour:
   - {fileID: 5530966168092758330}
   - {fileID: 4281648350526902496}
   - {fileID: 7989323617726389955}
+  - {fileID: -4497279288300979409}
   EditorEvents:
-  - {fileID: 1802676875586177014}
-  - {fileID: 5555515322535653561}
-  - {fileID: 3370451773646274208}
-  - {fileID: -6728597502504898575}
-  - {fileID: 7093966253448890327}
-  - {fileID: -2989159448257647958}
-  - {fileID: -4048227515140847469}
+  - {fileID: -8308717308378879506}
+  - {fileID: -8461626297098052985}
+  - {fileID: -4954473642353629878}
+  - {fileID: -7642281327331299867}
+  - {fileID: -2779967491199080904}
+  - {fileID: -3710973493996459741}
+  - {fileID: 9180710691787683726}
+  - {fileID: 5140378874916603677}
+  - {fileID: -2904699789348640537}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638572464887004264
+  cacheTime: 638586199911667300
   cacheVersion: 131618
---- !u!114 &1802676875586177014
+--- !u!114 &3864141237057838175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,51 +253,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapon2Shoot
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicTrack1/MusicTrack
   m_EditorClassIdentifier: 
-  Path: event:/Weapon2Shoot
-  Guid:
-    Data1: 938271369
-    Data2: 1321062282
-    Data3: -913895033
-    Data4: 277780272
-  Banks:
-  - {fileID: 7989323617726389955}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3370451773646274208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MinibossARShoot
-  m_EditorClassIdentifier: 
-  Path: event:/MinibossARShoot
-  Guid:
-    Data1: -2062809330
-    Data2: 1204963342
-    Data3: -1470238577
-    Data4: -1035210110
-  Banks:
-  - {fileID: 7989323617726389955}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: MusicTrack
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3606760187
+    data2: 2240637325
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Default
+  - BossFight
+  Exists: 1
 --- !u!114 &4281648350526902496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,11 +285,63 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638572464887001475
+  lastModified: 638586199874442599
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &5089256135042556486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerFootstepsMetal/Sprinting
+  m_EditorClassIdentifier: 
+  Name: Sprinting
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 848200756
+    data2: 3926983636
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5140378874916603677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerFootstepsMetal
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerFootstepsMetal
+  Guid:
+    Data1: -1128282648
+    Data2: 1198286097
+    Data3: -1540607323
+    Data4: -226217619
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5089256135042556486}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &5530966168092758330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,65 +357,11 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638572464887002782
+  lastModified: 638586199874467485
   FileSizes:
   - Name: Desktop
-    Value: 1112
+    Value: 1382
   Exists: 1
---- !u!114 &5555515322535653561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapon1Shoot
-  m_EditorClassIdentifier: 
-  Path: event:/Weapon1Shoot
-  Guid:
-    Data1: -1075228687
-    Data2: 1125265201
-    Data3: 4026788
-    Data4: 11680991
-  Banks:
-  - {fileID: 7989323617726389955}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &7093966253448890327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapon2Reload
-  m_EditorClassIdentifier: 
-  Path: event:/Weapon2Reload
-  Guid:
-    Data1: -1855247754
-    Data2: 1293551172
-    Data3: 1403858336
-    Data4: 1033086371
-  Banks:
-  - {fileID: 7989323617726389955}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &7989323617726389955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,8 +377,35 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638572464887004264
+  lastModified: 638586199911667300
   FileSizes:
   - Name: Desktop
-    Value: 157120
+    Value: 2590528
   Exists: 1
+--- !u!114 &9180710691787683726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon1Reload
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon1Reload
+  Guid:
+    Data1: 1644079058
+    Data2: 1088152576
+    Data3: 1930570127
+    Data4: 1046039335
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

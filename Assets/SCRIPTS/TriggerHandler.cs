@@ -32,6 +32,7 @@ public class TriggerHandler : MonoBehaviour
             {
                 miniboss.anim.SetBool("movementEnabled", true);
                 uiHandler.EnableBossBar(miniboss);
+                AudioManager.instance.SwitchMusicTrack(MusicTrack.BOSS_FIGHT);
             }
         }
     }
