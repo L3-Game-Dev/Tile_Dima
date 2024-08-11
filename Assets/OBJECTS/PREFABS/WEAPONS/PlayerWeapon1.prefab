@@ -104,21 +104,14 @@ MonoBehaviour:
       Data2: 1125265201
       Data3: 4026788
       Data4: 11680991
-    Path: event:/Weapon1Shoot
+    Path: event:/SFX/Weapon1Shoot
   reloadStartSound:
     Guid:
       Data1: 1644079058
       Data2: 1088152576
       Data3: 1930570127
       Data4: 1046039335
-    Path: event:/Weapon1Reload
-  reloadFinishSound:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+    Path: event:/SFX/Weapon1Reload
   baseDamage: 10
   damageMultiplier: 1
   damage: 0

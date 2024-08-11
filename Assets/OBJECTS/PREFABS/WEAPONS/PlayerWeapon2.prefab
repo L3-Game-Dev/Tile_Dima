@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &472567621664514569
 Transform:
   m_ObjectHideFlags: 0
@@ -135,21 +135,14 @@ MonoBehaviour:
       Data2: 1321062282
       Data3: -913895033
       Data4: 277780272
-    Path: event:/Weapon2Shoot
+    Path: event:/SFX/Weapon2Shoot
   reloadStartSound:
     Guid:
       Data1: -1855247754
       Data2: 1293551172
       Data3: 1403858336
       Data4: 1033086371
-    Path: event:/Weapon2Reload
-  reloadFinishSound:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+    Path: event:/SFX/Weapon2Reload
   baseDamage: 200
   damageMultiplier: 1
   damage: 200

@@ -163,6 +163,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16326
+--- !u!114 &-5808327979932897063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Kick
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Kick
+  Guid:
+    Data1: 1082257206
+    Data2: 1159974135
+    Data3: -675203411
+    Data4: 135976387
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4954473642353629878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,12 +427,14 @@ MonoBehaviour:
   - {fileID: -9044842080630251399}
   - {fileID: 4766597115087293752}
   - {fileID: -6103297063132286005}
+  - {fileID: 8860419455447281765}
+  - {fileID: -5808327979932897063}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638587235458363951
+  cacheTime: 638590517748404556
   cacheVersion: 131618
 --- !u!114 &2789331744061479094
 MonoBehaviour:
@@ -475,7 +504,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638586383606567213
+  lastModified: 638590517746817638
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -574,10 +603,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638586383606578724
+  lastModified: 638590517746829408
   FileSizes:
   - Name: Desktop
-    Value: 1730
+    Value: 1802
   Exists: 1
 --- !u!114 &7989323617726389955
 MonoBehaviour:
@@ -594,11 +623,38 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638586326702732669
+  lastModified: 638590517748404556
   FileSizes:
   - Name: Desktop
-    Value: 2651808
+    Value: 2909536
   Exists: 1
+--- !u!114 &8860419455447281765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Typing
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Typing
+  Guid:
+    Data1: 704781258
+    Data2: 1259692975
+    Data3: 1405903293
+    Data4: -507942362
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17472
 --- !u!114 &9180710691787683726
 MonoBehaviour:
   m_ObjectHideFlags: 0

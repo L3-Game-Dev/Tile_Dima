@@ -13,9 +13,8 @@ public class Weapon : MonoBehaviour
     public string weaponName;
 
     [Header("Audio")]
-    [SerializeField] private EventReference attackSound;
-    [SerializeField] private EventReference reloadStartSound;
-    [SerializeField] private EventReference reloadFinishSound;
+    [SerializeField] public EventReference attackSound;
+    [SerializeField] public EventReference reloadStartSound;
 
     [Header("Weapon Stats")]
     [Tooltip("Damage amount per hit")]
@@ -175,6 +174,5 @@ public class Weapon : MonoBehaviour
     {
         ammo = maxAmmo; // Refill ammo
         reloading = false;
-        AudioManager.instance.PlayOneShot(reloadFinishSound, transform.position);
     }
 }

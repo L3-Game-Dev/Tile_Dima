@@ -32,6 +32,7 @@ public class MainMenuUI : MonoBehaviour
 
     [Header("Audio")]
     public EventInstance humAmbience;
+    public EventInstance typing;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class MainMenuUI : MonoBehaviour
         creditsScreen.SetActive(false);
 
         humAmbience = AudioManager.instance.CreateEventInstance(FMODEvents.instance.humAmbience);
+        typing = AudioManager.instance.CreateEventInstance(FMODEvents.instance.typing);
     }
 
     private void Update()
@@ -102,21 +104,27 @@ public class MainMenuUI : MonoBehaviour
         cutsceneScreen.SetActive(true);
         cutscenePlaying = true;
 
-        AudioManager.instance.StopMusic();
-        HumAmbience();
+        PlayCutsceneAudio();
 
         StartCoroutine(Typewrite(0.5f, 0.05f, 5f));
     }
 
-    public void HumAmbience()
+    public void PlayCutsceneAudio()
     {
+        // Stop playing music
+        AudioManager.instance.StopMusic();
+
         PLAYBACK_STATE playback_state;
 
+        // Play Hum Ambience
         humAmbience.getPlaybackState(out playback_state);
-
-        // If playbackstate is stopped, start it
         if (playback_state.Equals(PLAYBACK_STATE.STOPPED))
             humAmbience.start();
+
+        // Play typing sound
+        typing.getPlaybackState(out playback_state);
+        if (playback_state.Equals(PLAYBACK_STATE.STOPPED))
+            typing.start();
     }
 
     public void UpdateGameSettingsDisplays()

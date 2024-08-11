@@ -54,6 +54,9 @@ public class MinibossCombat : MonoBehaviour
 
         // Add forces to bullet
         currentBullet.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * equippedWeapon.projectileSpeed, ForceMode.Impulse);
+
+        // Play shoot sound
+        AudioManager.instance.PlayOneShot(equippedWeapon.attackSound, transform.position);
     }
 
     public void Kick()
@@ -64,5 +67,8 @@ public class MinibossCombat : MonoBehaviour
         {
             minibossController.target.GetComponent<PlayerStats>().ModifyHealth('-', equippedWeapon.damage);
         }
+
+        // Play kick sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.kick, transform.position);
     }
 }

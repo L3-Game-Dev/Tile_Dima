@@ -15,10 +15,12 @@ public class FMODEvents : MonoBehaviour
     [SerializeField] public EventReference zombieAttack;
     [SerializeField] public EventReference playerDeath;
     [SerializeField] public EventReference playerHit;
+    [SerializeField] public EventReference kick;
 
     [Header("UI")]
     [SerializeField] public EventReference uiClick1;
     [SerializeField] public EventReference uiClick2;
+    [SerializeField] public EventReference typing;
 
     [Header("Music")]
     [SerializeField] public EventReference musicTrack1;
