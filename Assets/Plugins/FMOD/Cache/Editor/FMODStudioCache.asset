@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9044842080630251399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UiClick1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UiClick1
+  Guid:
+    Data1: -699600002
+    Data2: 1085759952
+    Data3: 452721840
+    Data4: 45862287
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8461626297098052985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,6 +52,33 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters:
   - {fileID: 3864141237057838175}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8311855889723788998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerHit
+  Guid:
+    Data1: -187689122
+    Data2: 1093311803
+    Data3: 427223995
+    Data4: -1916716947
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -82,6 +136,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6103297063132286005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/HumAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/HumAmbience
+  Guid:
+    Data1: -1645468382
+    Data2: 1214042189
+    Data3: -1833405800
+    Data4: 34041744
+  Banks:
+  - {fileID: -1726590542529757286}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16326
 --- !u!114 &-4954473642353629878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +210,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2112672
   Exists: 1
+--- !u!114 &-3790218074791745475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/EnemyFootstepMetal
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/EnemyFootstepMetal
+  Guid:
+    Data1: 738022763
+    Data2: 1169053849
+    Data3: -710313054
+    Data4: -1884346846
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3710973493996459741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +258,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 7989323617726389955}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -177,7 +285,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 7989323617726389955}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -204,7 +312,54 @@ MonoBehaviour:
   Banks:
   - {fileID: 7989323617726389955}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1726590542529757286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/fmodproject.fspr/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638587235458363951
+  FileSizes:
+  - Name: Desktop
+    Value: 79808
+  Exists: 1
+--- !u!114 &-668712413103706896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerDeath
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerDeath
+  Guid:
+    Data1: -1720646196
+    Data2: 1265031514
+    Data3: 811323824
+    Data4: -1376811996
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -227,6 +382,7 @@ MonoBehaviour:
   - {fileID: 4281648350526902496}
   - {fileID: 7989323617726389955}
   - {fileID: -4497279288300979409}
+  - {fileID: -1726590542529757286}
   EditorEvents:
   - {fileID: -8308717308378879506}
   - {fileID: -8461626297098052985}
@@ -237,13 +393,47 @@ MonoBehaviour:
   - {fileID: 9180710691787683726}
   - {fileID: 5140378874916603677}
   - {fileID: -2904699789348640537}
+  - {fileID: -3790218074791745475}
+  - {fileID: 2789331744061479094}
+  - {fileID: -668712413103706896}
+  - {fileID: -8311855889723788998}
+  - {fileID: -9044842080630251399}
+  - {fileID: 4766597115087293752}
+  - {fileID: -6103297063132286005}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638586199911667300
+  cacheTime: 638587235458363951
   cacheVersion: 131618
+--- !u!114 &2789331744061479094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ZombieAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ZombieAttack
+  Guid:
+    Data1: 1650170587
+    Data2: 1199561303
+    Data3: -1315142978
+    Data4: 1008429268
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3864141237057838175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,11 +475,38 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638586199874442599
+  lastModified: 638586383606567213
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &4766597115087293752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UiClick2
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UiClick2
+  Guid:
+    Data1: -1380933200
+    Data2: 1233211891
+    Data3: 1358012080
+    Data4: 448508376
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5089256135042556486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,10 +574,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638586199874467485
+  lastModified: 638586383606578724
   FileSizes:
   - Name: Desktop
-    Value: 1382
+    Value: 1730
   Exists: 1
 --- !u!114 &7989323617726389955
 MonoBehaviour:
@@ -377,10 +594,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638586199911667300
+  lastModified: 638586326702732669
   FileSizes:
   - Name: Desktop
-    Value: 2590528
+    Value: 2651808
   Exists: 1
 --- !u!114 &9180710691787683726
 MonoBehaviour:
@@ -403,7 +620,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 7989323617726389955}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1

@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using FMODUnity;
 
 public class EnemyCombat : MonoBehaviour
 {
@@ -43,5 +44,7 @@ public class EnemyCombat : MonoBehaviour
         {
             enemyController.target.GetComponent<PlayerStats>().ModifyHealth('-', equippedWeapon.damage);
         }
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.zombieAttack, transform.position);
     }
 }

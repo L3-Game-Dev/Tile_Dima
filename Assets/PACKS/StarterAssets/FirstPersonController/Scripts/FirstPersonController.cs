@@ -107,8 +107,6 @@ namespace StarterAssets
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 			playerStats = GetComponent<PlayerStats>();
-
-			playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsMetal);
 		}
 
 		private void Start()
@@ -124,6 +122,9 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			// Create Audio Event Instances
+			playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsMetal);
 		}
 
 		private void Update()

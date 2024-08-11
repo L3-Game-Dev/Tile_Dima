@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using FMOD.Studio;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class MainMenuUI : MonoBehaviour
     [Header("Cutscene Screen")]
     public GameObject cutsceneScreen;
 
+    [Header("Audio")]
+    public EventInstance humAmbience;
+
     private void Awake()
     {
         GameSettingsHandler.InitialiseGameSettings();
@@ -39,7 +43,12 @@ public class MainMenuUI : MonoBehaviour
         cutscenePlaying = false;
         mainScreen.SetActive(true);
         cutsceneScreen.SetActive(false);
-        PressPlay();
+
+        playScreen.SetActive(true);
+        settingsScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+
+        humAmbience = AudioManager.instance.CreateEventInstance(FMODEvents.instance.humAmbience);
     }
 
     private void Update()
@@ -55,6 +64,7 @@ public class MainMenuUI : MonoBehaviour
         playScreen.SetActive(true);
         settingsScreen.SetActive(false);
         creditsScreen.SetActive(false);
+        AudioManager.instance.ClickSound2();
     }
 
     public void PressSettings()
@@ -63,6 +73,7 @@ public class MainMenuUI : MonoBehaviour
         settingsScreen.SetActive(true);
         creditsScreen.SetActive(false);
         UpdateGameSettingsDisplays();
+        AudioManager.instance.ClickSound2();
     }
 
     public void PressCredits()
@@ -70,15 +81,18 @@ public class MainMenuUI : MonoBehaviour
         playScreen.SetActive(false);
         settingsScreen.SetActive(false);
         creditsScreen.SetActive(true);
+        AudioManager.instance.ClickSound2();
     }
 
     public void PressQuit()
     {
+        AudioManager.instance.ClickSound2();
         Application.Quit();
     }
 
     public void PressStart()
     {
+        AudioManager.instance.ClickSound2();
         PlayCutscene();
     }
 
@@ -88,14 +102,27 @@ public class MainMenuUI : MonoBehaviour
         cutsceneScreen.SetActive(true);
         cutscenePlaying = true;
 
+        AudioManager.instance.StopMusic();
+        HumAmbience();
+
         StartCoroutine(Typewrite(0.5f, 0.05f, 5f));
+    }
+
+    public void HumAmbience()
+    {
+        PLAYBACK_STATE playback_state;
+
+        humAmbience.getPlaybackState(out playback_state);
+
+        // If playbackstate is stopped, start it
+        if (playback_state.Equals(PLAYBACK_STATE.STOPPED))
+            humAmbience.start();
     }
 
     public void UpdateGameSettingsDisplays()
     {
         sensitivityField.text = GameSettingsHandler.sensitivity.ToString();
         fullscreenToggle.isOn = GameSettingsHandler.fullscreen;
-        volumeSlider.value = GameSettingsHandler.volume;
     }
 
     public void LoadGame()

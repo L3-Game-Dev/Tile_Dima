@@ -80,6 +80,7 @@ public class PlayerStats : MonoBehaviour
             {
                 newHealthAmount = health - amt;
                 StatisticsTracker.damageTaken += amt;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, transform.position);
             }
             else // 0 health = dead
             {
@@ -87,6 +88,7 @@ public class PlayerStats : MonoBehaviour
                 newHealthAmount = 0;
                 isDead = true;
                 // Death Functionality
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath, transform.position);
                 uiHandler.PlayerDeath();
                 GameStateHandler.Defeat();
             }

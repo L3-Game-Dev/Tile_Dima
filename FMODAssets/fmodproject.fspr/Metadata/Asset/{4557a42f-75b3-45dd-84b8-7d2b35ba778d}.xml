@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="EncodableAsset" id="{4557a42f-75b3-45dd-84b8-7d2b35ba778d}">
 		<property name="assetPath">
-			<value>SFX/Player Footsteps/</value>
+			<value>SFX/Characters/Footsteps/</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{601739c7-d6fc-4fef-9870-bdd40dc3fb21}</destination>

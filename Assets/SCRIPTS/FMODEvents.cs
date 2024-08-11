@@ -11,10 +11,21 @@ public class FMODEvents : MonoBehaviour
 {
     [Header("SFX")]
     [SerializeField] public EventReference playerFootstepsMetal;
+    [SerializeField] public EventReference enemyFootstepMetal;
+    [SerializeField] public EventReference zombieAttack;
+    [SerializeField] public EventReference playerDeath;
+    [SerializeField] public EventReference playerHit;
+
+    [Header("UI")]
+    [SerializeField] public EventReference uiClick1;
+    [SerializeField] public EventReference uiClick2;
 
     [Header("Music")]
     [SerializeField] public EventReference musicTrack1;
     [SerializeField] public EventReference mainMenuTrack;
+
+    [Header("Ambience")]
+    [SerializeField] public EventReference humAmbience;
 
     // Singleton functionality
     public static FMODEvents instance { get; private set; }
@@ -23,7 +34,7 @@ public class FMODEvents : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.Log("More than one AudioManager found");
+            Debug.Log("More than one FMODEvents found");
         }
         instance = this;
     }

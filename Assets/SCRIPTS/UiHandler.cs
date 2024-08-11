@@ -325,30 +325,35 @@ public class UiHandler : MonoBehaviour
         ToggleMultiUI(false, new GameObject[] { settingsScreen, creditsScreen });
         UpdateGameSettingsDisplays();
         GameStateHandler.Pause();
+        AudioManager.instance.ClickSound1();
     }
 
     private void Resume()
     {
         ToggleMultiUI(false, new GameObject[] { pauseMenu, doorConsolePanel, weaponUpgraderPanel, noteImage, passwordPanel });
         GameStateHandler.Resume();
+        AudioManager.instance.ClickSound1();
     }
 
     private void Back()
     {
         ToggleMultiUI(false, new GameObject[] { settingsScreen, creditsScreen });
         ToggleUI(true, pauseScreen);
+        AudioManager.instance.ClickSound2();
     }
 
     private void Settings()
     {
         ToggleUI(false, pauseScreen);
         ToggleUI(true, settingsScreen);
+        AudioManager.instance.ClickSound2();
     }
 
     private void Credits()
     {
         ToggleUI(false, pauseScreen);
         ToggleUI(true, creditsScreen);
+        AudioManager.instance.ClickSound2();
     }
 
     private void Quit()
@@ -374,7 +379,6 @@ public class UiHandler : MonoBehaviour
     {
         sensitivityField.text = GameSettingsHandler.sensitivity.ToString();
         fullscreenToggle.isOn = GameSettingsHandler.fullscreen;
-        volumeSlider.value = GameSettingsHandler.volume;
     }
 
     private IEnumerator FadeInScreen(GameObject screen, float goal, float duration)

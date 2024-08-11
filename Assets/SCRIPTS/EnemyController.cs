@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMOD.Studio;
+using FMODUnity;
 
 public class EnemyController : MonoBehaviour
 {
@@ -63,6 +65,12 @@ public class EnemyController : MonoBehaviour
             anim.SetFloat("speed", 1f, 0.3f, Time.deltaTime);
             anim.SetBool("isAttacking", false);
         }
+    }
+
+    public void FootstepMetal()
+    {
+        //AudioManager.instance.PlayOneShot(enemyFootsteps, transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyFootstepMetal, transform.position);
     }
 
     private void DestroyCollider()

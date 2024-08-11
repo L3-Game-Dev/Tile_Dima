@@ -5,7 +5,7 @@
 			<value>Weapon1Shoot</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{fbc94c2d-20e2-468c-918a-358421fc7961}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{992b423c-04c9-44c3-b55d-df2faaa13e1e}">
+		<relationship name="modulators">
+			<destination>{bc0d8b88-4cb6-4176-987b-311a8f19852b}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{47e3056b-c795-427e-b458-fceb6f146c0e}</destination>
 		</relationship>
@@ -93,10 +96,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{28a5608e-6d7c-4003-8322-20f5f8978e18}" />
+	<object class="RandomizerModulator" id="{bc0d8b88-4cb6-4176-987b-311a8f19852b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>4.16666698</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{47e3056b-c795-427e-b458-fceb6f146c0e}">
 		<relationship name="effects">
 			<destination>{99c36bb0-a8b3-4c83-aa06-025f0a5d1973}</destination>
-			<destination>{fc3e9888-59cd-459a-b6ff-98283ac88c93}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{944fc799-498d-4d0b-b1be-dcfa99c2f5c2}" />
@@ -107,5 +117,4 @@
 	</object>
 	<object class="MixerBusFader" id="{f9720e1a-282d-4e7b-bac3-261224fa5a33}" />
 	<object class="MixerBusFader" id="{99c36bb0-a8b3-4c83-aa06-025f0a5d1973}" />
-	<object class="SpatialiserEffect" id="{fc3e9888-59cd-459a-b6ff-98283ac88c93}" />
 </objects>

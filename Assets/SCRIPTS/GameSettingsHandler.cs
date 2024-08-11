@@ -16,7 +16,6 @@ public class GameSettingsHandler : MonoBehaviour
 
     public static int sensitivity;
     public static bool fullscreen;
-    public static float volume;
 
     public void SetDifficulty()
     {
@@ -49,11 +48,6 @@ public class GameSettingsHandler : MonoBehaviour
         fullscreen = toggle.isOn;
     }
 
-    public void ChangeVolume(Slider slider)
-    {
-        volume = slider.value;
-    }
-
     public static void InitialiseGameSettings()
     {
         if (!settingsInitialised)
@@ -61,7 +55,6 @@ public class GameSettingsHandler : MonoBehaviour
             difficulty = 1f;
             sensitivity = 100;
             fullscreen = false;
-            volume = 0.5f;
 
             settingsInitialised = true;
         }
