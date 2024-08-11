@@ -66,9 +66,9 @@ public class MinibossCombat : MonoBehaviour
         if (distanceToTarget <= minibossStats.meleeRange)
         {
             minibossController.target.GetComponent<PlayerStats>().ModifyHealth('-', equippedWeapon.damage);
-        }
 
-        // Play kick sound
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.kick, transform.position);
+            // Play kick sound
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.kick, transform.position);
+        }
     }
 }

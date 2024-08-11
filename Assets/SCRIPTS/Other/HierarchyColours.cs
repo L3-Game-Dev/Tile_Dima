@@ -34,15 +34,6 @@ public class HierarchyObjectColor
 
             /////// Start Here ////////
 
-            void ColBlue(string objectName) // Colour Blue
-            {
-                if (obj.name == objectName)
-                {
-                    backgroundColor = new Color(0.2f, 0.3f, 0.6f);
-                    textColor = new Color(0.9f, 0.9f, 0.9f);
-                }
-            }
-
             void ColBlueInc(string objectName) // Colour Blue
             {
                 if (obj.name.Contains(objectName))
@@ -70,18 +61,27 @@ public class HierarchyObjectColor
                 }
             }
 
+            void ColPurpleInc(string objectName) // Colour Purple
+            {
+                if (obj.name.Contains(objectName))
+                {
+                    backgroundColor = new Color(1f, 0f, 1f);
+                    textColor = new Color(0.9f, 0.9f, 0.9f);
+                }
+            }
+
             // Header Folders
 
             ColBlueInc("--");
-            ColGreenInc("==");
 
             // Sub Folders
 
-
+            ColGreenInc("==");
 
             // Temporary or Idea Objects
 
             ColRedInc("?");
+            ColPurpleInc("!");
 
             /////// End Here ////////
 
