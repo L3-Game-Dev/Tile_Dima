@@ -23,10 +23,6 @@ public class PlayerCombat : MonoBehaviour
         input = gameObject.GetComponent<StarterAssetsInputs>();
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
 
-        // Set weapon reference
-        if (GameObject.FindGameObjectsWithTag("PlayerWeapon").Length != 1)
-            Debug.Log("More than one PlayerWeapon found");
-
         foreach (Transform transform in transform.Find("PlayerCameraRoot"))
         {
             if (transform.CompareTag("PlayerWeapon"))
@@ -34,10 +30,6 @@ public class PlayerCombat : MonoBehaviour
                 playerInventory.equippedWeapon = transform.gameObject.GetComponent<Weapon>();
                 break;
             }
-        }
-        if (playerInventory.equippedWeapon == null)
-        {
-            Debug.Log("No PlayerWeapon found");
         }
     }
 

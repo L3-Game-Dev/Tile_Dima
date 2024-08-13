@@ -25,6 +25,7 @@ public class UiHandler : MonoBehaviour
     public GameObject interactPrompt;
     public GameObject crosshair;
     public GameObject hitmarker;
+    public GameObject fullInventory;
     public GameObject victoryScreen;
     public GameObject defeatScreen;
 
@@ -99,6 +100,11 @@ public class UiHandler : MonoBehaviour
     public Image weaponDisplay3Image;
     public Image weaponDisplay4Image;
 
+    public TextMeshProUGUI weaponDisplay1Number;
+    public TextMeshProUGUI weaponDisplay2Number;
+    public TextMeshProUGUI weaponDisplay3Number;
+    public TextMeshProUGUI weaponDisplay4Number;
+
     public TextMeshProUGUI weaponDisplay1AmmoNumber;
     public TextMeshProUGUI weaponDisplay2AmmoNumber;
     public TextMeshProUGUI weaponDisplay3AmmoNumber;
@@ -125,7 +131,8 @@ public class UiHandler : MonoBehaviour
         ToggleMultiUI(false, new GameObject[] { interactPrompt, doorConsolePanel, hitmarker,
                                                 pauseMenu, victoryScreen, defeatScreen,
                                                 statisticsScreen, highscoresScreen, weaponUpgraderPanel,
-                                                enterNameScreen, bossBar, passwordPanel, noteImage });
+                                                enterNameScreen, bossBar, passwordPanel, noteImage,
+                                                fullInventory});
 
         GameStateHandler.Resume();
     }
@@ -209,24 +216,38 @@ public class UiHandler : MonoBehaviour
         {
             case 1:
                 weaponDisplay4Image.sprite = weapons[0].weaponSprite;
+                weaponDisplay4Number.text = "1";
                 ToggleMultiUI(false, new GameObject[] { weaponDisplay1, weaponDisplay2, weaponDisplay3 });
+                ToggleMultiUI(true, new GameObject[] { weaponDisplay4 });
                 break;
             case 2:
                 weaponDisplay4Image.sprite = weapons[1].weaponSprite;
                 weaponDisplay3Image.sprite = weapons[0].weaponSprite;
+                weaponDisplay4Number.text = "1";
+                weaponDisplay3Number.text = "2";
                 ToggleMultiUI(false, new GameObject[] { weaponDisplay1, weaponDisplay2 });
+                ToggleMultiUI(true, new GameObject[] { weaponDisplay4, weaponDisplay3 });
                 break;
             case 3:
                 weaponDisplay4Image.sprite = weapons[2].weaponSprite;
                 weaponDisplay3Image.sprite = weapons[1].weaponSprite;
                 weaponDisplay2Image.sprite = weapons[0].weaponSprite;
+                weaponDisplay4Number.text = "1";
+                weaponDisplay3Number.text = "2";
+                weaponDisplay2Number.text = "3";
                 ToggleMultiUI(false, new GameObject[] { weaponDisplay1 });
+                ToggleMultiUI(true, new GameObject[] { weaponDisplay4, weaponDisplay3, weaponDisplay2 });
                 break;
             case 4:
                 weaponDisplay4Image.sprite = weapons[3].weaponSprite;
                 weaponDisplay3Image.sprite = weapons[2].weaponSprite;
                 weaponDisplay2Image.sprite = weapons[1].weaponSprite;
                 weaponDisplay1Image.sprite = weapons[0].weaponSprite;
+                weaponDisplay4Number.text = "1";
+                weaponDisplay3Number.text = "2";
+                weaponDisplay2Number.text = "3";
+                weaponDisplay1Number.text = "4";
+                ToggleMultiUI(true, new GameObject[] { weaponDisplay4, weaponDisplay3, weaponDisplay2, weaponDisplay1 });
                 break;
             default:
                 // Number of weapons is not between 1 & 4

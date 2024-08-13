@@ -10,12 +10,17 @@ using StarterAssets;
 public class PlayerInventory : MonoBehaviour
 {
     [Header("References")]
-    [HideInInspector] public List<Weapon> heldWeapons = new List<Weapon>();
+    [HideInInspector] public List<Weapon> heldWeapons = new List<Weapon>(4);
     public Weapon equippedWeapon;
     public GrenadeThrower grenadeThrower;
     [HideInInspector] public StarterAssetsInputs input;
     [HideInInspector] public PlayerStats playerStats;
     [HideInInspector] public UiHandler uiHandler;
+
+    public LayerMask playerWeaponLayer;
+    public LayerMask interactableLayer;
+
+    public GameObject tempWeapon;
 
     public int heldCredits;
 
@@ -56,6 +61,7 @@ public class PlayerInventory : MonoBehaviour
         if (!playerStats.isDead && GameStateHandler.gameState == "PLAYING")
         {
             EquipWeaponInput();
+            DropWeapon();
             uiHandler.UpdateAmmoNumberUI(heldWeapons);
         }
     }
@@ -74,12 +80,16 @@ public class PlayerInventory : MonoBehaviour
 
     public void EquipWeapon(int i)
     {
-        // Cancel previous weapon's reloading
-        equippedWeapon.CancelInvoke("ReloadFinished");
-        equippedWeapon.reloading = false;
+        if (!equippedWeapon.Equals(null))
+        {
+            // Cancel previous weapon's reloading
+            equippedWeapon.CancelInvoke("ReloadFinished");
+            equippedWeapon.reloading = false;
+        }
         // Equip new weapon
         equippedWeapon = heldWeapons[i];
         UpdateEnabledWeapons();
+        equippedWeapon.gameObject.SetActive(true);
     }
 
     public void UpdateEnabledWeapons()
@@ -90,7 +100,94 @@ public class PlayerInventory : MonoBehaviour
             if (w != equippedWeapon)
                 w.gameObject.SetActive(false);
             else
+            {
                 w.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void PickupWeapon(GameObject weapon)
+    {
+        if (heldWeapons.Count + 1 > heldWeapons.Capacity)
+        {
+            uiHandler.ToggleUI(true, uiHandler.fullInventory);
+            CancelInvoke("HideFullInventory");
+            Invoke("HideFullInventory", 1f);
+        }
+        else
+        {
+            // Set weapon's parent to playercameraroot
+            weapon.transform.SetParent(GameObject.Find("PlayerCameraRoot").transform);
+
+            // Set weapon's layer to weapon
+            weapon.layer = LayerMask.NameToLayer("Weapon");
+
+            // Reset weapon's position
+            weapon.transform.localPosition = new Vector3(0.294f, -0.258f, 0.108f);
+            weapon.transform.localEulerAngles = Vector3.zero;
+
+            //GameObject newWeapon = Instantiate(tempWeapon, GameObject.Find("PlayerCameraRoot").transform);
+            heldWeapons.Add(weapon.GetComponent<Weapon>());
+        }
+
+        uiHandler.UpdateInventoryUI(heldWeapons);
+        UpdateEnabledWeapons();
+    }
+
+    public void HideFullInventory()
+    {
+        uiHandler.ToggleUI(false, uiHandler.fullInventory);
+    }
+
+    public void DropWeapon()
+    {
+        if (heldWeapons.Count > 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Minus))
+            {
+                // PRINT CURRENT POS AND ROT
+                //Debug.Log(equippedWeapon.transform.localPosition + ", " + equippedWeapon.transform.localEulerAngles);
+
+                // Get index of current equipped weapon
+                int index = heldWeapons.IndexOf(equippedWeapon);
+
+                // Move weapon to 'droppeditems' category
+                equippedWeapon.transform.SetParent(GameObject.Find("DroppedItems").transform);
+
+                // Set weapon's layer to interactable
+                equippedWeapon.gameObject.layer = LayerMask.NameToLayer("Interactable");
+
+                // Set new position & rotation
+                Vector3 newPos = transform.position;
+                newPos.y = transform.position.y;
+
+                Vector3 newRot = new Vector3(0, Random.Range(0, 360), 90);
+
+                // Apply to the weapon
+                equippedWeapon.transform.position = newPos;
+                equippedWeapon.transform.eulerAngles = newRot;
+
+                // Remove the weapon from player's inventory
+                heldWeapons.Remove(heldWeapons[index]);
+
+                // Equip new weapon
+                if (index - 1 >= 0)
+                    EquipWeapon(index - 1);
+                else
+                    EquipWeapon(0);
+
+                // Update UI
+                UpdateEnabledWeapons();
+                uiHandler.UpdateInventoryUI(heldWeapons);
+            }
+        }
+    }
+
+    public void AddTestWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Equals))
+        {
+            PickupWeapon(tempWeapon);
         }
     }
 }
