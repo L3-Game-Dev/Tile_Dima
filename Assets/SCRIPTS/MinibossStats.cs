@@ -66,7 +66,7 @@ public class MinibossStats : MonoBehaviour
                 health = 0;
                 isDead = true;
                 uiHandler.MinibossDeath();
-                Instantiate(notePrefab, transform.position, new Quaternion(0, 0, 0, 0), transform);
+                //Instantiate(notePrefab, transform.position, new Quaternion(0, 0, 0, 0), transform);
                 AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFAULT);
             }
         }
