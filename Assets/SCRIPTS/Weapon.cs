@@ -153,7 +153,7 @@ public class Weapon : MonoBehaviour
         }
         else // Melee weapons
         {
-            // Add functionality for melee weapons
+            // None
         }
     }
 
