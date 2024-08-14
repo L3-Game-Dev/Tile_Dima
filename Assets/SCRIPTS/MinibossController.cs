@@ -34,64 +34,67 @@ public class MinibossController : MonoBehaviour
 
     private void Update()
     {
-        if (!minibossStats.isDead)
+        if (GameStateHandler.gameState == "PLAYING")
         {
-            // Outside of shootRange
-            if (Vector3.Distance(transform.position, target.position) > minibossStats.shootRange)
+            if (!minibossStats.isDead)
             {
-                if (anim.GetBool("movementEnabled"))
+                // Outside of shootRange
+                if (Vector3.Distance(transform.position, target.position) > minibossStats.shootRange)
                 {
-                    anim.SetBool("inShootRange", false);
-                    anim.SetBool("inMeleeRange", false);
-                    anim.SetBool("isShooting", false);
-                    MoveToTarget();
+                    if (anim.GetBool("movementEnabled"))
+                    {
+                        anim.SetBool("inShootRange", false);
+                        anim.SetBool("inMeleeRange", false);
+                        anim.SetBool("isShooting", false);
+                        MoveToTarget();
+                    }
                 }
-            }
-            // Inside meleeRange
-            else if (Vector3.Distance(transform.position, target.position) < minibossStats.meleeRange)
-            {
-                Vector3 lookTarget = target.position;
-                lookTarget.y = transform.position.y;
-                transform.LookAt(lookTarget);
-                anim.SetBool("inShootRange", false);
-                anim.SetBool("inMeleeRange", true);
-                anim.SetBool("isShooting", false);
-            }
-            // Inside shootRange && !Inside meleeRange
-            else
-            {
-                SightCheck();
-
-                if (canSeePlayer)
+                // Inside meleeRange
+                else if (Vector3.Distance(transform.position, target.position) < minibossStats.meleeRange)
                 {
                     Vector3 lookTarget = target.position;
                     lookTarget.y = transform.position.y;
                     transform.LookAt(lookTarget);
-                    anim.SetBool("inMeleeRange", false);
-                    anim.SetBool("inShootRange", true);
-
-                    Shooting();
+                    anim.SetBool("inShootRange", false);
+                    anim.SetBool("inMeleeRange", true);
+                    anim.SetBool("isShooting", false);
                 }
+                // Inside shootRange && !Inside meleeRange
                 else
                 {
-                    anim.SetBool("inShootRange", false);
-                    anim.SetBool("inMeleeRange", false);
-                    anim.SetBool("isShooting", false);
-                    MoveToTarget();
+                    SightCheck();
+
+                    if (canSeePlayer)
+                    {
+                        Vector3 lookTarget = target.position;
+                        lookTarget.y = transform.position.y;
+                        transform.LookAt(lookTarget);
+                        anim.SetBool("inMeleeRange", false);
+                        anim.SetBool("inShootRange", true);
+
+                        Shooting();
+                    }
+                    else
+                    {
+                        anim.SetBool("inShootRange", false);
+                        anim.SetBool("inMeleeRange", false);
+                        anim.SetBool("isShooting", false);
+                        MoveToTarget();
+                    }
                 }
             }
-        }
-        else
-        {
-            anim.SetBool("isDead", true);
-
-            // Find death animation
-            AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
-            DestroyCollider();
-            foreach (AnimationClip clip in clips)
+            else
             {
-                if (clip.name == "Die")
-                    Invoke("DestroyComponents", 3f/*clip.length*/); // Invoke after animation completed
+                anim.SetBool("isDead", true);
+
+                // Find death animation
+                AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+                DestroyCollider();
+                foreach (AnimationClip clip in clips)
+                {
+                    if (clip.name == "Die")
+                        Invoke("DestroyComponents", 3f/*clip.length*/); // Invoke after animation completed
+                }
             }
         }
     }

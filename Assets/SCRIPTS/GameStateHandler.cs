@@ -47,6 +47,8 @@ public class GameStateHandler : MonoBehaviour
     public static void Statistics()
     {
         gameState = "STATISTICS";
+        Cursor.visible = true; // Show cursor
+        Cursor.lockState = CursorLockMode.None; // Unlock cursor
     }
 
     public static void EnterName()

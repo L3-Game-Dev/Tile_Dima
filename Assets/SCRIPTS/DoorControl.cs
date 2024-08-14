@@ -34,6 +34,8 @@ public class DoorControl : MonoBehaviour
             {
                 // Open console panel
                 uiHandler.ToggleUI(true, uiHandler.doorConsolePanel);
+                // Play sound
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.uiClick1, transform.position);
                 // Pause the game
                 GameStateHandler.Pause();
             }
@@ -52,6 +54,14 @@ public class DoorControl : MonoBehaviour
             {
                 doorPart.gameObject.SetActive(false);
             }
+
+            // Play sound
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.success, transform.position);
         }
+    }
+
+    public void DisableButton(Button button)
+    {
+        button.interactable = false;
     }
 }

@@ -45,6 +45,7 @@ public class EnemyCombat : MonoBehaviour
             enemyController.target.GetComponent<PlayerStats>().ModifyHealth('-', equippedWeapon.damage);
         }
 
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.zombieAttack, transform.position);
+        if (GameStateHandler.gameState == "PLAYING")
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.zombieAttack, transform.position);
     }
 }

@@ -109,6 +109,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 219382
+--- !u!114 &-7864344896028745896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Defeat
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Defeat
+  Guid:
+    Data1: 857710202
+    Data2: 1081351583
+    Data3: 782153864
+    Data4: 391602858
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7642281327331299867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +239,33 @@ MonoBehaviour:
   - {fileID: 7989323617726389955}
   IsStream: 0
   Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4803357096961519821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Success
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Success
+  Guid:
+    Data1: 10965733
+    Data2: 1138604020
+    Data3: -766180417
+    Data4: -1547155914
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -365,6 +419,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 79808
   Exists: 1
+--- !u!114 &-1581308570620586973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Victory
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Victory
+  Guid:
+    Data1: 1362289027
+    Data2: 1222324836
+    Data3: -2106049367
+    Data4: 373172292
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-668712413103706896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +464,33 @@ MonoBehaviour:
     Data2: 1265031514
     Data3: 811323824
     Data4: -1376811996
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-373973574201842397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Upgrade1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Upgrade1
+  Guid:
+    Data1: -611616337
+    Data2: 1319289065
+    Data3: -181068380
+    Data4: 318163722
   Banks:
   - {fileID: 7989323617726389955}
   IsStream: 0
@@ -429,12 +537,18 @@ MonoBehaviour:
   - {fileID: -6103297063132286005}
   - {fileID: 8860419455447281765}
   - {fileID: -5808327979932897063}
+  - {fileID: -373973574201842397}
+  - {fileID: 7148512009146729182}
+  - {fileID: -7864344896028745896}
+  - {fileID: -1581308570620586973}
+  - {fileID: 6058997513634446468}
+  - {fileID: -4803357096961519821}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638590517748404556
+  cacheTime: 638592379239880881
   cacheVersion: 131618
 --- !u!114 &2789331744061479094
 MonoBehaviour:
@@ -478,7 +592,7 @@ MonoBehaviour:
   Name: MusicTrack
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 3
   Default: 0
   ID:
     data1: 3606760187
@@ -488,6 +602,8 @@ MonoBehaviour:
   Labels:
   - Default
   - BossFight
+  - VictoryMusic
+  - DefeatMusic
   Exists: 1
 --- !u!114 &4281648350526902496
 MonoBehaviour:
@@ -504,7 +620,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638590517746817638
+  lastModified: 638592359193767363
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -603,11 +719,65 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638590517746829408
+  lastModified: 638592359193782086
   FileSizes:
   - Name: Desktop
-    Value: 1802
+    Value: 2048
   Exists: 1
+--- !u!114 &6058997513634446468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Beep
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Beep
+  Guid:
+    Data1: 954225216
+    Data2: 1081066980
+    Data3: 634145456
+    Data4: 561480561
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7148512009146729182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Error1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Error1
+  Guid:
+    Data1: 257524087
+    Data2: 1333413114
+    Data3: 1565425051
+    Data4: 1642961059
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7989323617726389955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,10 +793,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638590517748404556
+  lastModified: 638592379239880881
   FileSizes:
   - Name: Desktop
-    Value: 2909536
+    Value: 3877184
   Exists: 1
 --- !u!114 &8860419455447281765
 MonoBehaviour:

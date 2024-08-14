@@ -59,44 +59,47 @@ public class PlayerStats : MonoBehaviour
 
     public void ModifyHealth(char op, float amt)
     {
-        float newHealthAmount = health;
-
-        if (op == '+') // Adding health
+        if (GameStateHandler.gameState == "PLAYING")
         {
-            // Health can't increase beyond max
-            if (health + amt <= maxHealth)
-            {
-                newHealthAmount = health + amt;
-            }
-            else
-            {
-                newHealthAmount = maxHealth;
-            }
-        }
-        else if (op == '-') // Removing health
-        {
-            // Health can't decrease below 0
-            if (health - amt > 0)
-            {
-                newHealthAmount = health - amt;
-                StatisticsTracker.damageTaken += amt;
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, transform.position);
-            }
-            else // 0 health = dead
-            {
-                StatisticsTracker.damageTaken += health;
-                newHealthAmount = 0;
-                isDead = true;
-                // Death Functionality
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath, transform.position);
-                uiHandler.PlayerDeath();
-                GameStateHandler.Defeat();
-            }
-        }
+            float newHealthAmount = health;
 
-        health = newHealthAmount;
-        uiHandler.healthBarSlider.value = newHealthAmount;
-        uiHandler.healthBarNumber.text = newHealthAmount.ToString();
+            if (op == '+') // Adding health
+            {
+                // Health can't increase beyond max
+                if (health + amt <= maxHealth)
+                {
+                    newHealthAmount = health + amt;
+                }
+                else
+                {
+                    newHealthAmount = maxHealth;
+                }
+            }
+            else if (op == '-') // Removing health
+            {
+                // Health can't decrease below 0
+                if (health - amt > 0)
+                {
+                    newHealthAmount = health - amt;
+                    StatisticsTracker.damageTaken += amt;
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, transform.position);
+                }
+                else // 0 health = dead
+                {
+                    StatisticsTracker.damageTaken += health;
+                    newHealthAmount = 0;
+                    isDead = true;
+                    // Death Functionality
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath, transform.position);
+                    uiHandler.PlayerDeath();
+                    GameStateHandler.Defeat();
+                }
+            }
+
+            health = newHealthAmount;
+            uiHandler.healthBarSlider.value = newHealthAmount;
+            uiHandler.healthBarNumber.text = newHealthAmount.ToString();
+        }
     }
 
     public void UpdateStamina()

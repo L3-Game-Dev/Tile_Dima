@@ -18,9 +18,15 @@ public class FMODEvents : MonoBehaviour
     [SerializeField] public EventReference kick;
 
     [Header("UI")]
+    [SerializeField] public EventReference beep;
+    [SerializeField] public EventReference success;
     [SerializeField] public EventReference uiClick1;
     [SerializeField] public EventReference uiClick2;
+    [SerializeField] public EventReference upgrade1;
+    [SerializeField] public EventReference error1;
     [SerializeField] public EventReference typing;
+    [SerializeField] public EventReference victory;
+    [SerializeField] public EventReference defeat;
 
     [Header("Music")]
     [SerializeField] public EventReference musicTrack1;

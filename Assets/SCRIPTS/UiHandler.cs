@@ -300,6 +300,7 @@ public class UiHandler : MonoBehaviour
     public void MinibossDeath()
     {
         DisableBossBar();
+        VictoryScreen();
     }
 
     public void ResumeButton()
@@ -386,6 +387,8 @@ public class UiHandler : MonoBehaviour
     {
         ToggleUI(true, victoryScreen);
         StartCoroutine(FadeInScreen(victoryScreen, 1, 100f));
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.victory, transform.position);
+        AudioManager.instance.SwitchMusicTrack(MusicTrack.VICTORY);
         GameStateHandler.Victory();
     }
 
@@ -393,6 +396,8 @@ public class UiHandler : MonoBehaviour
     {
         ToggleUI(true, defeatScreen);
         StartCoroutine(FadeInScreen(defeatScreen, 1, 100f));
+        //AudioManager.instance.PlayOneShot(FMODEvents.instance.defeat, transform.position);
+        AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFEAT);
         GameStateHandler.Defeat();
     }
 
@@ -414,7 +419,7 @@ public class UiHandler : MonoBehaviour
             image.color = Color.Lerp(image.color, goalColor, normalisedDuration);
         }
         image.color = goalColor;
-        GameStateHandler.Pause();
+        //GameStateHandler.Pause();
         yield return null;
     }
 

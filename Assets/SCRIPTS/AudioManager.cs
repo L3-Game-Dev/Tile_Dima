@@ -116,8 +116,8 @@ public class AudioManager : MonoBehaviour
             stop_mode = FMOD.Studio.STOP_MODE.IMMEDIATE;
         else
             stop_mode = FMOD.Studio.STOP_MODE.ALLOWFADEOUT;
-            
-        Debug.Log(instance.stop(stop_mode));
+        
+        instance.stop(stop_mode);
     }
 
     public void StopMusic()
@@ -145,7 +145,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (EventInstance eventInstance in eventInstances)
         {
-            eventInstance.getDescription(out FMOD.Studio.EventDescription desc);
+            eventInstance.getDescription(out EventDescription desc);
             desc.getPath(out string path);
             Debug.Log(path);
         }

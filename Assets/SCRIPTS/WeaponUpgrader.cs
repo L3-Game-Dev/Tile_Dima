@@ -70,6 +70,8 @@ public class WeaponUpgrader : MonoBehaviour
                 // Set weapon display references
                 uiHandler.upgraderWeaponDisplayImage.sprite = FindEquippedWeapon().weaponSprite;
                 uiHandler.upgraderWeaponDisplayText.text = FindEquippedWeapon().weaponName;
+                // Play sound
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.uiClick1, transform.position);
                 // Pause the game
                 GameStateHandler.Pause();
             }
@@ -83,7 +85,12 @@ public class WeaponUpgrader : MonoBehaviour
             inventory.heldCredits -= FindEquippedWeapon().damageUpgradeCost;
             FindEquippedWeapon().damageMultiplier += FindEquippedWeapon().damageUpgradeAmount;
             FindEquippedWeapon().damageUpgradeCost *= 2;
+            UpgradeSound1();
             UpdateStats();
+        }
+        else
+        {
+            ErrorSound1();
         }
     }
 
@@ -94,7 +101,12 @@ public class WeaponUpgrader : MonoBehaviour
             inventory.heldCredits -= FindEquippedWeapon().maxAmmoUpgradeCost;
             FindEquippedWeapon().maxAmmoMultiplier += FindEquippedWeapon().maxAmmoUpgradeAmount;
             FindEquippedWeapon().maxAmmoUpgradeCost *= 2;
+            UpgradeSound1();
             UpdateStats();
+        }
+        else
+        {
+            ErrorSound1();
         }
     }
 
@@ -105,7 +117,12 @@ public class WeaponUpgrader : MonoBehaviour
             inventory.heldCredits -= FindEquippedWeapon().attackSpeedUpgradeCost;
             FindEquippedWeapon().attackSpeedMultiplier += FindEquippedWeapon().attackSpeedUpgradeAmount;
             FindEquippedWeapon().attackSpeedUpgradeCost *= 2;
+            UpgradeSound1();
             UpdateStats();
+        }
+        else
+        {
+            ErrorSound1();
         }
     }
 
@@ -116,7 +133,22 @@ public class WeaponUpgrader : MonoBehaviour
             inventory.heldCredits -= FindEquippedWeapon().reloadSpeedUpgradeCost;
             FindEquippedWeapon().reloadSpeedMultiplier += FindEquippedWeapon().reloadSpeedUpgradeAmount;
             FindEquippedWeapon().reloadSpeedUpgradeCost *= 2;
+            UpgradeSound1();
             UpdateStats();
         }
+        else
+        {
+            ErrorSound1();
+        }
+    }
+
+    public void UpgradeSound1()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.upgrade1, transform.position);
+    }
+
+    public void ErrorSound1()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.error1, transform.position);
     }
 }

@@ -62,6 +62,8 @@ public class PasswordPanel : MonoBehaviour
                     InitialisePanelUI();
                     // Set password to current panel's password
                     password = panel.Item2;
+                    // Play sound
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.uiClick1, transform.position);
                     // Pause the game
                     GameStateHandler.Pause();
                 }
@@ -100,10 +102,15 @@ public class PasswordPanel : MonoBehaviour
             selectedDigit = digits[digits.IndexOf(selectedDigit)+1];
 
         selectedDigit.fontStyle = FontStyles.Underline;
+
+        // Play beep sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.beep, transform.position);
     }
 
     public void DeleteDigit()
     {
+        // Play beep sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.beep, transform.position);
         ResetDigits();
     }
 
@@ -123,13 +130,13 @@ public class PasswordPanel : MonoBehaviour
 
     public void CorrectPassword()
     {
-        Debug.Log("CORRECT PASSWORD ENTERED");
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.success, transform.position);
         OpenDoor();
     }
 
     public void IncorrectPassword()
     {
-        Debug.Log("INCORRECT PASSWORD ENTERED");
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.error1, transform.position);
     }
 
     public void OpenDoor()
