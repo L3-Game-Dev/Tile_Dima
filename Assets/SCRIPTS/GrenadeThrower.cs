@@ -44,6 +44,11 @@ public class GrenadeThrower : MonoBehaviour
         allowInvoke = true;
     }
 
+    private void Start()
+    {
+        uiHandler.grenadeDisplayAmmoNumber.text = grenadesHeld.ToString();
+    }
+
     public void Throw()
     {
         readyToThrow = false; // No longer ready to throw
@@ -72,6 +77,12 @@ public class GrenadeThrower : MonoBehaviour
         currentGrenade.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * grenade.GetComponent<Grenade>().throwSpeed, ForceMode.Impulse);
 
         grenadesHeld--; // Take away one from held grenades amount
+
+        // Update text
+        uiHandler.grenadeDisplayAmmoNumber.text = grenadesHeld.ToString();
+
+        // Play throw sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.grenadeThrow1, transform.position);
 
         // Invoke resetShot function
         if (allowInvoke)

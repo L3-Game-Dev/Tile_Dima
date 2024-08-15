@@ -90,6 +90,9 @@ public class UiHandler : MonoBehaviour
     public GameObject activeBoss;
 
     [Header("Weapon Display References")]
+    public GameObject grenadeDisplay;
+    public TextMeshProUGUI grenadeDisplayAmmoNumber;
+
     public GameObject weaponDisplay1;
     public GameObject weaponDisplay2;
     public GameObject weaponDisplay3;

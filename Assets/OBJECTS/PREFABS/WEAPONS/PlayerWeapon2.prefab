@@ -174,7 +174,7 @@ MonoBehaviour:
   reloading: 0
   attackPoint: {fileID: 6982976359346615529}
   projectile: {fileID: 7286042161397671503, guid: a6320e39cb2cf4a31b6b0cbb536c49af, type: 3}
-  weaponSprite: {fileID: 21300000, guid: d600fa795e148433f844e34d1c86e5b1, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 2fbe9f993137e4bc0b10cb5bb4fc3e30, type: 3}
   playerCamera: {fileID: 0}
   uiHandler: {fileID: 0}
 --- !u!65 &3456040300346287973

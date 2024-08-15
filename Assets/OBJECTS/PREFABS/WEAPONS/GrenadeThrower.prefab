@@ -83,6 +83,6 @@ MonoBehaviour:
   throwing: 0
   playerCamera: {fileID: 0}
   throwPoint: {fileID: 4376418325728040738}
-  grenade: {fileID: 7777482561074766855, guid: 565de6594bc7a4a70b7d3c3567becd6d, type: 3}
-  grenadeSprite: {fileID: 0}
+  grenade: {fileID: 713529224904574090, guid: 4eb9e43336d364c3997fb3cdb73d75be, type: 3}
+  grenadeSprite: {fileID: 21300000, guid: 77cc97925f2eb40279195bac00a3f901, type: 3}
   uiHandler: {fileID: 0}

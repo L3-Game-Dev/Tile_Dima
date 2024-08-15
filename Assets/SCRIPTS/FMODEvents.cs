@@ -16,6 +16,8 @@ public class FMODEvents : MonoBehaviour
     [SerializeField] public EventReference playerDeath;
     [SerializeField] public EventReference playerHit;
     [SerializeField] public EventReference kick;
+    [SerializeField] public EventReference grenadeExplosion1;
+    [SerializeField] public EventReference grenadeThrow1;
 
     [Header("UI")]
     [SerializeField] public EventReference beep;

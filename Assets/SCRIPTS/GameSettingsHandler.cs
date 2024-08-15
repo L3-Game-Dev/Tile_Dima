@@ -14,7 +14,7 @@ public class GameSettingsHandler : MonoBehaviour
 
     public static float difficulty = 1f;
 
-    public static int sensitivity;
+    public static float sensitivity;
     public static bool fullscreen;
 
     public void SetDifficulty()
@@ -37,15 +37,23 @@ public class GameSettingsHandler : MonoBehaviour
         }
     }
 
-    public void ChangeSensitivity(TMP_InputField inputField)
+    public static void ChangeSensitivity(TMP_InputField inputField)
     {
         if (int.TryParse(inputField.text, out int sens))
             sensitivity = sens;
     }
 
-    public void ChangeFullscreen(Toggle toggle)
+    public static void ChangeFullscreen(Toggle toggle)
     {
         fullscreen = toggle.isOn;
+        if (fullscreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
     }
 
     public static void InitialiseGameSettings()
@@ -53,8 +61,9 @@ public class GameSettingsHandler : MonoBehaviour
         if (!settingsInitialised)
         {
             difficulty = 1f;
-            sensitivity = 100;
-            fullscreen = false;
+            sensitivity = 100f;
+            fullscreen = true;
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
 
             settingsInitialised = true;
         }

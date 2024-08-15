@@ -70,6 +70,9 @@ public class Grenade : MonoBehaviour
 
         // Spawn grenade effect
         Instantiate(grenadeEffect, transform.position, transform.rotation, GameObject.Find("PlayerProjectiles").transform);
+        
+        // Play explosion sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.grenadeExplosion1, transform.position);
 
         DestroyGrenade();
     }

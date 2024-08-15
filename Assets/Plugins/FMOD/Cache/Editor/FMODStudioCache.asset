@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 7989323617726389955}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters:
   - {fileID: 3864141237057838175}
   MinDistance: 1
@@ -543,12 +543,14 @@ MonoBehaviour:
   - {fileID: -1581308570620586973}
   - {fileID: 6058997513634446468}
   - {fileID: -4803357096961519821}
+  - {fileID: 4683760742569194898}
+  - {fileID: 7485988124586426256}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638592379239880881
+  cacheTime: 638594013424546699
   cacheVersion: 131618
 --- !u!114 &2789331744061479094
 MonoBehaviour:
@@ -620,11 +622,38 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638592359193767363
+  lastModified: 638594013423449429
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &4683760742569194898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GrenadeExplosion1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GrenadeExplosion1
+  Guid:
+    Data1: -1218166960
+    Data2: 1259390886
+    Data3: -1564620151
+    Data4: -1425401217
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4766597115087293752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,10 +748,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638592359193782086
+  lastModified: 638594013423460581
   FileSizes:
   - Name: Desktop
-    Value: 2048
+    Value: 2144
   Exists: 1
 --- !u!114 &6058997513634446468
 MonoBehaviour:
@@ -778,6 +807,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7485988124586426256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GrenadeThrow1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GrenadeThrow1
+  Guid:
+    Data1: -91638374
+    Data2: 1093708075
+    Data3: -1692145258
+    Data4: 1533312609
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7989323617726389955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,10 +849,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638592379239880881
+  lastModified: 638594013424546699
   FileSizes:
   - Name: Desktop
-    Value: 3877184
+    Value: 3915520
   Exists: 1
 --- !u!114 &8860419455447281765
 MonoBehaviour:

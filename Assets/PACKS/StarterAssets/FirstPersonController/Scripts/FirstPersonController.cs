@@ -137,6 +137,8 @@ namespace StarterAssets
 			}
 
 			UpdateSound();
+
+			RotationSpeed = GameSettingsHandler.sensitivity / 10;
 		}
 
         private void LateUpdate()
