@@ -117,6 +117,11 @@ public class MinibossController : MonoBehaviour
         }
     }
 
+    public void FootstepSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.minibossFootstepMetal, transform.position);
+    }
+
     private void MoveToTarget()
     {
         agent.SetDestination(target.position);

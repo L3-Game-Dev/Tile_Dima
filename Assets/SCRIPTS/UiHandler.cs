@@ -399,7 +399,6 @@ public class UiHandler : MonoBehaviour
     {
         ToggleUI(true, defeatScreen);
         StartCoroutine(FadeInScreen(defeatScreen, 1, 100f));
-        //AudioManager.instance.PlayOneShot(FMODEvents.instance.defeat, transform.position);
         AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFEAT);
         GameStateHandler.Defeat();
     }

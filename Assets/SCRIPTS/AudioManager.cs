@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="arg1"></param>
     private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
     {
-        StopTracks();
+        StopTracks(true);
         InitialiseMusic();
     }
 

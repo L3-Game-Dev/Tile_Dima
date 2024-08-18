@@ -217,6 +217,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5555439506269959508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/MinibossFootstepMetal
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/MinibossFootstepMetal
+  Guid:
+    Data1: -1410285285
+    Data2: 1171170025
+    Data3: 1765518763
+    Data4: -1816781453
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4954473642353629878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +313,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638584647282528867
+  lastModified: 638594099888165154
   FileSizes:
   - Name: Desktop
     Value: 2112672
@@ -545,12 +572,14 @@ MonoBehaviour:
   - {fileID: -4803357096961519821}
   - {fileID: 4683760742569194898}
   - {fileID: 7485988124586426256}
+  - {fileID: 8801964210159329628}
+  - {fileID: -5555439506269959508}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638594013424546699
+  cacheTime: 638596552592123335
   cacheVersion: 131618
 --- !u!114 &2789331744061479094
 MonoBehaviour:
@@ -622,7 +651,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638594013423449429
+  lastModified: 638596552590897624
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -748,10 +777,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638594013423460581
+  lastModified: 638596552590913265
   FileSizes:
   - Name: Desktop
-    Value: 2144
+    Value: 2248
   Exists: 1
 --- !u!114 &6058997513634446468
 MonoBehaviour:
@@ -849,11 +878,38 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638594013424546699
+  lastModified: 638596552592123335
   FileSizes:
   - Name: Desktop
-    Value: 3915520
+    Value: 3931680
   Exists: 1
+--- !u!114 &8801964210159329628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ZombieHurt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ZombieHurt
+  Guid:
+    Data1: -259639618
+    Data2: 1283797807
+    Data3: -77042011
+    Data4: -803129722
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8860419455447281765
 MonoBehaviour:
   m_ObjectHideFlags: 0

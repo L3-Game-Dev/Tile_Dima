@@ -159,52 +159,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &19504415
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 19504417}
-  - component: {fileID: 19504416}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &19504416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19504415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244ba3356162a47759490d110cb171fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterVolume: 1
---- !u!4 &19504417
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19504415}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 497104416}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &29700443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,176 +1863,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488414553}
   m_CullTransparentMesh: 1
---- !u!1 &497104415
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 497104416}
-  - component: {fileID: 497104417}
-  m_Layer: 0
-  m_Name: FMODEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &497104416
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 497104415}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 19504417}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &497104417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 497104415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2795863f25f4a9985b30df6a758963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerFootstepsMetal:
-    Guid:
-      Data1: -1128282648
-      Data2: 1198286097
-      Data3: -1540607323
-      Data4: -226217619
-    Path: event:/SFX/PlayerFootstepsMetal
-  enemyFootstepMetal:
-    Guid:
-      Data1: 738022763
-      Data2: 1169053849
-      Data3: -710313054
-      Data4: -1884346846
-    Path: event:/SFX/EnemyFootstepMetal
-  zombieAttack:
-    Guid:
-      Data1: 1650170587
-      Data2: 1199561303
-      Data3: -1315142978
-      Data4: 1008429268
-    Path: event:/SFX/ZombieAttack
-  playerDeath:
-    Guid:
-      Data1: -1720646196
-      Data2: 1265031514
-      Data3: 811323824
-      Data4: -1376811996
-    Path: event:/SFX/PlayerDeath
-  playerHit:
-    Guid:
-      Data1: -187689122
-      Data2: 1093311803
-      Data3: 427223995
-      Data4: -1916716947
-    Path: event:/SFX/PlayerHit
-  kick:
-    Guid:
-      Data1: 1082257206
-      Data2: 1159974135
-      Data3: -675203411
-      Data4: 135976387
-    Path: event:/SFX/Kick
-  beep:
-    Guid:
-      Data1: 954225216
-      Data2: 1081066980
-      Data3: 634145456
-      Data4: 561480561
-    Path: event:/SFX/Beep
-  success:
-    Guid:
-      Data1: 10965733
-      Data2: 1138604020
-      Data3: -766180417
-      Data4: -1547155914
-    Path: event:/SFX/Success
-  uiClick1:
-    Guid:
-      Data1: -699600002
-      Data2: 1085759952
-      Data3: 452721840
-      Data4: 45862287
-    Path: event:/SFX/UiClick1
-  uiClick2:
-    Guid:
-      Data1: -1380933200
-      Data2: 1233211891
-      Data3: 1358012080
-      Data4: 448508376
-    Path: event:/SFX/UiClick2
-  upgrade1:
-    Guid:
-      Data1: -611616337
-      Data2: 1319289065
-      Data3: -181068380
-      Data4: 318163722
-    Path: event:/SFX/Upgrade1
-  error1:
-    Guid:
-      Data1: 257524087
-      Data2: 1333413114
-      Data3: 1565425051
-      Data4: 1642961059
-    Path: event:/SFX/Error1
-  typing:
-    Guid:
-      Data1: 704781258
-      Data2: 1259692975
-      Data3: 1405903293
-      Data4: -507942362
-    Path: event:/SFX/Typing
-  victory:
-    Guid:
-      Data1: 1362289027
-      Data2: 1222324836
-      Data3: -2106049367
-      Data4: 373172292
-    Path: event:/SFX/Victory
-  defeat:
-    Guid:
-      Data1: 857710202
-      Data2: 1081351583
-      Data3: 782153864
-      Data4: 391602858
-    Path: event:/SFX/Defeat
-  musicTrack1:
-    Guid:
-      Data1: -620810491
-      Data2: 1196008679
-      Data3: -1227072622
-      Data4: 1188766181
-    Path: event:/Music/MusicTrack1
-  mainMenuTrack:
-    Guid:
-      Data1: 1697813670
-      Data2: 1342086016
-      Data3: 1439593356
-      Data4: 134220567
-    Path: event:/Music/MainMenuTrack
-  humAmbience:
-    Guid:
-      Data1: -1645468382
-      Data2: 1214042189
-      Data3: -1833405800
-      Data4: 34041744
-    Path: event:/Ambience/HumAmbience
 --- !u!1 &509489810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,7 +1957,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TITLE
+  m_text: " WAVE\n        ZERO"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9029880b22d2e4facb07d7a33ac6077d, type: 2}
   m_sharedMaterial: {fileID: -7317549920037867581, guid: 9029880b22d2e4facb07d7a33ac6077d, type: 2}
@@ -2207,7 +1991,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 3
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5614,6 +5398,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1469038409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469038411}
+  - component: {fileID: 1469038410}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1469038410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469038409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244ba3356162a47759490d110cb171fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+--- !u!4 &1469038411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469038409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1868264265}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482920773
 GameObject:
   m_ObjectHideFlags: 0
@@ -6924,6 +6754,190 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1868264264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1868264265}
+  - component: {fileID: 1868264266}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1868264265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868264264}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1469038411}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1868264266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868264264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2795863f25f4a9985b30df6a758963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFootstepsMetal:
+    Guid:
+      Data1: -1128282648
+      Data2: 1198286097
+      Data3: -1540607323
+      Data4: -226217619
+    Path: event:/SFX/PlayerFootstepsMetal
+  enemyFootstepMetal:
+    Guid:
+      Data1: 738022763
+      Data2: 1169053849
+      Data3: -710313054
+      Data4: -1884346846
+    Path: event:/SFX/EnemyFootstepMetal
+  zombieAttack:
+    Guid:
+      Data1: 1650170587
+      Data2: 1199561303
+      Data3: -1315142978
+      Data4: 1008429268
+    Path: event:/SFX/ZombieAttack
+  playerDeath:
+    Guid:
+      Data1: -1720646196
+      Data2: 1265031514
+      Data3: 811323824
+      Data4: -1376811996
+    Path: event:/SFX/PlayerDeath
+  playerHit:
+    Guid:
+      Data1: -187689122
+      Data2: 1093311803
+      Data3: 427223995
+      Data4: -1916716947
+    Path: event:/SFX/PlayerHit
+  kick:
+    Guid:
+      Data1: 1082257206
+      Data2: 1159974135
+      Data3: -675203411
+      Data4: 135976387
+    Path: event:/SFX/Kick
+  grenadeExplosion1:
+    Guid:
+      Data1: -1218166960
+      Data2: 1259390886
+      Data3: -1564620151
+      Data4: -1425401217
+    Path: event:/SFX/GrenadeExplosion1
+  grenadeThrow1:
+    Guid:
+      Data1: -91638374
+      Data2: 1093708075
+      Data3: -1692145258
+      Data4: 1533312609
+    Path: event:/SFX/GrenadeThrow1
+  beep:
+    Guid:
+      Data1: 954225216
+      Data2: 1081066980
+      Data3: 634145456
+      Data4: 561480561
+    Path: event:/SFX/Beep
+  success:
+    Guid:
+      Data1: 10965733
+      Data2: 1138604020
+      Data3: -766180417
+      Data4: -1547155914
+    Path: event:/SFX/Success
+  uiClick1:
+    Guid:
+      Data1: -699600002
+      Data2: 1085759952
+      Data3: 452721840
+      Data4: 45862287
+    Path: event:/SFX/UiClick1
+  uiClick2:
+    Guid:
+      Data1: -1380933200
+      Data2: 1233211891
+      Data3: 1358012080
+      Data4: 448508376
+    Path: event:/SFX/UiClick2
+  upgrade1:
+    Guid:
+      Data1: -611616337
+      Data2: 1319289065
+      Data3: -181068380
+      Data4: 318163722
+    Path: event:/SFX/Upgrade1
+  error1:
+    Guid:
+      Data1: 257524087
+      Data2: 1333413114
+      Data3: 1565425051
+      Data4: 1642961059
+    Path: event:/SFX/Error1
+  typing:
+    Guid:
+      Data1: 704781258
+      Data2: 1259692975
+      Data3: 1405903293
+      Data4: -507942362
+    Path: event:/SFX/Typing
+  victory:
+    Guid:
+      Data1: 1362289027
+      Data2: 1222324836
+      Data3: -2106049367
+      Data4: 373172292
+    Path: event:/SFX/Victory
+  defeat:
+    Guid:
+      Data1: 857710202
+      Data2: 1081351583
+      Data3: 782153864
+      Data4: 391602858
+    Path: event:/SFX/Defeat
+  musicTrack1:
+    Guid:
+      Data1: -620810491
+      Data2: 1196008679
+      Data3: -1227072622
+      Data4: 1188766181
+    Path: event:/Music/MusicTrack1
+  mainMenuTrack:
+    Guid:
+      Data1: 1697813670
+      Data2: 1342086016
+      Data3: 1439593356
+      Data4: 134220567
+    Path: event:/Music/MainMenuTrack
+  humAmbience:
+    Guid:
+      Data1: -1645468382
+      Data2: 1214042189
+      Data3: -1833405800
+      Data4: 34041744
+    Path: event:/Ambience/HumAmbience
 --- !u!1 &1906995884
 GameObject:
   m_ObjectHideFlags: 0
@@ -7951,4 +7965,4 @@ SceneRoots:
   - {fileID: 35631344}
   - {fileID: 1377373213}
   - {fileID: 1061152199}
-  - {fileID: 19504417}
+  - {fileID: 1469038411}

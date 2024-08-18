@@ -57,6 +57,9 @@ public class EnemyStats : MonoBehaviour
                 health = 0;
                 isDead = true;
             }
+
+            // Play hurt sound
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.zombieHurt, transform.position);
         }
     }
 }

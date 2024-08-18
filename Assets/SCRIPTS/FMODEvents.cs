@@ -12,7 +12,9 @@ public class FMODEvents : MonoBehaviour
     [Header("SFX")]
     [SerializeField] public EventReference playerFootstepsMetal;
     [SerializeField] public EventReference enemyFootstepMetal;
+    [SerializeField] public EventReference minibossFootstepMetal;
     [SerializeField] public EventReference zombieAttack;
+    [SerializeField] public EventReference zombieHurt;
     [SerializeField] public EventReference playerDeath;
     [SerializeField] public EventReference playerHit;
     [SerializeField] public EventReference kick;
