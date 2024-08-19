@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.Find("PlayerCapsule").transform;
         anim = GetComponent<Animator>();
@@ -46,6 +47,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the agent's target destination to the player's location and determines what action to take
+    /// </summary>
     private void MoveToTarget()
     {
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
@@ -67,17 +71,25 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Play metal footstep sound
+    /// </summary>
     public void FootstepMetal()
     {
-        //AudioManager.instance.PlayOneShot(enemyFootsteps, transform.position);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyFootstepMetal, transform.position);
     }
 
+    /// <summary>
+    /// Destroys the enemy's collider component
+    /// </summary>
     private void DestroyCollider()
     {
         Destroy(gameObject.GetComponent<CapsuleCollider>());
     }
 
+    /// <summary>
+    /// Destroys all components attached to the enemy object
+    /// </summary>
     private void DestroyComponents()
     {
         foreach (Component c in gameObject.GetComponents<Component>()) // Destroy components

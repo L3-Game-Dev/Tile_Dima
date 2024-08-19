@@ -20,6 +20,9 @@ public class HighscoreStorer : MonoBehaviour
     // Whether new highscores are currently being stored
     public static bool storingHighscores = true;
 
+    /// <summary>
+    /// Reads the currently selected file and sends the data to data string
+    /// </summary>
     public static void ReadFile()
     {
         data = "";
@@ -34,6 +37,11 @@ public class HighscoreStorer : MonoBehaviour
         else Debug.Log("No file found at " + path);
     }
 
+    /// <summary>
+    /// Saves a highscore to file
+    /// </summary>
+    /// <param name="name">Highscore person's name</param>
+    /// <param name="time">Highscore time value</param>
     public static void SaveHighscore(string name, string time)
     {
         if (storingHighscores)
@@ -47,6 +55,10 @@ public class HighscoreStorer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets the number of highscores in the data string
+    /// </summary>
+    /// <returns>Number of lines</returns>
     public static int GetHighscoreCount()
     {
         ReadFile();
@@ -56,6 +68,11 @@ public class HighscoreStorer : MonoBehaviour
         return lines.Length;
     }
 
+    /// <summary>
+    /// Gets the highscore values at a specified index
+    /// </summary>
+    /// <param name="i">The index to get</param>
+    /// <returns>The highscore name & time as a double string Tuple</returns>
     public static Tuple<string, string> GetHighscores(int i)
     {
         ReadFile();

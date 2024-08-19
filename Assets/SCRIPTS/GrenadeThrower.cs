@@ -1,5 +1,5 @@
-// Weapon
-// Stores weapon stats and handles the weapon's functionality
+// GrenadeThrower
+// Handles throwing grenades
 // Created by Dima Bethune 05/06
 
 using System.Collections;
@@ -46,9 +46,13 @@ public class GrenadeThrower : MonoBehaviour
 
     private void Start()
     {
+        // Initialise UI text
         uiHandler.grenadeDisplayAmmoNumber.text = grenadesHeld.ToString();
     }
 
+    /// <summary>
+    /// Throws the held grenade
+    /// </summary>
     public void Throw()
     {
         readyToThrow = false; // No longer ready to throw
@@ -92,6 +96,9 @@ public class GrenadeThrower : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets the grenadethrower's throw, allowing another throw if has remaining grenades
+    /// </summary>
     private void ResetThrow()
     {
         readyToThrow = true;

@@ -213,6 +213,10 @@ public class UiHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the inventory UI
+    /// </summary>
+    /// <param name="weapons"></param>
     public void UpdateInventoryUI(List<Weapon> weapons)
     {
         switch (weapons.Count)
@@ -259,6 +263,10 @@ public class UiHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the ammo number UI of each weapon provided
+    /// </summary>
+    /// <param name="weapons"></param>
     public void UpdateAmmoNumberUI(List<Weapon> weapons)
     {
         // For every weapon inside weapons[]
@@ -273,39 +281,61 @@ public class UiHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets a specified text component's text to the specified string
+    /// </summary>
+    /// <param name="t">The text component to change</param>
+    /// <param name="s">The string to set the text to</param>
     public void UpdateUIText(TextMeshProUGUI t, string s)
     {
         t.text = s;
     }
 
+    /// <summary>
+    /// Disables the hitmarker UI
+    /// </summary>
     public void DisableHitmarker()
     {
         hitmarker.SetActive(false);
     }
 
+    /// <summary>
+    /// Enables the boss bar UI and sets active boss to provided miniboss
+    /// </summary>
+    /// <param name="minibossController"></param>
     public void EnableBossBar(MinibossController minibossController)
     {
         activeBoss = minibossController.gameObject;
         ToggleUI(true, bossBar);
     }
 
+    /// <summary>
+    /// Disables the boss bar and clears active boss
+    /// </summary>
     public void DisableBossBar()
     {
         activeBoss = null;
         ToggleUI(false, bossBar);
     }
 
+    /// <summary>
+    /// Shows the defeat screen
+    /// </summary>
     public void PlayerDeath()
     {
         DefeatScreen();
     }
 
+    /// <summary>
+    /// Disables boss bar and shows victory screen
+    /// </summary>
     public void MinibossDeath()
     {
         DisableBossBar();
         VictoryScreen();
     }
 
+    /* ---- START UI BUTTONS ---- */
     public void ResumeButton()
     {
         Resume();
@@ -343,7 +373,11 @@ public class UiHandler : MonoBehaviour
                 break;
         }
     }
+    /* ---- END UI BUTTONS ---- */
 
+    /// <summary>
+    /// Opens the pause menu and pauses the game
+    /// </summary>
     private void Pause()
     {
         ToggleMultiUI(true, new GameObject[] { pauseMenu, pauseScreen });
@@ -353,6 +387,9 @@ public class UiHandler : MonoBehaviour
         AudioManager.instance.ClickSound1();
     }
 
+    /// <summary>
+    /// Closes the pause menu and resumes the game
+    /// </summary>
     private void Resume()
     {
         ToggleMultiUI(false, new GameObject[] { pauseMenu, doorConsolePanel, weaponUpgraderPanel, noteImage, passwordPanel });
@@ -360,6 +397,9 @@ public class UiHandler : MonoBehaviour
         AudioManager.instance.ClickSound1();
     }
 
+    /// <summary>
+    /// Returns back to the main pause menu page
+    /// </summary>
     private void Back()
     {
         ToggleMultiUI(false, new GameObject[] { settingsScreen, creditsScreen });
@@ -367,6 +407,9 @@ public class UiHandler : MonoBehaviour
         AudioManager.instance.ClickSound2();
     }
 
+    /// <summary>
+    /// Opens the settings page of pause menu
+    /// </summary>
     private void Settings()
     {
         ToggleUI(false, pauseScreen);
@@ -374,6 +417,9 @@ public class UiHandler : MonoBehaviour
         AudioManager.instance.ClickSound2();
     }
 
+    /// <summary>
+    /// Opens the credits page of pause menu
+    /// </summary>
     private void Credits()
     {
         ToggleUI(false, pauseScreen);
@@ -381,11 +427,17 @@ public class UiHandler : MonoBehaviour
         AudioManager.instance.ClickSound2();
     }
 
+    /// <summary>
+    /// Returns back to the main menu
+    /// </summary>
     private void Quit()
     {
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
+    /// <summary>
+    /// Displays a victory screen and sets gamestate to victory
+    /// </summary>
     private void VictoryScreen()
     {
         ToggleUI(true, victoryScreen);
@@ -395,6 +447,9 @@ public class UiHandler : MonoBehaviour
         GameStateHandler.Victory();
     }
 
+    /// <summary>
+    /// Displays a defeat screen and sets gamestate to defeat
+    /// </summary>
     private void DefeatScreen()
     {
         ToggleUI(true, defeatScreen);
@@ -403,12 +458,22 @@ public class UiHandler : MonoBehaviour
         GameStateHandler.Defeat();
     }
 
+    /// <summary>
+    /// Sets the pause menu gamesettings displays to actual settings values
+    /// </summary>
     private void UpdateGameSettingsDisplays()
     {
         sensitivityField.text = GameSettingsHandler.sensitivity.ToString();
         fullscreenToggle.isOn = GameSettingsHandler.fullscreen;
     }
 
+    /// <summary>
+    /// Fades in a provided screen over a specified duration
+    /// </summary>
+    /// <param name="screen">The screen to fade in</param>
+    /// <param name="goal">The transparency to reach</param>
+    /// <param name="duration">The duration to fade across</param>
+    /// <returns></returns>
     private IEnumerator FadeInScreen(GameObject screen, float goal, float duration)
     {
         Image image = screen.GetComponent<Image>();
@@ -425,8 +490,12 @@ public class UiHandler : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Displays the statistics screen and sets all statistics values
+    /// </summary>
     private void StatisticsScreen()
     {
+        // Show the UI
         ToggleMultiUI(false, new GameObject[] { victoryScreen, defeatScreen });
         ToggleUI(true, statisticsScreen);
         GameStateHandler.Statistics();
@@ -434,6 +503,7 @@ public class UiHandler : MonoBehaviour
         string tempTime = timer.time.ToString();
         StatisticsTracker.finalTime = tempTime.Remove(tempTime.Length-4, 4);
 
+        // Initialises new tuple list containing round statistics
         List<Tuple<string, string>> statTuples = new List<Tuple<string, string>>{
             new Tuple<string, string>("Total Time", StatisticsTracker.finalTime),
             new Tuple<string, string>("Total Kills", StatisticsTracker.kills.ToString()),
@@ -441,6 +511,7 @@ public class UiHandler : MonoBehaviour
             new Tuple<string, string>("Total Damage Taken", StatisticsTracker.damageTaken.ToString())
         };
 
+        // Creates the display objects and provides stats to them
         for (int i = 0; i < statTuples.Count; i++)
         {
             Tuple<string, string> t = statTuples[i];
@@ -455,6 +526,9 @@ public class UiHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Displays the enter name screen
+    /// </summary>
     private void EnterNameScreen()
     {
         ToggleUI(false, statisticsScreen);
@@ -462,6 +536,10 @@ public class UiHandler : MonoBehaviour
         GameStateHandler.EnterName();
     }
 
+    /// <summary>
+    /// Checks the entered name to make sure it is valid
+    /// </summary>
+    /// <returns>Whether the entered name is valid</returns>
     private bool CheckEnteredName()
     {
         string name = enteredName.text.Trim((char)8203);
@@ -471,12 +549,16 @@ public class UiHandler : MonoBehaviour
             return false;
     }
 
+    /// <summary>
+    /// Displays the highscores screen and displays all highscores
+    /// </summary>
     private void HighscoresScreen()
     {
         ToggleMultiUI(false, new GameObject[] { statisticsScreen, enterNameScreen });
         ToggleUI(true, highscoresScreen);
         GameStateHandler.Highscores();
 
+        // Creates a new display object for each highscore entry in file
         for (int i = 0; i < HighscoreStorer.GetHighscoreCount(); i++)
         {
             Tuple<string, string> t = HighscoreStorer.GetHighscores(i);

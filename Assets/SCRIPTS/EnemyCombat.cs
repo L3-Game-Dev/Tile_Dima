@@ -36,6 +36,9 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Attacks in front of the enemy location
+    /// </summary>
     public void Attack()
     {
         float distanceToTarget = Vector3.Distance(transform.position, enemyController.target.position);

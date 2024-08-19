@@ -1,3 +1,7 @@
+// VolumeSlider
+// Handles changing volumes based on UI volume sliders
+// Created by Dima Bethune 12/08
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +37,9 @@ public class VolumeSlider : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets relevant volume to entered value
+    /// </summary>
     public void OnSliderValueChanged()
     {
         switch (volumeType)

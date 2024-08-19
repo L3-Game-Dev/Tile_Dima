@@ -23,6 +23,9 @@ public class MinimapIcon : MonoBehaviour
             UpdatePosition();
     }
 
+    /// <summary>
+    /// Moves the icon to its owner's position, excluding y axis which is static
+    /// </summary>
     public void UpdatePosition()
     {
         Vector3 newPosition = owner.transform.position;
@@ -30,6 +33,9 @@ public class MinimapIcon : MonoBehaviour
         transform.position = newPosition;
     }
 
+    /// <summary>
+    /// Destroys the icon gameObject
+    /// </summary>
     public void DeleteIcon()
     {
         Destroy(gameObject);

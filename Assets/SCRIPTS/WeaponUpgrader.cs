@@ -16,6 +16,7 @@ public class WeaponUpgrader : MonoBehaviour
     
     private void Awake()
     {
+        // Set references
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
         interact = GameObject.Find("PlayerCapsule").GetComponent<PlayerInteract>();
         inventory = GameObject.Find("PlayerCapsule").GetComponent<PlayerInventory>();
@@ -32,11 +33,18 @@ public class WeaponUpgrader : MonoBehaviour
         UpdateStats();
     }
 
+    /// <summary>
+    /// Finds and returns the currently equipped weapon
+    /// </summary>
+    /// <returns>The equipped weapon</returns>
     public Weapon FindEquippedWeapon()
     {
         return inventory.equippedWeapon;
     }
 
+    /// <summary>
+    /// Updates the equipped weapon's stats and displays
+    /// </summary>
     public void UpdateStats()
     {
         // Set weapon display references
@@ -59,6 +67,9 @@ public class WeaponUpgrader : MonoBehaviour
         uiHandler.upgradeButton4.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "Upgrade Reload Speed: $" + FindEquippedWeapon().reloadSpeedUpgradeCost;
     }
 
+    /// <summary>
+    /// Opens the weapon upgrader panel if player is looking at the object and presses interact keybind
+    /// </summary>
     public void WeaponUpgraderPanel()
     {
         if (interact.lookingAt == gameObject && GameStateHandler.gameState == "PLAYING")
@@ -78,6 +89,9 @@ public class WeaponUpgrader : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Upgrades the equipped weapon's damage amount
+    /// </summary>
     public void UpgradeDamage()
     {
         if (inventory.heldCredits - FindEquippedWeapon().damageUpgradeCost >= 0)
@@ -94,6 +108,9 @@ public class WeaponUpgrader : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Upgrades the equipped weapon's max ammo amount
+    /// </summary>
     public void UpgradeMaxAmmo()
     {
         if (inventory.heldCredits - FindEquippedWeapon().maxAmmoUpgradeCost >= 0)
@@ -110,6 +127,9 @@ public class WeaponUpgrader : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Upgrades the equipped weapon's attack speed amount
+    /// </summary>
     public void UpgradeAttackSpeed()
     {
         if (inventory.heldCredits - FindEquippedWeapon().attackSpeedUpgradeCost >= 0)
@@ -126,6 +146,9 @@ public class WeaponUpgrader : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Upgrades the equipped weapon's reload speed amount
+    /// </summary>
     public void UpgradeReloadSpeed()
     {
         if (inventory.heldCredits - FindEquippedWeapon().reloadSpeedUpgradeCost >= 0)
@@ -142,6 +165,7 @@ public class WeaponUpgrader : MonoBehaviour
         }
     }
 
+    /* ----------------------------------- START SOUNDS ----------------------------------- */
     public void UpgradeSound1()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.upgrade1, transform.position);
@@ -151,4 +175,5 @@ public class WeaponUpgrader : MonoBehaviour
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.error1, transform.position);
     }
+    /* ------------------------------------ END SOUNDS ------------------------------------ */
 }

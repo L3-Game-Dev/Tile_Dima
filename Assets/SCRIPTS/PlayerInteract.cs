@@ -18,6 +18,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         playerCamera = transform.parent.Find("MainCamera").gameObject;
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
     }
@@ -28,6 +29,10 @@ public class PlayerInteract : MonoBehaviour
         InteractPrompt();
     }
 
+    /// <summary>
+    /// Checks whether player is looking at an interactable object within interaction range
+    /// </summary>
+    /// <returns>The gameobject being looked at</returns>
     public GameObject CheckPlayerDistance()
     {
         // Send out a ray to check if player is in range & looking at interactable
@@ -49,6 +54,9 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shows/hides the interact prompt depending on whether an interactable object within range is being looked at
+    /// </summary>
     public void InteractPrompt()
     {
         if (lookingAt != null && GameStateHandler.gameState == "PLAYING") // Show interact prompt

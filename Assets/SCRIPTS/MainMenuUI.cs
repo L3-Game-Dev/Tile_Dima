@@ -41,6 +41,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
+        // Initialise values
         cutscenePlaying = false;
         mainScreen.SetActive(true);
         cutsceneScreen.SetActive(false);
@@ -49,6 +50,7 @@ public class MainMenuUI : MonoBehaviour
         settingsScreen.SetActive(false);
         creditsScreen.SetActive(false);
 
+        // Set references
         humAmbience = AudioManager.instance.CreateEventInstance(FMODEvents.instance.humAmbience);
         typing = AudioManager.instance.CreateEventInstance(FMODEvents.instance.typing);
     }
@@ -61,6 +63,9 @@ public class MainMenuUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets active screen to the Play screen
+    /// </summary>
     public void PressPlay()
     {
         playScreen.SetActive(true);
@@ -69,6 +74,9 @@ public class MainMenuUI : MonoBehaviour
         AudioManager.instance.ClickSound2();
     }
 
+    /// <summary>
+    /// Sets active screen to the Settings screen
+    /// </summary>
     public void PressSettings()
     {
         playScreen.SetActive(false);
@@ -78,6 +86,9 @@ public class MainMenuUI : MonoBehaviour
         AudioManager.instance.ClickSound2();
     }
 
+    /// <summary>
+    /// Sets active screen to the Credits screen
+    /// </summary>
     public void PressCredits()
     {
         playScreen.SetActive(false);
@@ -86,18 +97,27 @@ public class MainMenuUI : MonoBehaviour
         AudioManager.instance.ClickSound2();
     }
 
+    /// <summary>
+    /// Quits the application
+    /// </summary>
     public void PressQuit()
     {
         AudioManager.instance.ClickSound2();
         Application.Quit();
     }
 
+    /// <summary>
+    /// Loads the cutscene
+    /// </summary>
     public void PressStart()
     {
         AudioManager.instance.ClickSound2();
         PlayCutscene();
     }
 
+    /// <summary>
+    /// Plays an intro cutscene
+    /// </summary>
     public void PlayCutscene()
     {
         mainScreen.SetActive(false);
@@ -109,6 +129,9 @@ public class MainMenuUI : MonoBehaviour
         StartCoroutine(Typewrite(0.5f, 0.05f, 5f));
     }
 
+    /// <summary>
+    /// Plays the cutscene audio
+    /// </summary>
     public void PlayCutsceneAudio()
     {
         // Stop playing music
@@ -127,15 +150,21 @@ public class MainMenuUI : MonoBehaviour
             typing.start();
     }
 
+    /// <summary>
+    /// Updates the settings menu UI to match game settings values
+    /// </summary>
     public void UpdateGameSettingsDisplays()
     {
         sensitivityField.text = GameSettingsHandler.sensitivity.ToString();
         fullscreenToggle.isOn = GameSettingsHandler.fullscreen;
     }
 
+    /// <summary>
+    /// Loads the main game scene
+    /// </summary>
     public void LoadGame()
     {
-        SceneManager.LoadScene(sceneName); // Load the game scene
+        SceneManager.LoadScene(sceneName);
     }
 
     /// <summary>

@@ -35,6 +35,9 @@ public class MinibossCombat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shoots a projectile in the direction of the player
+    /// </summary>
     public void Shoot()
     {
         if (GameStateHandler.gameState == "PLAYING")
@@ -62,6 +65,9 @@ public class MinibossCombat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Kicks in front of the miniboss
+    /// </summary>
     public void Kick()
     {
         if (GameStateHandler.gameState == "PLAYING")

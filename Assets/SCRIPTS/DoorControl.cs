@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class DoorControl : MonoBehaviour
 {
+    // References
     [HideInInspector] public UiHandler uiHandler;
     [HideInInspector] public PlayerInteract interact;
 
@@ -26,6 +27,9 @@ public class DoorControl : MonoBehaviour
         DoorControlPanel();
     }
 
+    /// <summary>
+    /// Opens the door control panel UI if the player is looking at console and presses the interact key
+    /// </summary>
     public void DoorControlPanel()
     {
         if (interact.lookingAt == gameObject && GameStateHandler.gameState == "PLAYING")
@@ -42,6 +46,10 @@ public class DoorControl : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Deletes all objects from a specified door
+    /// </summary>
+    /// <param name="door">The door to open/delete</param>
     public void OpenDoor(GameObject door)
     {
         if (doorControlEnabled)
@@ -60,6 +68,10 @@ public class DoorControl : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Disables a specified button
+    /// </summary>
+    /// <param name="button">The button to disable</param>
     public void DisableButton(Button button)
     {
         button.interactable = false;

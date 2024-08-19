@@ -10,6 +10,10 @@ public class GameStateHandler : MonoBehaviour
 {
     public static string gameState = "PLAYING";
 
+    /// <summary>
+    /// Sets the gameState to PAUSED
+    /// </summary>
+    /// <param name="unlockCursor"></param>
     public static void Pause(bool unlockCursor = true)
     {
         gameState = "PAUSED";
@@ -22,6 +26,10 @@ public class GameStateHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the gameState to PLAYING
+    /// </summary>
+    /// <param name="lockCursor"></param>
     public static void Resume(bool lockCursor = true)
     {
         gameState = "PLAYING";
@@ -34,16 +42,25 @@ public class GameStateHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the gameState to DEFEAT
+    /// </summary>
     public static void Defeat()
     {
         gameState = "DEFEAT";
     }
 
+    /// <summary>
+    /// Sets the gameState to VICTORY
+    /// </summary>
     public static void Victory()
     {
         gameState = "VICTORY";
     }
 
+    /// <summary>
+    /// Sets the gameState to STATISTICS
+    /// </summary>
     public static void Statistics()
     {
         gameState = "STATISTICS";
@@ -51,11 +68,17 @@ public class GameStateHandler : MonoBehaviour
         Cursor.lockState = CursorLockMode.None; // Unlock cursor
     }
 
+    /// <summary>
+    /// Sets the gameState to ENTERNAME
+    /// </summary>
     public static void EnterName()
     {
         gameState = "ENTERNAME";
     }
 
+    /// <summary>
+    /// Sets the gameState to HIGHSCORES
+    /// </summary>
     public static void Highscores()
     {
         gameState = "HIGHSCORES";

@@ -33,9 +33,14 @@ public class Grenade : MonoBehaviour
 
     private void Start()
     {
+        // Detonate the grenade after delay
         Invoke("DetonateGrenade", detonationTime);
     }
 
+    /// <summary>
+    /// Detonates the grenade on impact if enabled
+    /// </summary>
+    /// <param name="collision">The collider the grenade collided with</param>
     private void OnTriggerEnter(Collider collision)
     {
         if (detonateOnImpact)
@@ -44,6 +49,9 @@ public class Grenade : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detonates the grenade and damages all enemies in range
+    /// </summary>
     private void DetonateGrenade()
     {
         // Get all enemies
@@ -77,6 +85,9 @@ public class Grenade : MonoBehaviour
         DestroyGrenade();
     }
 
+    /// <summary>
+    /// Destorys the grenade object
+    /// </summary>
     private void DestroyGrenade()
     {
         Destroy(gameObject);

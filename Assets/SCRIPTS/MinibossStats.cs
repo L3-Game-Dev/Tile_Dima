@@ -26,6 +26,7 @@ public class MinibossStats : MonoBehaviour
 
     private void Awake()
     {
+        // Set reference
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
     }
 
@@ -36,6 +37,11 @@ public class MinibossStats : MonoBehaviour
         health = maxHealth;
     }
 
+    /// <summary>
+    /// Modifies the miniboss' health
+    /// </summary>
+    /// <param name="op">Usage: '+' || '-'</param>
+    /// <param name="amt">The amount to increase/decrease by</param>
     public void ModifyHealth(char op, float amt)
     {
         if (op == '+') // Adding health

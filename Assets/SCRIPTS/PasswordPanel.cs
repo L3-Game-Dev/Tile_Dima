@@ -10,6 +10,7 @@ using TMPro;
 
 public class PasswordPanel : MonoBehaviour
 {
+    // References
     public GameObject panel1;
     public GameObject panel2;
     public GameObject panel3;
@@ -33,6 +34,7 @@ public class PasswordPanel : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
         interact = GameObject.Find("PlayerCapsule").GetComponent<PlayerInteract>();
 
@@ -48,6 +50,9 @@ public class PasswordPanel : MonoBehaviour
         PasswordPanelUI();
     }
 
+    /// <summary>
+    /// Opens the panel UI if player is looking at a panel object and presses the interact keybind
+    /// </summary>
     public void PasswordPanelUI()
     {
         foreach (Tuple<GameObject, string, GameObject> panel in panelPasswords)
@@ -71,11 +76,17 @@ public class PasswordPanel : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Initialises the panel UI
+    /// </summary>
     public void InitialisePanelUI()
     {
         ResetDigits();
     }
 
+    /// <summary>
+    /// Deletes each entered digit
+    /// </summary>
     public void ResetDigits()
     {
         // Reset each digit to default (0, not underlined)
@@ -91,6 +102,10 @@ public class PasswordPanel : MonoBehaviour
         selectedDigit.fontStyle = FontStyles.Underline;
     }
 
+    /// <summary>
+    /// Sets the currently indexed digit
+    /// </summary>
+    /// <param name="n">The number to set the digit to</param>
     public void SetDigit(int n)
     {
         selectedDigit.text = n.ToString();
@@ -107,6 +122,9 @@ public class PasswordPanel : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.beep, transform.position);
     }
 
+    /// <summary>
+    /// Resets digits
+    /// </summary>
     public void DeleteDigit()
     {
         // Play beep sound
@@ -114,6 +132,9 @@ public class PasswordPanel : MonoBehaviour
         ResetDigits();
     }
 
+    /// <summary>
+    /// Submits the currently entered password and checks whether it is correct
+    /// </summary>
     public void SubmitPassword()
     {
         string p1 = digits[0].text;
@@ -128,17 +149,26 @@ public class PasswordPanel : MonoBehaviour
             IncorrectPassword();
     }
 
+    /// <summary>
+    /// Plays a success sound and opens the door
+    /// </summary>
     public void CorrectPassword()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.success, transform.position);
         OpenDoor();
     }
 
+    /// <summary>
+    /// Plays an error sound
+    /// </summary>
     public void IncorrectPassword()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.error1, transform.position);
     }
 
+    /// <summary>
+    /// Opens the door associated with the panel being interacted with
+    /// </summary>
     public void OpenDoor()
     {
         // Check which door should be opened based on panel being interacted with

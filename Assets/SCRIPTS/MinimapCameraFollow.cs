@@ -21,7 +21,6 @@ public class MinimapCameraFollow : MonoBehaviour
         newPosition.y = transform.position.y;
         transform.position = newPosition;
 
-        // if (GameSettingsHandler.minimapRotation)
         transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
     }
 }

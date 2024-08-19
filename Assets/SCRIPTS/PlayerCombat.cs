@@ -45,6 +45,9 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Determines what action to perform with equipped weapon and performs it
+    /// </summary>
     private void AttackInput()
     {
         // Check if allowed to hold down button and take corresponding input
@@ -63,6 +66,9 @@ public class PlayerCombat : MonoBehaviour
             playerInventory.equippedWeapon.Attack();
     }
 
+    /// <summary>
+    /// Throws a grenade if player presses throw button
+    /// </summary>
     private void GrenadeInput()
     {
         playerInventory.grenadeThrower.throwing = input.throwingGrenade;

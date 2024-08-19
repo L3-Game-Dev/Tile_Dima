@@ -27,6 +27,11 @@ public class EnemyStats : MonoBehaviour
         health = maxHealth;
     }
 
+    /// <summary>
+    /// Modifies the enemy's health
+    /// </summary>
+    /// <param name="op">Usage: '+' || '-'</param>
+    /// <param name="amt">The amount to increase/decrease by</param>
     public void ModifyHealth(char op, float amt)
     {
         if (op == '+') // Adding health

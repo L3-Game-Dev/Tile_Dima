@@ -93,6 +93,7 @@ public class AudioManager : MonoBehaviour
         return eventInstance;
     }
 
+    /* ----------------------- Start UI Sounds ----------------------------- */
     public void ClickSound1()
     {
         instance.PlayOneShot(FMODEvents.instance.uiClick1, transform.position);
@@ -102,13 +103,23 @@ public class AudioManager : MonoBehaviour
     {
         instance.PlayOneShot(FMODEvents.instance.uiClick2, transform.position);
     }
+    /* ------------------------ End UI Sounds ------------------------------ */
 
+    /// <summary>
+    /// Initialises a track from a given EventReference
+    /// </summary>
+    /// <param name="musicEventReference">The EventReference to initialise from</param>
     private void InitialiseTrack(EventReference musicEventReference)
     {
         musicEventInstance = CreateEventInstance(musicEventReference);
         musicEventInstance.start();
     }
 
+    /// <summary>
+    /// Stops playing a provided EventInstance
+    /// </summary>
+    /// <param name="instance">The instance to stop</param>
+    /// <param name="immediate">Whether to stop immediately</param>
     public void StopInstance(EventInstance instance, bool immediate = true)
     {
         FMOD.Studio.STOP_MODE stop_mode;
@@ -120,6 +131,9 @@ public class AudioManager : MonoBehaviour
         instance.stop(stop_mode);
     }
 
+    /// <summary>
+    /// Stops the currently playing music track
+    /// </summary>
     public void StopMusic()
     {
         if (musicEventInstance.isValid())
@@ -133,6 +147,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Switches the current music track
+    /// </summary>
+    /// <param name="track">The track to switch to</param>
     public void SwitchMusicTrack(MusicTrack track)
     {
         musicEventInstance.setParameterByName("MusicTrack", (float) track);

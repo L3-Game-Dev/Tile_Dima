@@ -1,5 +1,5 @@
 // FMODEvents
-// Stores references to general FMOD events
+// Stores references to all FMOD events
 // Created by Dima Bethune 05/07
 
 using System.Collections;

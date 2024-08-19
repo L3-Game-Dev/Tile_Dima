@@ -26,6 +26,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Awake()
     {
+        // Initialise variable
         heldCredits = 0;
 
         // Set references
@@ -66,6 +67,9 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Equip specified weapon on player input
+    /// </summary>
     public void EquipWeaponInput()
     {
         if (input.equipWeapon1 && heldWeapons.Count >= 1)
@@ -78,6 +82,10 @@ public class PlayerInventory : MonoBehaviour
             EquipWeapon(3);
     }
 
+    /// <summary>
+    /// Equip weapon in the provided index
+    /// </summary>
+    /// <param name="i">The index of weapon to equip</param>
     public void EquipWeapon(int i)
     {
         if (!equippedWeapon.Equals(null))
@@ -92,6 +100,9 @@ public class PlayerInventory : MonoBehaviour
         equippedWeapon.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Enables the equipped weapon and disables all other held weapons
+    /// </summary>
     public void UpdateEnabledWeapons()
     {
         // Disable all non-equipped weapons, enabled equipped weapon
@@ -106,6 +117,10 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds the specified weapon into the player's inventory
+    /// </summary>
+    /// <param name="weapon"></param>
     public void PickupWeapon(GameObject weapon)
     {
         if (heldWeapons.Count + 1 > heldWeapons.Capacity)
@@ -134,11 +149,17 @@ public class PlayerInventory : MonoBehaviour
         UpdateEnabledWeapons();
     }
 
+    /// <summary>
+    /// Hides the 'full inventory' UI prompt
+    /// </summary>
     public void HideFullInventory()
     {
         uiHandler.ToggleUI(false, uiHandler.fullInventory);
     }
 
+    /// <summary>
+    /// Drops the currently equipped weapon
+    /// </summary>
     public void DropWeapon()
     {
         if (heldWeapons.Count > 1)
@@ -180,14 +201,6 @@ public class PlayerInventory : MonoBehaviour
                 UpdateEnabledWeapons();
                 uiHandler.UpdateInventoryUI(heldWeapons);
             }
-        }
-    }
-
-    public void AddTestWeapon()
-    {
-        if (Input.GetKeyDown(KeyCode.Equals))
-        {
-            PickupWeapon(tempWeapon);
         }
     }
 }

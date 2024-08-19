@@ -31,6 +31,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
         controller = gameObject.GetComponent<FirstPersonController>();
         input = gameObject.GetComponent<StarterAssetsInputs>();
@@ -57,6 +58,11 @@ public class PlayerStats : MonoBehaviour
         UpdateStamina();
     }
 
+    /// <summary>
+    /// Modifies the players health
+    /// </summary>
+    /// <param name="op">Usage: '+' || '-'</param>
+    /// <param name="amt">The amount to modify by</param>
     public void ModifyHealth(char op, float amt)
     {
         if (GameStateHandler.gameState == "PLAYING")
@@ -102,6 +108,9 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the players stamina
+    /// </summary>
     public void UpdateStamina()
     {
         if (controller.sprinting && (input.move.x != 0 || input.move.y != 0))
@@ -124,6 +133,9 @@ public class PlayerStats : MonoBehaviour
         uiHandler.staminaBarNumber.text = ((int)stamina).ToString();
     }
 
+    /// <summary>
+    /// Regains the players stamina
+    /// </summary>
     public void RegainStamina()
     {
         if (stamina + 1 * staminaRegainSpeed * Time.deltaTime < maxStamina)

@@ -20,6 +20,9 @@ public class TimerHandler : MonoBehaviour
         UpdateTimer();
     }
 
+    /// <summary>
+    /// Updates the timer display and currentTime
+    /// </summary>
     private void UpdateTimer()
     {
         switch (GameStateHandler.gameState)

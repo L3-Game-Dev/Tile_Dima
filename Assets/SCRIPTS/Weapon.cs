@@ -107,6 +107,9 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Uses the weapon's attack
+    /// </summary>
     public void Attack()
     {
         if (!isMelee) // Non-melee weapons
@@ -157,12 +160,18 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets the gun's shot, allowing it to shoot again
+    /// </summary>
     private void ResetShot()
     {
         readyToAttack = true;
         allowInvoke = true;
     }
 
+    /// <summary>
+    /// Starts reloading the gun
+    /// </summary>
     public void Reload()
     {
         reloading = true;
@@ -170,6 +179,9 @@ public class Weapon : MonoBehaviour
         Invoke("ReloadFinished", reloadTime * reloadSpeedMultiplier);
     }
 
+    /// <summary>
+    /// Finishes reloading and refills ammo
+    /// </summary>
     private void ReloadFinished()
     {
         ammo = maxAmmo; // Refill ammo

@@ -16,6 +16,9 @@ public class AdminTools : MonoBehaviour
     [HideInInspector] public PlayerInventory inventory;
     [HideInInspector] public Weapon weapon;
 
+    [Header("Admin Tools Enabled")]
+    [HideInInspector] public bool adminToolsEnabled = true;
+
     private void Start()
     {
         player = GameObject.Find("PlayerCapsule");
@@ -27,12 +30,15 @@ public class AdminTools : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (adminToolsEnabled && Input.GetKeyDown(KeyCode.P))
         {
             StatBuff();
         }
     }
 
+    /// <summary>
+    /// Increases player stats
+    /// </summary>
     public void StatBuff()
     {
         playerController.MoveSpeed = 30;

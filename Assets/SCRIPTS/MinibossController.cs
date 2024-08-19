@@ -22,6 +22,7 @@ public class MinibossController : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.Find("PlayerCapsule").transform;
         anim = GetComponent<Animator>();
@@ -34,6 +35,7 @@ public class MinibossController : MonoBehaviour
 
     private void Update()
     {
+        // Determines the miniboss' action to take
         if (GameStateHandler.gameState == "PLAYING")
         {
             if (!minibossStats.isDead)
@@ -99,11 +101,17 @@ public class MinibossController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the animator's isShooting bool to true
+    /// </summary>
     private void Shooting()
     {
         anim.SetBool("isShooting", true);
     }
 
+    /// <summary>
+    /// Check whether the miniboss can see the player
+    /// </summary>
     private void SightCheck()
     {
         // Check if line of sight is blocked
@@ -117,21 +125,33 @@ public class MinibossController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Plays the miniboss footstep sound
+    /// </summary>
     public void FootstepSound()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.minibossFootstepMetal, transform.position);
     }
 
+    /// <summary>
+    /// Sets the miniboss agent to the player's position
+    /// </summary>
     private void MoveToTarget()
     {
         agent.SetDestination(target.position);
     }
 
+    /// <summary>
+    /// Destroys the miniboss' collider
+    /// </summary>
     private void DestroyCollider()
     {
         Destroy(gameObject.GetComponent<CapsuleCollider>());
     }
 
+    /// <summary>
+    /// Destroys all components in the miniboss gameObject
+    /// </summary>
     private void DestroyComponents()
     {
         foreach (Component c in gameObject.GetComponents<Component>()) // Destroy components

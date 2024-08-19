@@ -31,6 +31,11 @@ public class MinimapIconSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Spawns a minimap icon from the provided references
+    /// </summary>
+    /// <param name="owner">The object to attach the icon to</param>
+    /// <param name="prefab">The icon to spawn</param>
     public void InstantiateIcon(GameObject owner, GameObject prefab)
     {
         Vector3 newPosition = owner.transform.position;

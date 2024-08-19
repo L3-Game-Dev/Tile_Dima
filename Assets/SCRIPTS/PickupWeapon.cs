@@ -1,3 +1,7 @@
+// PickupWeapon
+// Handles functionality for pickup up dropped weapons
+// Created by Dima Bethune 13/08
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +13,7 @@ public class PickupWeapon : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         interact = GameObject.Find("PlayerCapsule").GetComponent<PlayerInteract>();
         inventory = GameObject.Find("PlayerCapsule").GetComponent<PlayerInventory>();
     }
@@ -18,6 +23,9 @@ public class PickupWeapon : MonoBehaviour
         PickupWeaponCheck();
     }
 
+    /// <summary>
+    /// Picks up a dropped weapon if player is looking at it and presses the interact keybind
+    /// </summary>
     public void PickupWeaponCheck()
     {
         foreach (Transform weaponObject in transform)

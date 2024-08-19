@@ -1,3 +1,7 @@
+// NoteDisplay
+// Handles opening of note UI
+// Created by Dima Bethune 01/08
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +13,7 @@ public class NoteDisplay : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
         interact = GameObject.Find("PlayerCapsule").GetComponent<PlayerInteract>();
     }
@@ -18,6 +23,9 @@ public class NoteDisplay : MonoBehaviour
         NoteDisplayUI();
     }
 
+    /// <summary>
+    /// Opens the note UI if player is looking at object and presses the interact keybind
+    /// </summary>
     public void NoteDisplayUI()
     {
         if (interact.lookingAt == gameObject && GameStateHandler.gameState == "PLAYING")

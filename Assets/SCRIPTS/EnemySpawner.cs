@@ -8,8 +8,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    //public int activeTile;
-
     public List<Transform> spawnLocations;
     public Transform spawnLocationParent;
 
@@ -23,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
+        // Set references
         iconSpawner = GameObject.Find("MinimapIcons").GetComponent<MinimapIconSpawner>();
 
         spawnLocations = new List<Transform>();
@@ -34,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        // Initialise variables
         spawningEnabled = false;
         spawning = false;
     }
@@ -46,6 +46,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Spawns the currently selected enemy after an interval
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SpawnInterval()
     {
         spawning = true;
@@ -55,12 +59,21 @@ public class EnemySpawner : MonoBehaviour
         spawning = false;
     }
 
+    /// <summary>
+    /// Spawns a given enemy at a given location
+    /// </summary>
+    /// <param name="enemyPrefab">The enemy to spawn</param>
+    /// <param name="location">The location to spawn at</param>
     private void SpawnEnemy(GameObject enemyPrefab, Transform location)
     {
         GameObject enemy = Instantiate(enemyPrefab, location.position, location.rotation, spawnLocationParent);
         iconSpawner.InstantiateIcon(enemy, iconSpawner.enemyIcon);
     }
 
+    /// <summary>
+    /// Enables/disables enemy spawning
+    /// </summary>
+    /// <param name="enabled">Spawning enabled</param>
     public void EnableSpawning(bool enabled)
     {
         spawningEnabled = enabled;

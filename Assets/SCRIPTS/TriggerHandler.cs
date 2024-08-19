@@ -18,12 +18,20 @@ public class TriggerHandler : MonoBehaviour
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
     }
 
+    /// <summary>
+    /// Executes a specific method on collision
+    /// </summary>
+    /// <param name="other">The object collided with</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
             method.Invoke();
     }
 
+    /// <summary>
+    /// Awakens the provided miniboss
+    /// </summary>
+    /// <param name="miniboss">The miniboss to awaken</param>
     public void AwakenMiniboss(MinibossController miniboss)
     {
         if (miniboss != null)
