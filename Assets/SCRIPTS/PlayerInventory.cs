@@ -20,8 +20,6 @@ public class PlayerInventory : MonoBehaviour
     public LayerMask playerWeaponLayer;
     public LayerMask interactableLayer;
 
-    public GameObject tempWeapon;
-
     public int heldCredits;
 
     private void Awake()
@@ -141,7 +139,6 @@ public class PlayerInventory : MonoBehaviour
             weapon.transform.localPosition = new Vector3(0.294f, -0.258f, 0.108f);
             weapon.transform.localEulerAngles = Vector3.zero;
 
-            //GameObject newWeapon = Instantiate(tempWeapon, GameObject.Find("PlayerCameraRoot").transform);
             heldWeapons.Add(weapon.GetComponent<Weapon>());
         }
 

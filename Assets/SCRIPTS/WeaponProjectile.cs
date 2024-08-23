@@ -36,7 +36,7 @@ public class WeaponProjectile : MonoBehaviour
     /// <summary>
     /// Determines what object the projectile collided with and makes action accordingly
     /// </summary>
-    /// <param name="collision"></param>
+    /// <param name="collision">The collided object</param>
     private void OnTriggerEnter(Collider collision)
     {
         // Player projectiles

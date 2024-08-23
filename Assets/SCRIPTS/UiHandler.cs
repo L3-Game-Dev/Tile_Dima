@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class UiHandler : MonoBehaviour
 {
@@ -64,6 +65,8 @@ public class UiHandler : MonoBehaviour
     [Header("EnterName Screen References")]
     public GameObject enterNameScreen;
     public TextMeshProUGUI enteredName;
+    public GameObject invalidName;
+    public float invalidNameDuration;
 
     [Header("Statistic Screen References")]
     public GameObject statisticsScreen;
@@ -164,11 +167,15 @@ public class UiHandler : MonoBehaviour
             {
                 if (CheckEnteredName())
                 {
-                    HighscoreStorer.SaveHighscore(enteredName.text.Trim((char)8203), StatisticsTracker.finalTime);
+                    HighscoreStorer.SaveHighscore(enteredName.text.Trim((char)8203).Trim(), StatisticsTracker.finalTime);
                     HighscoresScreen(); // Go to highscore screen
                 }
                 else
-                    Debug.Log("NAME CANNOT BE EMPTY");
+                {
+                    ToggleUI(true, invalidName);
+                    CancelInvoke("HideInvalidName");
+                    Invoke("HideInvalidName", invalidNameDuration);
+                }
             }
 
             else if (GameStateHandler.gameState == "HIGHSCORES")
@@ -438,7 +445,7 @@ public class UiHandler : MonoBehaviour
     /// <summary>
     /// Displays a victory screen and sets gamestate to victory
     /// </summary>
-    private void VictoryScreen()
+    public void VictoryScreen()
     {
         ToggleUI(true, victoryScreen);
         StartCoroutine(FadeInScreen(victoryScreen, 1, 100f));
@@ -486,7 +493,6 @@ public class UiHandler : MonoBehaviour
             image.color = Color.Lerp(image.color, goalColor, normalisedDuration);
         }
         image.color = goalColor;
-        //GameStateHandler.Pause();
         yield return null;
     }
 
@@ -542,11 +548,28 @@ public class UiHandler : MonoBehaviour
     /// <returns>Whether the entered name is valid</returns>
     private bool CheckEnteredName()
     {
-        string name = enteredName.text.Trim((char)8203);
-        if (name != null && name != "") // Make sure entered name isnt empty
+        string pattern = @"^[a-zA-Z0-9]+$";
+        Regex regex = new Regex(pattern);
+        
+        string name = enteredName.text.Trim((char)8203).Trim();
+
+        // Make sure the entered name is Alphanumeric only
+        if (regex.IsMatch(name) && name.Length >= 2)
+        {
             return true;
+        }
         else
+        {
             return false;
+        }
+    }
+
+    /// <summary>
+    /// Hides the invalid name prompt
+    /// </summary>
+    private void HideInvalidName()
+    {
+        ToggleUI(false, invalidName);
     }
 
     /// <summary>

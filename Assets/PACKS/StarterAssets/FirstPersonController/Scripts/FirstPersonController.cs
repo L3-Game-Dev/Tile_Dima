@@ -180,8 +180,9 @@ namespace StarterAssets
 
 		private void Move()
 		{
+			// If player has stamina remaining
 			if (playerStats.stamina > 0)
-				sprinting = _input.sprint;
+				sprinting = _input.sprint; // Set sprinting to whether player is pressing sprint key
 			else
 				sprinting = false;
 
@@ -190,7 +191,6 @@ namespace StarterAssets
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
-			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is no input, set the target speed to 0
 			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 

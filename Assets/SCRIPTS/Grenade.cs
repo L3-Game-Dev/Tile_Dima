@@ -59,18 +59,20 @@ public class Grenade : MonoBehaviour
 
         foreach (GameObject enemy in enemiesInRange)
         {
-            // Damage enemies in radius
+            // If enemy is within grenade explosion radius
             float distance = Vector3.Distance(enemy.transform.position, transform.position);
             if (distance <= detonationRadius)
             {
+                // If enemy
                 if (enemy.GetComponent<EnemyStats>())
-                    enemy.GetComponent<EnemyStats>().ModifyHealth('-', damage);
+                    enemy.GetComponent<EnemyStats>().ModifyHealth('-', damage); // Damage the enemy
+                // If minboss
                 else if (enemy.GetComponent<MinibossStats>())
-                    enemy.GetComponent<MinibossStats>().ModifyHealth('-', damage);
+                    enemy.GetComponent<MinibossStats>().ModifyHealth('-', damage); // Damage the miniboss
             }
         }
 
-        // Damage player if in radius
+        // Damage player if in radius & affectsPlayer is enabled
         if (affectsPlayer && (Vector3.Distance(playerCombat.transform.position, transform.position) <= detonationRadius))
         {
             playerStats.ModifyHealth('-', damage);

@@ -15,6 +15,7 @@ public class AdminTools : MonoBehaviour
     [HideInInspector] public FirstPersonController playerController;
     [HideInInspector] public PlayerInventory inventory;
     [HideInInspector] public Weapon weapon;
+    [HideInInspector] public UiHandler uiHandler;
 
     [Header("Admin Tools Enabled")]
     [HideInInspector] public bool adminToolsEnabled = true;
@@ -26,13 +27,19 @@ public class AdminTools : MonoBehaviour
         playerController = player.GetComponent<FirstPersonController>();
         inventory = player.GetComponent<PlayerInventory>();
         weapon = inventory.equippedWeapon;
+        uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
     }
 
     private void Update()
     {
-        if (adminToolsEnabled && Input.GetKeyDown(KeyCode.P))
+        if (adminToolsEnabled)
         {
-            StatBuff();
+            if (Input.GetKeyDown(KeyCode.P))
+                StatBuff();
+            if (Input.GetKeyDown(KeyCode.O))
+                MinibossTeleport();
+            if (Input.GetKeyDown(KeyCode.U))
+                VictoryScreenInstant();
         }
     }
 
@@ -47,5 +54,26 @@ public class AdminTools : MonoBehaviour
         weapon.baseDamage = 999999;
 
         Debug.Log("Stat Buff Applied");
+    }
+
+    /// <summary>
+    /// Teleports the player to the miniboss
+    /// </summary>
+    public void MinibossTeleport()
+    {
+        Vector3 teleportPos = new Vector3(-25, 0, -61);
+        player.transform.position = teleportPos;
+
+        Debug.Log("Teleported");
+    }
+
+    /// <summary>
+    /// Skips straight to the enter name screen
+    /// </summary>
+    public void VictoryScreenInstant()
+    {
+        uiHandler.VictoryScreen();
+
+        Debug.Log("Skipped to Victory Screen");
     }
 }
