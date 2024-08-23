@@ -34,7 +34,6 @@ public class PlayerStats : MonoBehaviour
         // Set references
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
         controller = gameObject.GetComponent<FirstPersonController>();
-        Debug.Log(controller);
         input = gameObject.GetComponent<StarterAssetsInputs>();
     }
 
