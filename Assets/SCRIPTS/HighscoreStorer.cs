@@ -18,7 +18,7 @@ public class HighscoreStorer : MonoBehaviour
     public static string data;
 
     // Whether new highscores are currently being stored
-    public static bool storingHighscores = false;
+    public static bool storingHighscores = true;
 
     /// <summary>
     /// Reads the currently selected file and sends the data to data string

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f47e19c465814b20a8755986fb6f0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Weapon1
+  weaponName: Laser Rifle
   attackSound:
     Guid:
       Data1: -1075228687

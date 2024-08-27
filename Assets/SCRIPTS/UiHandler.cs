@@ -34,6 +34,7 @@ public class UiHandler : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject pauseScreen;
     public GameObject settingsScreen;
+    public GameObject controlsScreen;
     public GameObject creditsScreen;
 
     [Header("Settings Menu References")]
@@ -237,8 +238,8 @@ public class UiHandler : MonoBehaviour
             case 2:
                 weaponDisplay4Image.sprite = weapons[1].weaponSprite;
                 weaponDisplay3Image.sprite = weapons[0].weaponSprite;
-                weaponDisplay4Number.text = "1";
-                weaponDisplay3Number.text = "2";
+                weaponDisplay4Number.text = "2";
+                weaponDisplay3Number.text = "1";
                 ToggleMultiUI(false, new GameObject[] { weaponDisplay1, weaponDisplay2 });
                 ToggleMultiUI(true, new GameObject[] { weaponDisplay4, weaponDisplay3 });
                 break;
@@ -246,9 +247,9 @@ public class UiHandler : MonoBehaviour
                 weaponDisplay4Image.sprite = weapons[2].weaponSprite;
                 weaponDisplay3Image.sprite = weapons[1].weaponSprite;
                 weaponDisplay2Image.sprite = weapons[0].weaponSprite;
-                weaponDisplay4Number.text = "1";
+                weaponDisplay4Number.text = "3";
                 weaponDisplay3Number.text = "2";
-                weaponDisplay2Number.text = "3";
+                weaponDisplay2Number.text = "1";
                 ToggleMultiUI(false, new GameObject[] { weaponDisplay1 });
                 ToggleMultiUI(true, new GameObject[] { weaponDisplay4, weaponDisplay3, weaponDisplay2 });
                 break;
@@ -257,10 +258,10 @@ public class UiHandler : MonoBehaviour
                 weaponDisplay3Image.sprite = weapons[2].weaponSprite;
                 weaponDisplay2Image.sprite = weapons[1].weaponSprite;
                 weaponDisplay1Image.sprite = weapons[0].weaponSprite;
-                weaponDisplay4Number.text = "1";
-                weaponDisplay3Number.text = "2";
-                weaponDisplay2Number.text = "3";
-                weaponDisplay1Number.text = "4";
+                weaponDisplay4Number.text = "4";
+                weaponDisplay3Number.text = "3";
+                weaponDisplay2Number.text = "2";
+                weaponDisplay1Number.text = "1";
                 ToggleMultiUI(true, new GameObject[] { weaponDisplay4, weaponDisplay3, weaponDisplay2, weaponDisplay1 });
                 break;
             default:
@@ -276,14 +277,39 @@ public class UiHandler : MonoBehaviour
     /// <param name="weapons"></param>
     public void UpdateAmmoNumberUI(List<Weapon> weapons)
     {
-        // For every weapon inside weapons[]
-        for (int j = 0; j < weapons.Count; j++)
-        {
             // Create temporary reference list
-            List<TextMeshProUGUI> l = new List<TextMeshProUGUI>() { weaponDisplay4AmmoNumber,
-                                                                    weaponDisplay3AmmoNumber,
-                                                                    weaponDisplay2AmmoNumber,
-                                                                    weaponDisplay1AmmoNumber };
+            List<TextMeshProUGUI> l =  new List<TextMeshProUGUI>();
+
+            // Add ammo numbers to reference list, depending on number of weapons
+            switch (weapons.Count)
+            {
+                case 1:
+                    l = new List<TextMeshProUGUI>() { weaponDisplay4AmmoNumber };
+                    break;
+                case 2:
+                    l = new List<TextMeshProUGUI>() { weaponDisplay3AmmoNumber,
+                                                      weaponDisplay4AmmoNumber };
+                    break;
+                case 3:
+                    l = new List<TextMeshProUGUI>() { weaponDisplay2AmmoNumber,
+                                                      weaponDisplay3AmmoNumber,
+                                                      weaponDisplay4AmmoNumber };
+                    break;
+                case 4:
+                    l = new List<TextMeshProUGUI>() { weaponDisplay1AmmoNumber,
+                                                      weaponDisplay2AmmoNumber,
+                                                      weaponDisplay3AmmoNumber,
+                                                      weaponDisplay4AmmoNumber };
+                    break;
+                default:
+                    // Number of weapons is not between 1 & 4
+                    Debug.Log("INVALID # OF WEAPONS IN INVENTORY");
+                    break;
+            }
+
+        // For every weapon inside weapons[]
+        for (int j = weapons.Count - 1; j >= 0; j--)
+        {
             UpdateUIText(l[j], weapons[j].ammo.ToString());
         }
     }
@@ -358,6 +384,11 @@ public class UiHandler : MonoBehaviour
         Settings();
     }
 
+    public void ControlsButton()
+    {
+        Controls();
+    }
+
     public void CreditsButton()
     {
         Credits();
@@ -409,7 +440,7 @@ public class UiHandler : MonoBehaviour
     /// </summary>
     private void Back()
     {
-        ToggleMultiUI(false, new GameObject[] { settingsScreen, creditsScreen });
+        ToggleMultiUI(false, new GameObject[] { settingsScreen, creditsScreen, controlsScreen });
         ToggleUI(true, pauseScreen);
         AudioManager.instance.ClickSound2();
     }
@@ -421,6 +452,16 @@ public class UiHandler : MonoBehaviour
     {
         ToggleUI(false, pauseScreen);
         ToggleUI(true, settingsScreen);
+        AudioManager.instance.ClickSound2();
+    }
+
+    /// <summary>
+    /// Opens the controls page of pause menu
+    /// </summary>
+    private void Controls()
+    {
+        ToggleUI(false, settingsScreen);
+        ToggleUI(true, controlsScreen);
         AudioManager.instance.ClickSound2();
     }
 

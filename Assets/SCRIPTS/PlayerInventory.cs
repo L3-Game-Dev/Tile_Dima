@@ -161,7 +161,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (heldWeapons.Count > 1)
         {
-            if (Input.GetKeyDown(KeyCode.Minus))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 // PRINT CURRENT POS AND ROT
                 //Debug.Log(equippedWeapon.transform.localPosition + ", " + equippedWeapon.transform.localEulerAngles);

@@ -20,6 +20,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject mainScreen;
     public GameObject playScreen;
     public GameObject settingsScreen;
+    public GameObject controlsScreen;
     public GameObject creditsScreen;
 
     [Header("Settings Screen")]
@@ -48,6 +49,7 @@ public class MainMenuUI : MonoBehaviour
 
         playScreen.SetActive(true);
         settingsScreen.SetActive(false);
+        controlsScreen.SetActive(false);
         creditsScreen.SetActive(false);
 
         // Set references
@@ -70,6 +72,7 @@ public class MainMenuUI : MonoBehaviour
     {
         playScreen.SetActive(true);
         settingsScreen.SetActive(false);
+        controlsScreen.SetActive(false);
         creditsScreen.SetActive(false);
         AudioManager.instance.ClickSound2();
     }
@@ -81,8 +84,21 @@ public class MainMenuUI : MonoBehaviour
     {
         playScreen.SetActive(false);
         settingsScreen.SetActive(true);
+        controlsScreen.SetActive(false);
         creditsScreen.SetActive(false);
         UpdateGameSettingsDisplays();
+        AudioManager.instance.ClickSound2();
+    }
+
+    /// <summary>
+    /// Sets active screen to the controls screen
+    /// </summary>
+    public void PressControls()
+    {
+        playScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        controlsScreen.SetActive(true);
+        creditsScreen.SetActive(false);
         AudioManager.instance.ClickSound2();
     }
 
@@ -93,6 +109,7 @@ public class MainMenuUI : MonoBehaviour
     {
         playScreen.SetActive(false);
         settingsScreen.SetActive(false);
+        controlsScreen.SetActive(false);
         creditsScreen.SetActive(true);
         AudioManager.instance.ClickSound2();
     }
