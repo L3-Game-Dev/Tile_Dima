@@ -30,6 +30,9 @@ public class MainMenuUI : MonoBehaviour
 
     [Header("Cutscene Screen")]
     public GameObject cutsceneScreen;
+    const float START_DELAY = 0.5f;
+    const float CHAR_INTERVAL = 0.5f;
+    const float END_DELAY = 5f;
 
     [Header("Audio")]
     public EventInstance humAmbience;
@@ -143,7 +146,7 @@ public class MainMenuUI : MonoBehaviour
 
         PlayCutsceneAudio();
 
-        StartCoroutine(Typewrite(0.5f, 0.05f, 5f));
+        StartCoroutine(Typewrite());
     }
 
     /// <summary>
@@ -191,7 +194,7 @@ public class MainMenuUI : MonoBehaviour
     /// <param name="interval">Delay between characters, excludes spaces</param>
     /// <param name="endDelay">Delay once line is printed, before starting next</param>
     /// <returns></returns>
-    public IEnumerator Typewrite(float startDelay, float interval, float endDelay)
+    public IEnumerator Typewrite()
     {
         List<Transform> textTransforms = new List<Transform> { };
         foreach (Transform t in cutsceneScreen.transform.Find("TextLines"))
@@ -214,7 +217,7 @@ public class MainMenuUI : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(startDelay); // Wait start delay
+            yield return new WaitForSeconds(START_DELAY); // Wait start delay
 
             foreach (char c in text)
             {
@@ -222,11 +225,11 @@ public class MainMenuUI : MonoBehaviour
 
                 if (c != ' ') // Skip delay on spaces
                 {
-                    yield return new WaitForSeconds(interval); // Wait interval delay
+                    yield return new WaitForSeconds(CHAR_INTERVAL); // Wait interval delay
                 }
             }
 
-            yield return new WaitForSeconds(endDelay); // Wait end delay
+            yield return new WaitForSeconds(END_DELAY); // Wait end delay
 
             if (textTransform.Equals(textTransforms[^1])) // If final iteration
             {
