@@ -489,7 +489,7 @@ public class UiHandler : MonoBehaviour
     public void VictoryScreen()
     {
         ToggleUI(true, victoryScreen);
-        StartCoroutine(FadeInScreen(victoryScreen, 1, 100f));
+        StartCoroutine(FadeScreen(victoryScreen, 1, 10f));
         AudioManager.instance.PlayOneShot(FMODEvents.instance.victory, transform.position);
         AudioManager.instance.SwitchMusicTrack(MusicTrack.VICTORY);
         GameStateHandler.Victory();
@@ -501,7 +501,7 @@ public class UiHandler : MonoBehaviour
     private void DefeatScreen()
     {
         ToggleUI(true, defeatScreen);
-        StartCoroutine(FadeInScreen(defeatScreen, 1, 100f));
+        StartCoroutine(FadeScreen(defeatScreen, 1, 10f));
         AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFEAT);
         GameStateHandler.Defeat();
     }
@@ -522,19 +522,22 @@ public class UiHandler : MonoBehaviour
     /// <param name="goal">The transparency to reach</param>
     /// <param name="duration">The duration to fade across</param>
     /// <returns></returns>
-    private IEnumerator FadeInScreen(GameObject screen, float goal, float duration)
+    private IEnumerator FadeScreen(GameObject screen, float goal, float duration)
     {
+        // Initialisation
         Image image = screen.GetComponent<Image>();
         Color goalColor = image.color;
         goalColor.a = goal;
 
-        for (float t = 0f; t < duration; t += Time.deltaTime)
+        for (float t = image.color.a; t < duration; t += 1 / duration)
         {
-            float normalisedDuration = t / duration;
-            image.color = Color.Lerp(image.color, goalColor, normalisedDuration);
+            yield return new WaitForSeconds(1 / duration);
+            Color newColor = image.color;
+            newColor.a = goal / duration + t;
+            image.color = newColor;
         }
+
         image.color = goalColor;
-        yield return null;
     }
 
     /// <summary>

@@ -11,8 +11,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class HighscoreStorer : MonoBehaviour
 {
-    public static string file = "random_first_names.csv"; // Testing file 1 (100 values)
-    //public static string file = "blank.csv"; // Testing file 2 (blank data)
+    //public static string file = "random_first_names.csv"; // Testing file 1 (100 values)
+    public static string file = "blank.csv"; // Testing file 2 (blank data)
     //public static string file = "highscores.csv";
     public static string path = Application.dataPath + "/HIGHSCORES/" + file;
     public static string data;
