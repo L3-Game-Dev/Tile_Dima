@@ -76,7 +76,8 @@ public class EnemyController : MonoBehaviour
     /// </summary>
     public void FootstepMetal()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyFootstepMetal, transform.position);
+        if (GameStateHandler.gameState == "PLAYING")
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyFootstepMetal, transform.position);
     }
 
     /// <summary>

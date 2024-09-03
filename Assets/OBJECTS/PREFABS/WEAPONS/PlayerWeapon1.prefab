@@ -113,7 +113,7 @@ MonoBehaviour:
       Data3: 1930570127
       Data4: 1046039335
     Path: event:/SFX/Weapon1Reload
-  baseDamage: 10
+  baseDamage: 20
   damageMultiplier: 1
   damage: 10
   baseMaxAmmo: 30
