@@ -157,6 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: MinibossAR
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1025
   attackSound:
     Guid:
       Data1: -2062809330
@@ -181,7 +184,7 @@ MonoBehaviour:
   baseAttackInterval: 0
   attackSpeedMultiplier: 0
   attackInterval: 0
-  projectileSpeed: 0
+  projectileSpeed: 20
   baseReloadTime: 0
   reloadSpeedMultiplier: 0
   reloadTime: 0

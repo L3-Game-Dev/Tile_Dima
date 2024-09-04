@@ -31,8 +31,8 @@ public class MainMenuUI : MonoBehaviour
     [Header("Cutscene Screen")]
     public GameObject cutsceneScreen;
     const float START_DELAY = 0.5f;
-    const float CHAR_INTERVAL = 0.5f;
-    const float END_DELAY = 5f;
+    const float CHAR_INTERVAL = 0.05f;
+    const float END_DELAY = 3f;
 
     [Header("Audio")]
     public EventInstance humAmbience;

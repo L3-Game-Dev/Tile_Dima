@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Laser Rifle
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2049
   attackSound:
     Guid:
       Data1: -1075228687

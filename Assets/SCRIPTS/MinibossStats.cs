@@ -32,6 +32,9 @@ public class MinibossStats : MonoBehaviour
 
     private void Start()
     {
+        // Scale stats based on difficulty
+        baseMaxHealth *= GameSettingsHandler.difficulty;
+
         // Initialise values
         maxHealth = baseMaxHealth;
         health = maxHealth;

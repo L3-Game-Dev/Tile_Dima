@@ -488,11 +488,14 @@ public class UiHandler : MonoBehaviour
     /// </summary>
     public void VictoryScreen()
     {
-        ToggleUI(true, victoryScreen);
-        StartCoroutine(FadeScreen(victoryScreen, 1, 10f));
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.victory, transform.position);
-        AudioManager.instance.SwitchMusicTrack(MusicTrack.VICTORY);
-        GameStateHandler.Victory();
+        if (GameStateHandler.gameState == "PLAYING")
+        {
+            ToggleUI(true, victoryScreen);
+            StartCoroutine(FadeScreen(victoryScreen, 1, 10f));
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.victory, transform.position);
+            AudioManager.instance.SwitchMusicTrack(MusicTrack.VICTORY);
+            GameStateHandler.Victory();
+        }
     }
 
     /// <summary>
@@ -500,10 +503,13 @@ public class UiHandler : MonoBehaviour
     /// </summary>
     private void DefeatScreen()
     {
-        ToggleUI(true, defeatScreen);
-        StartCoroutine(FadeScreen(defeatScreen, 1, 10f));
-        AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFEAT);
-        GameStateHandler.Defeat();
+        if (GameStateHandler.gameState == "PLAYING")
+        {
+            ToggleUI(true, defeatScreen);
+            StartCoroutine(FadeScreen(defeatScreen, 1, 10f));
+            AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFEAT);
+            GameStateHandler.Defeat();
+        }
     }
 
     /// <summary>

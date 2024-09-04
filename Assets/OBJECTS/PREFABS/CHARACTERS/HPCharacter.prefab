@@ -502,7 +502,6 @@ MonoBehaviour:
   anim: {fileID: 4361594560161573015}
   minibossStats: {fileID: 522083443703975614}
   minibossCombat: {fileID: 0}
-  angle: 50
   canSeePlayer: 0
   targetMask:
     serializedVersion: 2
@@ -2746,6 +2745,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2741200971806779136, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
+      propertyPath: baseDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741200971806779136, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
       propertyPath: baseMaxAmmo
       value: 5
       objectReference: {fileID: 0}
@@ -2755,7 +2758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2741200971806779136, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
       propertyPath: projectileSpeed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2741200971806779136, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
       propertyPath: maxAmmoMultiplier
@@ -2824,6 +2827,18 @@ PrefabInstance:
     - target: {fileID: 7527790698574038230, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
       propertyPath: m_TagString
       value: EnemyWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905521063841951892, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 61.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905521063841951892, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905521063841951892, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -290.5
       objectReference: {fileID: 0}
     - target: {fileID: 9089412976140199831, guid: c17a68e75e49c421cb31f323e1e1d3f3, type: 3}
       propertyPath: m_RootBone

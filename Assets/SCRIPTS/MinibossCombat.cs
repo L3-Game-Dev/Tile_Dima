@@ -42,26 +42,29 @@ public class MinibossCombat : MonoBehaviour
     {
         if (GameStateHandler.gameState == "PLAYING")
         {
-            Vector3 targetPoint = minibossController.target.position;
-            targetPoint.y += 1; // Add height to shoot at player's torso rather than feet
+            if (!minibossController.anim.GetBool("isReloading"))
+            {
+                Vector3 targetPoint = minibossController.target.position;
+                targetPoint.y += 1; // Add height to shoot at player's torso rather than feet
 
-            // Calculate direction from attackPoint to targetPoint
-            Vector3 directionWithoutSpread = targetPoint - equippedWeapon.attackPoint.position;
+                // Calculate direction from attackPoint to targetPoint
+                Vector3 directionWithoutSpread = targetPoint - equippedWeapon.attackPoint.position;
 
-            // Insantiate bullet/projectile
-            GameObject currentBullet = Instantiate(equippedWeapon.projectile, equippedWeapon.attackPoint.position, Quaternion.identity, GameObject.Find("EnemyProjectiles").transform);
+                // Insantiate bullet/projectile
+                GameObject currentBullet = Instantiate(equippedWeapon.projectile, equippedWeapon.attackPoint.position, Quaternion.identity, GameObject.Find("EnemyProjectiles").transform);
 
-            // Set weapon reference
-            currentBullet.GetComponent<WeaponProjectile>().weapon = equippedWeapon.GetComponent<Weapon>();
+                // Set weapon reference
+                currentBullet.GetComponent<WeaponProjectile>().weapon = equippedWeapon.GetComponent<Weapon>();
 
-            // Rotate bullet to shoot direction
-            currentBullet.transform.forward = directionWithoutSpread.normalized;
+                // Rotate bullet to shoot direction
+                currentBullet.transform.forward = directionWithoutSpread.normalized;
 
-            // Add forces to bullet
-            currentBullet.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * equippedWeapon.projectileSpeed, ForceMode.Impulse);
+                // Add forces to bullet
+                currentBullet.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * equippedWeapon.projectileSpeed, ForceMode.Impulse);
 
-            // Play shoot sound
-            AudioManager.instance.PlayOneShot(equippedWeapon.attackSound, transform.position);
+                // Play shoot sound
+                AudioManager.instance.PlayOneShot(equippedWeapon.attackSound, transform.position);
+            }
         }
     }
 
@@ -82,5 +85,23 @@ public class MinibossCombat : MonoBehaviour
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.kick, transform.position);
             }
         }
+    }
+
+    /// <summary>
+    /// Starts the miniboss' reload
+    /// </summary>
+    public void StartReload()
+    {
+        // Set reloading bool to true
+        minibossController.anim.SetBool("isReloading", true);
+    }
+
+    /// <summary>
+    /// Finishes the miniboss' reload
+    /// </summary>
+    public void FinishReload()
+    {
+        // Revert reloading bool to false
+        minibossController.anim.SetBool("isReloading", false);
     }
 }
