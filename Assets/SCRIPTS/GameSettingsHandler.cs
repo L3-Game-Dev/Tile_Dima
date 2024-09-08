@@ -77,7 +77,7 @@ public class GameSettingsHandler : MonoBehaviour
         if (!settingsInitialised)
         {
             difficulty = 1f;
-            sensitivity = 100f;
+            sensitivity = 20f;
             fullscreen = true;
             Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
             Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
