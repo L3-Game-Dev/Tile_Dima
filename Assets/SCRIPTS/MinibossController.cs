@@ -73,7 +73,7 @@ public class MinibossController : MonoBehaviour
                         transform.LookAt(lookTarget);
                         anim.SetBool("inMeleeRange", false);
                         anim.SetBool("inShootRange", true);
-
+                        anim.SetBool("canSeePlayer", true);
                         Shooting();
                     }
                     else
@@ -81,6 +81,7 @@ public class MinibossController : MonoBehaviour
                         anim.SetBool("inShootRange", false);
                         anim.SetBool("inMeleeRange", false);
                         anim.SetBool("isShooting", false);
+                        anim.SetBool("canSeePlayer", false);
                         MoveToTarget();
                     }
                 }

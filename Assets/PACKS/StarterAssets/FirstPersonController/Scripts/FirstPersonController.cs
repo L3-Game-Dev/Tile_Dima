@@ -290,7 +290,7 @@ namespace StarterAssets
 
 		private void UpdateSound()
         {
-			if (Grounded && _speed > 0)
+			if (Grounded && _speed > 0 && GameStateHandler.gameState == "PLAYING")
 			{
 				PLAYBACK_STATE playback_state;
 

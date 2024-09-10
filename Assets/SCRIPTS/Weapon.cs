@@ -122,10 +122,16 @@ public class Weapon : MonoBehaviour
 
             // Check if ray hits something
             Vector3 targetPoint;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Default", "Enemy")))
+            {
                 targetPoint = hit.point;
+                Debug.Log(hit.collider.gameObject.layer);
+            }
             else
+            {
                 targetPoint = ray.GetPoint(75);
+                Debug.Log("Other");
+            }
 
             // Calculate direction from attackPoint to targetPoint
             Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
