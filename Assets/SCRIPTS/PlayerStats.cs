@@ -100,6 +100,9 @@ public class PlayerStats : MonoBehaviour
                     uiHandler.PlayerDeath();
                     GameStateHandler.Defeat();
                 }
+
+                // Shake player's camera
+                CameraShake.instance.HitShake();
             }
 
             health = newHealthAmount;

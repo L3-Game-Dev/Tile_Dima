@@ -59,7 +59,7 @@ public class Weapon : MonoBehaviour
     public float reloadSpeedUpgradeAmount;
     [Tooltip("Cost (credits) per reload speed upgrade")]
     public int reloadSpeedUpgradeCost;
-
+    
     [Header("Bool Variables")]
     [Tooltip("Whether the weapon uses ammmo")]
     public bool usesAmmo;
@@ -125,12 +125,10 @@ public class Weapon : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Default", "Enemy")))
             {
                 targetPoint = hit.point;
-                Debug.Log(hit.collider.gameObject.layer);
             }
             else
             {
                 targetPoint = ray.GetPoint(75);
-                Debug.Log("Other");
             }
 
             // Calculate direction from attackPoint to targetPoint
@@ -150,6 +148,9 @@ public class Weapon : MonoBehaviour
 
             // Play shoot sound
             AudioManager.instance.PlayOneShot(attackSound, transform.position);
+
+            // Shake player's camera
+            CameraShake.instance.RecoilShake();
 
             ammo--; // Take away one from ammo pool
 

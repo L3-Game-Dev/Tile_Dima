@@ -84,6 +84,9 @@ public class Grenade : MonoBehaviour
         // Play explosion sound
         AudioManager.instance.PlayOneShot(FMODEvents.instance.grenadeExplosion1, transform.position);
 
+        // Shake player's camera
+        CameraShake.instance.ExplosionShake();
+
         DestroyGrenade();
     }
 

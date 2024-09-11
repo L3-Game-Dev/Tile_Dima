@@ -256,6 +256,8 @@ namespace StarterAssets
 				if (_jumpTimeoutDelta >= 0.0f)
 				{
 					_jumpTimeoutDelta -= Time.deltaTime;
+
+					CameraShake.instance.JumpShake();
 				}
 			}
 			else
