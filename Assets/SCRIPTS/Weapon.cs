@@ -159,6 +159,9 @@ public class Weapon : MonoBehaviour
             {
                 Invoke("ResetShot", attackInterval * attackSpeedMultiplier);
                 allowInvoke = false;
+
+                // Set animation bool
+                GetComponent<Animator>().SetBool("isOnCooldown", true);
             }
         }
         else // Melee weapons
@@ -174,6 +177,9 @@ public class Weapon : MonoBehaviour
     {
         readyToAttack = true;
         allowInvoke = true;
+
+        // Set animation bool
+        GetComponent<Animator>().SetBool("isOnCooldown", false);
     }
 
     /// <summary>
@@ -182,7 +188,13 @@ public class Weapon : MonoBehaviour
     public void Reload()
     {
         reloading = true;
+
+        // Play reload sound
         AudioManager.instance.PlayOneShot(reloadStartSound, transform.position);
+
+        // Set animation bool
+        GetComponent<Animator>().SetBool("isReloading", true);
+
         Invoke("ReloadFinished", reloadTime * reloadSpeedMultiplier);
     }
 
@@ -193,5 +205,8 @@ public class Weapon : MonoBehaviour
     {
         ammo = maxAmmo; // Refill ammo
         reloading = false;
+
+        // Set animation bool
+        GetComponent<Animator>().SetBool("isReloading", false);
     }
 }

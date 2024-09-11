@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1614385928502296776}
   - component: {fileID: 2769104417567550696}
   - component: {fileID: 2231605676192273411}
+  - component: {fileID: 8347456226623299705}
   m_Layer: 12
   m_Name: PlayerWeapon1
   m_TagString: PlayerWeapon
@@ -146,9 +147,6 @@ MonoBehaviour:
   weaponSprite: {fileID: 21300000, guid: 7904e9a6e3691406d8dd25f99a7eb56a, type: 3}
   playerCamera: {fileID: 0}
   uiHandler: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 2049
 --- !u!65 &2231605676192273411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -170,6 +168,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.07549858, y: 0.31807235, z: 0.83228624}
   m_Center: {x: 0.000000010499335, y: 0.022799991, z: 0.27416438}
+--- !u!95 &8347456226623299705
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300007798641610122}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e13a70dd52c664eb8989b632406c15d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &742042039049601507
 GameObject:
   m_ObjectHideFlags: 0
