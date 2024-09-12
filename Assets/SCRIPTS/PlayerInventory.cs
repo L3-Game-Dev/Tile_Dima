@@ -96,6 +96,9 @@ public class PlayerInventory : MonoBehaviour
         equippedWeapon = heldWeapons[i];
         UpdateEnabledWeapons();
         equippedWeapon.gameObject.SetActive(true);
+
+        // Initialise the weapon's animations
+        equippedWeapon.InitialiseAnim();
     }
 
     /// <summary>

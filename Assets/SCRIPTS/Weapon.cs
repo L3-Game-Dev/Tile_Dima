@@ -108,6 +108,22 @@ public class Weapon : MonoBehaviour
     }
 
     /// <summary>
+    /// Initialises the weapon's animation bools
+    /// </summary>
+    public void InitialiseAnim()
+    {
+        // Initialise animation bools
+        if (!readyToAttack)
+        {
+            GetComponent<Animator>().SetBool("isOnCooldown", true);
+        }
+        if (reloading)
+        {
+            GetComponent<Animator>().SetBool("isReloading", true);
+        }
+    }
+
+    /// <summary>
     /// Uses the weapon's attack
     /// </summary>
     public void Attack()

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3100829620910856478}
   - component: {fileID: 4177647585137344339}
   - component: {fileID: 3456040300346287973}
+  - component: {fileID: 6034702504823989501}
   m_Layer: 12
   m_Name: PlayerWeapon2
   m_TagString: PlayerWeapon
@@ -130,9 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Light Railgun
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 2049
   attackSound:
     Guid:
       Data1: 938271369
@@ -201,3 +199,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.075498424, y: 0.31807214, z: 0.832286}
   m_Center: {x: 0.000000044703484, y: 0.02280002, z: 0.27416432}
+--- !u!95 &6034702504823989501
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8284180814102536091}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 719859d9de6bf41c29f6f5806cede0d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
