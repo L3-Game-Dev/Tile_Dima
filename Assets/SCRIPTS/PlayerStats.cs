@@ -56,6 +56,8 @@ public class PlayerStats : MonoBehaviour
     private void Update()
     {
         UpdateStamina();
+
+        uiHandler.UpdateBloodOverlay(10 / health);
     }
 
     /// <summary>
@@ -89,6 +91,9 @@ public class PlayerStats : MonoBehaviour
                     newHealthAmount = health - amt;
                     StatisticsTracker.damageTaken += amt;
                     AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, transform.position);
+                    uiHandler.ShowBloodOverlay();
+                    //uiHandler.CancelInvoke("HideBloodOverlay");
+                    //uiHandler.Invoke("HideBloodOverlay", 2);
                 }
                 else // 0 health = dead
                 {

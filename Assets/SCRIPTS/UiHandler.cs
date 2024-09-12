@@ -29,6 +29,7 @@ public class UiHandler : MonoBehaviour
     public GameObject fullInventory;
     public GameObject victoryScreen;
     public GameObject defeatScreen;
+    public GameObject bloodOverlay;
 
     [Header("Pause Menu References")]
     public GameObject pauseMenu;
@@ -349,6 +350,42 @@ public class UiHandler : MonoBehaviour
     {
         activeBoss = null;
         ToggleUI(false, bossBar);
+    }
+
+    /// <summary>
+    /// Updates the blood overlay's transparency
+    /// </summary>
+    /// <param name="transparency"></param>
+    public void UpdateBloodOverlay(float transparency)
+    {
+        // Get references
+        Image bloodImage = bloodOverlay.GetComponent<Image>();
+        Color newColor = bloodImage.color;
+
+        // Set transparency
+        if (transparency > 1)
+            newColor.a = 1;
+        else
+            newColor.a = transparency;
+
+        // Apply new color
+        bloodImage.color = newColor;
+    }
+
+    /// <summary>
+    /// Enables the blood overlay
+    /// </summary>
+    public void ShowBloodOverlay()
+    {
+        ToggleUI(true, bloodOverlay);
+    }
+
+    /// <summary>
+    /// Disables the blood overlay
+    /// </summary>
+    public void HideBloodOverlay()
+    {
+        ToggleUI(false, bloodOverlay);
     }
 
     /// <summary>
