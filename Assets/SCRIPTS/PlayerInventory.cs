@@ -9,6 +9,9 @@ using StarterAssets;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [Header("Singleton")]
+    public static PlayerInventory instance;
+
     [Header("References")]
     [HideInInspector] public List<Weapon> heldWeapons = new List<Weapon>(4);
     public Weapon equippedWeapon;
@@ -24,6 +27,9 @@ public class PlayerInventory : MonoBehaviour
 
     private void Awake()
     {
+        // Set singleton reference
+        instance = this;
+
         // Initialise variable
         heldCredits = 0;
 
@@ -99,6 +105,9 @@ public class PlayerInventory : MonoBehaviour
 
         // Initialise the weapon's animations
         equippedWeapon.InitialiseAnim();
+
+        // Hide reloading display
+        UiHandler.instance.ToggleUI(false, UiHandler.instance.reloadDisplay.gameObject);
     }
 
     /// <summary>

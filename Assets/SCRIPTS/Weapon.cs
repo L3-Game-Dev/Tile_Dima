@@ -205,6 +205,9 @@ public class Weapon : MonoBehaviour
     {
         reloading = true;
 
+        // Initialise reloading display UI
+        UiHandler.instance.StartReload();
+
         // Play reload sound
         AudioManager.instance.PlayOneShot(reloadStartSound, transform.position);
 

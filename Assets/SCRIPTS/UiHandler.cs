@@ -13,6 +13,9 @@ using System.Text.RegularExpressions;
 
 public class UiHandler : MonoBehaviour
 {
+    [Header("Singleton")]
+    [HideInInspector] public static UiHandler instance;
+
     [Header("Uncategorised")]
     public TimerHandler timer;
     public TextMeshProUGUI creditDisplay;
@@ -118,6 +121,12 @@ public class UiHandler : MonoBehaviour
     public TextMeshProUGUI weaponDisplay3AmmoNumber;
     public TextMeshProUGUI weaponDisplay4AmmoNumber;
 
+    [Header("Reloading Display")]
+    public Image reloadDisplay;
+
+    public float reloadTime;
+    public float reloadTimer;
+
     [Header("Scene Name References")]
     public string mainMenuSceneName;
 
@@ -127,6 +136,8 @@ public class UiHandler : MonoBehaviour
 
     private void Awake()
     {
+        // Set singleton instance
+        instance = this;
         GameSettingsHandler.InitialiseGameSettings();
     }
 
@@ -197,6 +208,10 @@ public class UiHandler : MonoBehaviour
             bossBarSlider.value = currentHealth;
             bossBarNumber.text = currentHealth.ToString();
         }
+
+        // Reloading display
+        if (PlayerInventory.instance.equippedWeapon.reloading)
+            ReloadDisplay();
     }
 
     /// <summary>
@@ -331,6 +346,36 @@ public class UiHandler : MonoBehaviour
     public void DisableHitmarker()
     {
         hitmarker.SetActive(false);
+    }
+
+    /// <summary>
+    /// Initialises the reloading display values
+    /// </summary>
+    public void StartReload()
+    {
+        // Initialise values
+        reloadTime = PlayerInventory.instance.equippedWeapon.reloadTime;
+        reloadTimer = reloadTime;
+    }
+
+    /// <summary>
+    /// Shows & updates the reloading display
+    /// </summary>
+    public void ReloadDisplay()
+    {
+        // Update passed time
+        reloadTimer -= Time.deltaTime;
+
+        if (reloadTimer < 0f)
+        {
+            ToggleUI(false, reloadDisplay.gameObject);
+            reloadDisplay.fillAmount = 0f;
+        }
+        else
+        {
+            ToggleUI(true, reloadDisplay.gameObject);
+            reloadDisplay.fillAmount = reloadTimer / reloadTime;
+        }
     }
 
     /// <summary>
