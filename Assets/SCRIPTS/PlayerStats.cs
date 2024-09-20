@@ -43,6 +43,9 @@ public class PlayerStats : MonoBehaviour
         maxHealth = baseMaxHealth;
         health = maxHealth;
 
+        UiHandler.instance.healthBar1.fillAmount = 1;
+        UiHandler.instance.staminaBar1.fillAmount = 1;
+
         uiHandler.healthBarSlider.maxValue = maxHealth;
         uiHandler.healthBarSlider.minValue = 0;
 
@@ -111,6 +114,7 @@ public class PlayerStats : MonoBehaviour
             }
 
             health = newHealthAmount;
+            UiHandler.instance.healthBar1.fillAmount = health / maxHealth;
             uiHandler.healthBarSlider.value = newHealthAmount;
             uiHandler.healthBarNumber.text = newHealthAmount.ToString();
         }
@@ -137,6 +141,7 @@ public class PlayerStats : MonoBehaviour
         {
             Invoke("RegainStamina", 5);
         }
+        UiHandler.instance.staminaBar1.fillAmount = stamina / maxStamina;
         uiHandler.staminaBarSlider.value = stamina;
         uiHandler.staminaBarNumber.text = ((int)stamina).ToString();
     }

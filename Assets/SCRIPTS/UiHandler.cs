@@ -91,6 +91,9 @@ public class UiHandler : MonoBehaviour
     public Slider staminaBarSlider;
     public TextMeshProUGUI staminaBarNumber;
 
+    public Image staminaBar1;
+    public Image healthBar1;
+
     [Header("Boss Bar References")]
     public GameObject bossBar;
     public Slider bossBarSlider;
@@ -116,16 +119,16 @@ public class UiHandler : MonoBehaviour
     public TextMeshProUGUI weaponDisplay3Number;
     public TextMeshProUGUI weaponDisplay4Number;
 
-    public TextMeshProUGUI weaponDisplay1AmmoNumber;
-    public TextMeshProUGUI weaponDisplay2AmmoNumber;
-    public TextMeshProUGUI weaponDisplay3AmmoNumber;
-    public TextMeshProUGUI weaponDisplay4AmmoNumber;
+    public TextMeshProUGUI weaponDisplay1Ammo;
+    public TextMeshProUGUI weaponDisplay2Ammo;
+    public TextMeshProUGUI weaponDisplay3Ammo;
+    public TextMeshProUGUI weaponDisplay4Ammo;
 
     [Header("Reloading Display")]
     public Image reloadDisplay;
 
-    public float reloadTime;
-    public float reloadTimer;
+    [HideInInspector] public float reloadTime;
+    [HideInInspector] public float reloadTimer;
 
     [Header("Scene Name References")]
     public string mainMenuSceneName;
@@ -151,7 +154,7 @@ public class UiHandler : MonoBehaviour
                                                 pauseMenu, victoryScreen, defeatScreen,
                                                 statisticsScreen, highscoresScreen, weaponUpgraderPanel,
                                                 enterNameScreen, bossBar, passwordPanel, noteImage,
-                                                fullInventory});
+                                                fullInventory, reloadDisplay.gameObject });
 
         GameStateHandler.Resume();
     }
@@ -300,22 +303,22 @@ public class UiHandler : MonoBehaviour
             switch (weapons.Count)
             {
                 case 1:
-                    l = new List<TextMeshProUGUI>() { weaponDisplay4AmmoNumber };
+                    l = new List<TextMeshProUGUI>() { weaponDisplay4Ammo };
                     break;
                 case 2:
-                    l = new List<TextMeshProUGUI>() { weaponDisplay3AmmoNumber,
-                                                      weaponDisplay4AmmoNumber };
+                    l = new List<TextMeshProUGUI>() { weaponDisplay3Ammo,
+                                                      weaponDisplay4Ammo };
                     break;
                 case 3:
-                    l = new List<TextMeshProUGUI>() { weaponDisplay2AmmoNumber,
-                                                      weaponDisplay3AmmoNumber,
-                                                      weaponDisplay4AmmoNumber };
+                    l = new List<TextMeshProUGUI>() { weaponDisplay2Ammo,
+                                                      weaponDisplay3Ammo,
+                                                      weaponDisplay4Ammo };
                     break;
                 case 4:
-                    l = new List<TextMeshProUGUI>() { weaponDisplay1AmmoNumber,
-                                                      weaponDisplay2AmmoNumber,
-                                                      weaponDisplay3AmmoNumber,
-                                                      weaponDisplay4AmmoNumber };
+                    l = new List<TextMeshProUGUI>() { weaponDisplay1Ammo,
+                                                      weaponDisplay2Ammo,
+                                                      weaponDisplay3Ammo,
+                                                      weaponDisplay4Ammo };
                     break;
                 default:
                     // Number of weapons is not between 1 & 4
