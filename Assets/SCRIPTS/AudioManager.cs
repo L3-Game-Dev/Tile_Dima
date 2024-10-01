@@ -11,10 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Volume")]
-    [Range(0, 1)]
-    public float masterVolume = 1;
-    private Bus masterBus;
+    public Bus masterBus;
 
     private List<EventInstance> eventInstances;
 
@@ -25,11 +22,10 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-
-        if (instance != null && instance != this)
+        // Initialise singleton
+        if (instance != null)
         {
-            Destroy(this);
+            Debug.Log("More than one AudioManager found");
         }
         else
         {
@@ -45,7 +41,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        masterBus.setVolume(masterVolume);
+        masterBus.setVolume(GameSettingsHandler.masterVolume);
     }
 
     /// <summary>

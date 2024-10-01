@@ -29,7 +29,8 @@ public class VolumeSlider : MonoBehaviour
         switch (volumeType)
         {
             case VolumeType.MASTER:
-                volumeSlider.value = AudioManager.instance.masterVolume;
+                volumeSlider.value = GameSettingsHandler.masterVolume;
+                //volumeSlider.value = AudioManager.instance.masterVolume;
                 break;
             default:
                 Debug.Log("Unsupported Volume Type: " + volumeType);
@@ -45,7 +46,8 @@ public class VolumeSlider : MonoBehaviour
         switch (volumeType)
         {
             case VolumeType.MASTER:
-                AudioManager.instance.masterVolume = volumeSlider.value;
+                GameSettingsHandler.masterVolume = volumeSlider.value;
+                //AudioManager.instance.masterVolume = volumeSlider.value;
                 break;
             default:
                 Debug.Log("Unsupported Volume Type: " + volumeType);

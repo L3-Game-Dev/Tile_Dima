@@ -17,6 +17,10 @@ public class GameSettingsHandler : MonoBehaviour
     public static float sensitivity;
     public static bool fullscreen;
 
+    [Header("Volume")]
+    [Range(0, 1)]
+    public static float masterVolume = 1;
+
     /// <summary>
     /// Sets the current difficulty based on the chosen difficulty item from the main menu
     /// </summary>
