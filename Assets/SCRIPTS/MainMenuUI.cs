@@ -41,6 +41,7 @@ public class MainMenuUI : MonoBehaviour
     private void Awake()
     {
         GameSettingsHandler.InitialiseGameSettings();
+        Time.timeScale = 1f;
     }
 
     private void Start()
