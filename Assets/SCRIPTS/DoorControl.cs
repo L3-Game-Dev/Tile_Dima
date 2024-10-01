@@ -14,6 +14,10 @@ public class DoorControl : MonoBehaviour
     [HideInInspector] public UiHandler uiHandler;
     [HideInInspector] public PlayerInteract interact;
 
+    [Header("Colors")]
+    public Color closedColor;
+    public Color openColor;
+
     public bool doorControlEnabled;
 
     private void Awake()
@@ -66,6 +70,15 @@ public class DoorControl : MonoBehaviour
             // Play sound
             AudioManager.instance.PlayOneShot(FMODEvents.instance.success, transform.position);
         }
+    }
+
+    /// <summary>
+    /// Sets the corresponding door display to the correct color
+    /// </summary>
+    public void UpdateDisplay(Image display)
+    {
+        // Change display to 'open'
+        display.color = openColor;
     }
 
     /// <summary>

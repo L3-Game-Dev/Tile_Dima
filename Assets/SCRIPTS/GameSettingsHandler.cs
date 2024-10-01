@@ -22,23 +22,23 @@ public class GameSettingsHandler : MonoBehaviour
     /// </summary>
     public void SetDifficulty()
     {
-        difficulty = CheckDifficultyName(GameObject.Find("DifficultyDropdown").transform.Find("Difficulty").Find("Label").GetComponent<TextMeshProUGUI>().text.ToString());
+        difficulty = CheckDifficultyName(GameObject.Find("DifficultySlider").GetComponent<Slider>().value);
     }
 
     /// <summary>
-    /// Converts a given difficulty name to its respective difficulty value
+    /// Converts a slider value to its respective difficulty value
     /// </summary>
-    /// <param name="diffName">The difficulty name to convert</param>
+    /// <param name="diff">The difficulty value to convert</param>
     /// <returns></returns>
-    public static float CheckDifficultyName(string diffName)
+    public static float CheckDifficultyName(float diff)
     {
-        switch (diffName)
+        switch (diff)
         {
-            case "EASY":
+            case 0: // Easy
                 return 1f;
-            case "MEDIUM":
+            case 1: // Medium
                 return 1.5f;
-            case "HARD":
+            case 2: // Hard
                 return 2f;
             default:
                 return 1f;

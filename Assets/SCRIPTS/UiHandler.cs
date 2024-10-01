@@ -13,8 +13,8 @@ using System.Text.RegularExpressions;
 
 public class UiHandler : MonoBehaviour
 {
-    [Header("Singleton")]
-    [HideInInspector] public static UiHandler instance;
+    // Singleton
+    [HideInInspector] public static UiHandler instance { get; private set; }
 
     [Header("Uncategorised")]
     public TimerHandler timer;
@@ -29,7 +29,7 @@ public class UiHandler : MonoBehaviour
     public GameObject interactPrompt;
     public GameObject crosshair;
     public GameObject hitmarker;
-    public GameObject fullInventory;
+    public GameObject notification;
     public GameObject victoryScreen;
     public GameObject defeatScreen;
     public GameObject bloodOverlay;
@@ -154,7 +154,7 @@ public class UiHandler : MonoBehaviour
                                                 pauseMenu, victoryScreen, defeatScreen,
                                                 statisticsScreen, highscoresScreen, weaponUpgraderPanel,
                                                 enterNameScreen, bossBar, passwordPanel, noteImage,
-                                                fullInventory, reloadDisplay.gameObject });
+                                                notification, reloadDisplay.gameObject });
 
         GameStateHandler.Resume();
     }
@@ -379,6 +379,33 @@ public class UiHandler : MonoBehaviour
             ToggleUI(true, reloadDisplay.gameObject);
             reloadDisplay.fillAmount = reloadTimer / reloadTime;
         }
+    }
+
+    /// <summary>
+    /// Shows a notification to the player
+    /// </summary>
+    /// <param name="message">The message to show</param>
+    public void ShowNotification(string message)
+    {
+        // Set the message string
+        notification.GetComponent<TextMeshProUGUI>().text = message;
+
+        // Show the UI object
+        ToggleUI(true, notification);
+
+        // Cancel previous invoke if exists
+        CancelInvoke("HideNotification");
+        // (re)invoke
+        Invoke("HideNotification", 1f);
+    }
+
+    /// <summary>
+    /// Hides the notification shown
+    /// </summary>
+    public void HideNotification()
+    {
+        // Hide the UI object
+        ToggleUI(false, notification);
     }
 
     /// <summary>

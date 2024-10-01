@@ -135,9 +135,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (heldWeapons.Count + 1 > heldWeapons.Capacity)
         {
-            uiHandler.ToggleUI(true, uiHandler.fullInventory);
-            CancelInvoke("HideFullInventory");
-            Invoke("HideFullInventory", 1f);
+            UiHandler.instance.ShowNotification("Full Inventory");
         }
         else
         {
@@ -159,14 +157,6 @@ public class PlayerInventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Hides the 'full inventory' UI prompt
-    /// </summary>
-    public void HideFullInventory()
-    {
-        uiHandler.ToggleUI(false, uiHandler.fullInventory);
-    }
-
-    /// <summary>
     /// Drops the currently equipped weapon
     /// </summary>
     public void DropWeapon()
@@ -175,8 +165,8 @@ public class PlayerInventory : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                // PRINT CURRENT POS AND ROT
-                //Debug.Log(equippedWeapon.transform.localPosition + ", " + equippedWeapon.transform.localEulerAngles);
+                // Show dropped notification
+                UiHandler.instance.ShowNotification("Dropped Weapon");
 
                 // Get index of current equipped weapon
                 int index = heldWeapons.IndexOf(equippedWeapon);
