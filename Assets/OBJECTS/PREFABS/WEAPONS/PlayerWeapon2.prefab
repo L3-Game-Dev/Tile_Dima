@@ -155,7 +155,7 @@ MonoBehaviour:
   baseAttackInterval: 5
   attackSpeedMultiplier: 1
   attackInterval: 3
-  projectileSpeed: 5
+  projectileSpeed: 20
   baseReloadTime: 10
   reloadSpeedMultiplier: 1
   reloadTime: 10
