@@ -96,7 +96,7 @@ public class MinibossController : MonoBehaviour
                 foreach (AnimationClip clip in clips)
                 {
                     if (clip.name == "Die")
-                        Invoke("DestroyComponents", 3f/*clip.length*/); // Invoke after animation completed
+                        Invoke("DestroyComponents", 3f); // Invoke after animation completed
                 }
             }
         }

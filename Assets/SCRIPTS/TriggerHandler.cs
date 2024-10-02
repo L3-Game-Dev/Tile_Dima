@@ -41,6 +41,9 @@ public class TriggerHandler : MonoBehaviour
                 miniboss.anim.SetBool("movementEnabled", true);
                 uiHandler.EnableBossBar(miniboss);
                 AudioManager.instance.SwitchMusicTrack(MusicTrack.BOSS_FIGHT);
+
+                // Handle color change
+                PostProcessing.instance.BeginColorTransition(Color.white, Color.red);
             }
         }
     }

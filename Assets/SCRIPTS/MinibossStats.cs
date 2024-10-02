@@ -74,6 +74,7 @@ public class MinibossStats : MonoBehaviour
                 GameObject.Find("PlayerCapsule").GetComponent<PlayerInventory>().heldCredits += creditValue;
                 health = 0;
                 isDead = true;
+                PostProcessing.instance.BeginColorTransition(Color.red, Color.white);
                 uiHandler.MinibossDeath();
             }
         }
