@@ -89,4 +89,13 @@ public class DoorControl : MonoBehaviour
     {
         button.interactable = false;
     }
+
+    /// <summary>
+    /// Enables a specified button
+    /// </summary>
+    /// <param name="button">The button to enable</param>
+    public void EnableButton(Button button)
+    {
+        button.interactable = true;
+    }
 }

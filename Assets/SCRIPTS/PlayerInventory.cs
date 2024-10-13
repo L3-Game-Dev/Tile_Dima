@@ -135,7 +135,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (heldWeapons.Count + 1 > heldWeapons.Capacity)
         {
-            UiHandler.instance.ShowNotification("Full Inventory");
+            UiHandler.instance.ShowNotification("Full Inventory", 1f);
         }
         else
         {
@@ -166,7 +166,7 @@ public class PlayerInventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 // Show dropped notification
-                UiHandler.instance.ShowNotification("Dropped Weapon");
+                UiHandler.instance.ShowNotification("Dropped Weapon", 1f);
 
                 // Get index of current equipped weapon
                 int index = heldWeapons.IndexOf(equippedWeapon);

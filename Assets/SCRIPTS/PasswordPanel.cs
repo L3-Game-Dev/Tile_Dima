@@ -12,14 +12,8 @@ public class PasswordPanel : MonoBehaviour
 {
     // References
     public GameObject panel1;
-    public GameObject panel2;
-    public GameObject panel3;
-    public GameObject panel4;
 
     public GameObject door1;
-    public GameObject door2;
-    public GameObject door3;
-    public GameObject door4;
 
     public List<Tuple<GameObject, string, GameObject>> panelPasswords = new List<Tuple<GameObject, string, GameObject>>();
 
@@ -40,9 +34,6 @@ public class PasswordPanel : MonoBehaviour
 
         // Initialise passwords
         panelPasswords.Add(Tuple.Create(panel1, "2953", door1));
-        panelPasswords.Add(Tuple.Create(panel2, "0000", door2));
-        panelPasswords.Add(Tuple.Create(panel3, "0000", door3));
-        panelPasswords.Add(Tuple.Create(panel4, "0000", door4));
     }
     
     private void Update()

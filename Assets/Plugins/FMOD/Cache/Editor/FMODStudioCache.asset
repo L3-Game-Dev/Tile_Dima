@@ -313,10 +313,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638614026999965293
+  lastModified: 638644202849054808
   FileSizes:
   - Name: Desktop
-    Value: 2112672
+    Value: 2112736
   Exists: 1
 --- !u!114 &-3790218074791745475
 MonoBehaviour:
@@ -441,7 +441,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638614026999910212
+  lastModified: 638644202821955944
   FileSizes:
   - Name: Desktop
     Value: 79808
@@ -574,13 +574,42 @@ MonoBehaviour:
   - {fileID: 7485988124586426256}
   - {fileID: 8801964210159329628}
   - {fileID: -5555439506269959508}
+  - {fileID: 200526107485242942}
+  - {fileID: 7370040580355655512}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638614027000073375
+  cacheTime: 638644202870405679
   cacheVersion: 131618
+--- !u!114 &200526107485242942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TurretHurt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TurretHurt
+  Guid:
+    Data1: 1270576737
+    Data2: 1188742859
+    Data3: 1681155749
+    Data4: -1264502406
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2789331744061479094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,7 +680,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638614026999910212
+  lastModified: 638644202822012793
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -777,10 +806,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638614026999915262
+  lastModified: 638644202822022793
   FileSizes:
   - Name: Desktop
-    Value: 2248
+    Value: 2348
   Exists: 1
 --- !u!114 &6058997513634446468
 MonoBehaviour:
@@ -836,6 +865,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7370040580355655512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TurretShoot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TurretShoot
+  Guid:
+    Data1: -1374677560
+    Data2: 1168663857
+    Data3: 777719221
+    Data4: -1186292789
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7485988124586426256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,10 +934,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638614027000073375
+  lastModified: 638644202870405679
   FileSizes:
   - Name: Desktop
-    Value: 3931680
+    Value: 3946656
   Exists: 1
 --- !u!114 &8801964210159329628
 MonoBehaviour:

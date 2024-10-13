@@ -57,6 +57,12 @@ public class WeaponProjectile : MonoBehaviour
                     // Damage the minibosss
                     collision.GetComponent<MinibossStats>().ModifyHealth('-', damage);
                 }
+                // If it hits a turret
+                else if (collision.GetComponent<Turret>())
+                {
+                    // Damage the minibosss
+                    collision.GetComponent<Turret>().ModifyHealth('-', damage);
+                }
 
                 SpawnHitmarker(collision.gameObject);
             }

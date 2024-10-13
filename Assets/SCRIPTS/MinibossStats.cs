@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinibossStats : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class MinibossStats : MonoBehaviour
     [HideInInspector] public bool isDead;
     [HideInInspector] public UiHandler uiHandler;
 
-    public GameObject notePrefab;
+    public Button nextDoor;
 
     private void Awake()
     {
@@ -75,6 +76,10 @@ public class MinibossStats : MonoBehaviour
                 health = 0;
                 isDead = true;
                 PostProcessing.instance.BeginColorTransition(Color.red, Color.white);
+                EnemySpawner.instance.spawningEnabled = false;
+                AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFAULT);
+                nextDoor.interactable = true;
+                UiHandler.instance.ShowNotification("New Area Unlocked", 3f);
                 uiHandler.MinibossDeath();
             }
         }

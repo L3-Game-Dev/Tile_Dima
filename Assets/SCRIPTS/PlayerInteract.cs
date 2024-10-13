@@ -8,6 +8,9 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
+    [Header("Singleton")]
+    public static PlayerInteract instance;
+
     [HideInInspector] public GameObject playerCamera;
     [HideInInspector] public UiHandler uiHandler;
 
@@ -18,6 +21,10 @@ public class PlayerInteract : MonoBehaviour
 
     private void Awake()
     {
+        // Set singleton reference
+        if (instance == null)
+            instance = this;
+
         // Set references
         playerCamera = transform.parent.Find("MainCamera").gameObject;
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();

@@ -50,7 +50,7 @@ public class UiHandler : MonoBehaviour
     public GameObject doorConsolePanel;
     public GameObject passwordPanel;
 
-    [Header("Upgrader References")]
+    [Header("Weapon Upgrader References")]
     public GameObject weaponUpgraderPanel;
     public Image upgraderWeaponDisplayImage;
     public TextMeshProUGUI upgraderWeaponDisplayText;
@@ -62,6 +62,19 @@ public class UiHandler : MonoBehaviour
     public Button upgradeButton2;
     public Button upgradeButton3;
     public Button upgradeButton4;
+
+    [Header("Suit Upgrader References")]
+    public GameObject suitUpgraderPanel;
+    public Image upgraderSuitDisplayImage;
+    public TextMeshProUGUI upgraderSuitDisplayText;
+    public TextMeshProUGUI suitStat1;
+    public TextMeshProUGUI suitStat2;
+    public TextMeshProUGUI suitStat3;
+    public TextMeshProUGUI suitStat4;
+    public Button suitUpgradeButton1;
+    public Button suitUpgradeButton2;
+    public Button suitUpgradeButton3;
+    public Button suitUpgradeButton4;
 
     [Header("Note References")]
     public GameObject noteImage;
@@ -154,7 +167,7 @@ public class UiHandler : MonoBehaviour
                                                 pauseMenu, victoryScreen, defeatScreen,
                                                 statisticsScreen, highscoresScreen, weaponUpgraderPanel,
                                                 enterNameScreen, bossBar, passwordPanel, noteImage,
-                                                notification, reloadDisplay.gameObject });
+                                                notification, reloadDisplay.gameObject, suitUpgraderPanel });
 
         GameStateHandler.Resume();
     }
@@ -385,7 +398,7 @@ public class UiHandler : MonoBehaviour
     /// Shows a notification to the player
     /// </summary>
     /// <param name="message">The message to show</param>
-    public void ShowNotification(string message)
+    public void ShowNotification(string message, float time)
     {
         // Set the message string
         notification.GetComponent<TextMeshProUGUI>().text = message;
@@ -396,7 +409,7 @@ public class UiHandler : MonoBehaviour
         // Cancel previous invoke if exists
         CancelInvoke("HideNotification");
         // (re)invoke
-        Invoke("HideNotification", 1f);
+        Invoke("HideNotification", time);
     }
 
     /// <summary>
@@ -477,7 +490,6 @@ public class UiHandler : MonoBehaviour
     public void MinibossDeath()
     {
         DisableBossBar();
-        VictoryScreen();
     }
 
     /* ---- START UI BUTTONS ---- */
@@ -542,7 +554,7 @@ public class UiHandler : MonoBehaviour
     /// </summary>
     private void Resume()
     {
-        ToggleMultiUI(false, new GameObject[] { pauseMenu, doorConsolePanel, weaponUpgraderPanel, noteImage, passwordPanel });
+        ToggleMultiUI(false, new GameObject[] { pauseMenu, doorConsolePanel, weaponUpgraderPanel, noteImage, passwordPanel, suitUpgraderPanel });
         GameStateHandler.Resume();
         AudioManager.instance.ClickSound1();
     }

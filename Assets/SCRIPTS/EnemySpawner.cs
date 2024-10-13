@@ -8,6 +8,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [Header("Singleton")]
+    public static EnemySpawner instance;
+
     public List<Transform> spawnLocations;
     public Transform spawnLocationParent;
 
@@ -21,18 +24,19 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        // Set references
-        iconSpawner = GameObject.Find("MinimapIcons").GetComponent<MinimapIconSpawner>();
+        // Set singleton reference
+        if (instance == null)
+            instance = this;
 
         spawnLocations = new List<Transform>();
         spawnLocations.Clear();
-
-        foreach (Transform location in GameObject.Find("EnemySpawnLocations").transform)
-            spawnLocations.Add(location);
     }
 
     private void Start()
     {
+        // Set references
+        iconSpawner = GameObject.Find("MinimapIcons").GetComponent<MinimapIconSpawner>();
+
         // Initialise variables
         spawningEnabled = false;
         spawning = false;
@@ -43,6 +47,28 @@ public class EnemySpawner : MonoBehaviour
         if (spawningEnabled && !spawning)
         {
             StartCoroutine("SpawnInterval");
+        }
+    }
+
+    /// <summary>
+    /// Sets the tile in which to spawn enemies
+    /// </summary>
+    /// <param name="i">The tile to set to</param>
+    public void SetSpawningTile(int i)
+    {
+        string tile = "Tile ";
+        tile += i.ToString();
+
+        if (i < 1 || i > 5)
+        {
+            Debug.Log("Invalid Spawning Tile");
+        }
+        else
+        {
+            spawnLocations.Clear();
+
+            foreach (Transform location in GameObject.Find("EnemySpawnLocations").transform.Find(tile))
+                spawnLocations.Add(location);
         }
     }
 

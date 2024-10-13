@@ -13,8 +13,11 @@ public class TriggerHandler : MonoBehaviour
 
     [HideInInspector] public UiHandler uiHandler;
 
+    [HideInInspector] public bool triggered;
+
     private void Awake()
     {
+        triggered = false;
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
     }
 
@@ -25,7 +28,13 @@ public class TriggerHandler : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            method.Invoke();
+        {
+            if (!triggered)
+            {
+                triggered = true;
+                method.Invoke();
+            }
+        }
     }
 
     /// <summary>
@@ -42,7 +51,7 @@ public class TriggerHandler : MonoBehaviour
                 uiHandler.EnableBossBar(miniboss);
                 AudioManager.instance.SwitchMusicTrack(MusicTrack.BOSS_FIGHT);
 
-                // Handle color change
+                // Handle color change, if it hasn't already happened
                 PostProcessing.instance.BeginColorTransition(Color.white, Color.red);
             }
         }

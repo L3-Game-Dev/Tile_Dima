@@ -10,10 +10,15 @@ using StarterAssets;
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Singleton")]
+    public static PlayerStats instance;
+
     [Header("Player Stat Values")]
     public float baseMaxHealth;
     public float maxHealth;
     public float health;
+
+    public float damageResistance;
 
     public float baseMaxStamina;
     public float maxStamina;
@@ -21,6 +26,18 @@ public class PlayerStats : MonoBehaviour
 
     public float staminaDrainSpeed;
     public float staminaRegainSpeed;
+
+    [Header("Upgrade Amounts")]
+    public float healthUpgradeAmount;
+    public float shieldUpgradeAmount;
+    public float staminaUpgradeAmount;
+    public float sprintSpeedUpgradeAmount;
+
+    [Header("Upgrade Costs")]
+    public int healthUpgradeCost;
+    public int shieldUpgradeCost;
+    public int staminaUpgradeCost;
+    public int sprintSpeedUpgradeCost;
 
     [HideInInspector] public bool isDead;
 
@@ -31,6 +48,10 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        // Set singleton reference
+        if (instance == null)
+            instance = this;
+
         // Set references
         uiHandler = GameObject.Find("-- UI ELEMENTS --").GetComponent<UiHandler>();
         controller = gameObject.GetComponent<FirstPersonController>();
@@ -89,10 +110,10 @@ public class PlayerStats : MonoBehaviour
             else if (op == '-') // Removing health
             {
                 // Health can't decrease below 0
-                if (health - amt > 0)
+                if (health - (amt / damageResistance) > 0)
                 {
-                    newHealthAmount = health - amt;
-                    StatisticsTracker.damageTaken += amt;
+                    newHealthAmount = health - (amt / damageResistance);
+                    StatisticsTracker.damageTaken += (amt / damageResistance);
                     AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, transform.position);
                     uiHandler.ShowBloodOverlay();
                     //uiHandler.CancelInvoke("HideBloodOverlay");

@@ -15,6 +15,8 @@ public class FMODEvents : MonoBehaviour
     [SerializeField] public EventReference minibossFootstepMetal;
     [SerializeField] public EventReference zombieAttack;
     [SerializeField] public EventReference zombieHurt;
+    [SerializeField] public EventReference turretShoot;
+    [SerializeField] public EventReference turretHurt;
     [SerializeField] public EventReference playerDeath;
     [SerializeField] public EventReference playerHit;
     [SerializeField] public EventReference kick;

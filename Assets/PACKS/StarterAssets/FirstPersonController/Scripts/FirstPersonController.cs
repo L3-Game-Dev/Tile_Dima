@@ -17,6 +17,8 @@ namespace StarterAssets
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
+		public static FirstPersonController instance;
+
 		public PlayerStats playerStats;
 
 		private EventInstance playerFootsteps;
@@ -101,6 +103,10 @@ namespace StarterAssets
 
 		private void Awake()
 		{
+			// Set singleton reference
+			if (instance == null)
+				instance = this;
+
 			// get a reference to our main camera
 			if (_mainCamera == null)
 			{
