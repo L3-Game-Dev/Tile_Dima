@@ -71,6 +71,7 @@
 			<destination>{c671b0d4-84b7-426a-a522-a4b93e5047b4}</destination>
 			<destination>{57f6ebdd-2d99-494d-8005-1c6740bb73f5}</destination>
 			<destination>{a099afa0-c7cc-4821-8834-d137b0888c3b}</destination>
+			<destination>{613264d1-6172-4c15-9f97-680274f63e78}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{227eba1e-dc18-4769-8f69-2fefb2345f74}</destination>
@@ -87,6 +88,7 @@
 			<destination>{c671b0d4-84b7-426a-a522-a4b93e5047b4}</destination>
 			<destination>{57f6ebdd-2d99-494d-8005-1c6740bb73f5}</destination>
 			<destination>{a099afa0-c7cc-4821-8834-d137b0888c3b}</destination>
+			<destination>{613264d1-6172-4c15-9f97-680274f63e78}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{c5393233-87fa-4bf9-8eb2-ccc2f9078aa8}</destination>
@@ -151,6 +153,17 @@
 		</relationship>
 		<relationship name="event">
 			<destination>{6ca0cc0c-fa6b-4dc2-a29f-c739cfce3ded}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{613264d1-6172-4c15-9f97-680274f63e78}">
+		<property name="start">
+			<value>4</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{fadf5d22-e451-41c8-9e31-04c1d1d5b2f6}</destination>
+		</relationship>
+		<relationship name="event">
+			<destination>{8d90ded1-e60f-40f6-a402-0d71d19fa9ef}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{227eba1e-dc18-4769-8f69-2fefb2345f74}">
@@ -237,6 +250,23 @@
 		</property>
 		<property name="releaseTime">
 			<value>320</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{fadf5d22-e451-41c8-9e31-04c1d1d5b2f6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>280</value>
+		</property>
+		<property name="releaseTime">
+			<value>300</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>

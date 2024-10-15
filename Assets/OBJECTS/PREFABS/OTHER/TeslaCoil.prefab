@@ -103,3 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bd5f08360ca4da292f62180372d2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zapWarning: {fileID: 7562604296737773150, guid: 7f7ed1f4d21cd4115b31af2d8d986e9c, type: 3}
+  tempZapWarning: {fileID: 0}
+  zap: {fileID: 5956882841891622792, guid: dfe77fc7aefaa41dc9fd8a7b38a7276f, type: 3}
+  target: {fileID: 0}
+  attackCooldown: 10

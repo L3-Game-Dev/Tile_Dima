@@ -22,6 +22,10 @@ public class FMODEvents : MonoBehaviour
     [SerializeField] public EventReference kick;
     [SerializeField] public EventReference grenadeExplosion1;
     [SerializeField] public EventReference grenadeThrow1;
+    [SerializeField] public EventReference zapCharge;
+    [SerializeField] public EventReference zap;
+    [SerializeField] public EventReference explosion;
+    [SerializeField] public EventReference dink;
 
     [Header("UI")]
     [SerializeField] public EventReference beep;

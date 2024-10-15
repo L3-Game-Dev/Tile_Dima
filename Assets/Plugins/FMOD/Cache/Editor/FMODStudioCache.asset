@@ -163,6 +163,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7273714818836634488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ZapWarning
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ZapWarning
+  Guid:
+    Data1: 1246127276
+    Data2: 1184235697
+    Data3: 1516874391
+    Data4: 361507744
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6103297063132286005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +340,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638645015781524116
+  lastModified: 638644202849054808
   FileSizes:
   - Name: Desktop
     Value: 2112736
@@ -441,7 +468,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638645015781316009
+  lastModified: 638644202821955944
   FileSizes:
   - Name: Desktop
     Value: 79808
@@ -576,12 +603,16 @@ MonoBehaviour:
   - {fileID: -5555439506269959508}
   - {fileID: 200526107485242942}
   - {fileID: 7370040580355655512}
+  - {fileID: 3786517885339153233}
+  - {fileID: -7273714818836634488}
+  - {fileID: 3852229833813783191}
+  - {fileID: 8996051578508919901}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4281648350526902496}
   StringsBanks:
   - {fileID: 5530966168092758330}
-  cacheTime: 638645015781563527
+  cacheTime: 638646267935453590
   cacheVersion: 131618
 --- !u!114 &200526107485242942
 MonoBehaviour:
@@ -637,6 +668,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3786517885339153233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Zap
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Zap
+  Guid:
+    Data1: 265430111
+    Data2: 1092066511
+    Data3: -940365179
+    Data4: -1877933641
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3852229833813783191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Explosion
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Explosion
+  Guid:
+    Data1: -197755812
+    Data2: 1213791818
+    Data3: 1206620304
+    Data4: 787666048
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 70
+  Length: 0
 --- !u!114 &3864141237057838175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,7 +737,7 @@ MonoBehaviour:
   Name: MusicTrack
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 4
   Default: 0
   ID:
     data1: 3606760187
@@ -664,6 +749,7 @@ MonoBehaviour:
   - BossFight
   - VictoryMusic
   - DefeatMusic
+  - FinalBoss
   Exists: 1
 --- !u!114 &4281648350526902496
 MonoBehaviour:
@@ -680,7 +766,7 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638596552590897624
+  lastModified: 638646266261894601
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -806,10 +892,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638645015781320551
+  lastModified: 638646266261894601
   FileSizes:
   - Name: Desktop
-    Value: 2348
+    Value: 2526
   Exists: 1
 --- !u!114 &6058997513634446468
 MonoBehaviour:
@@ -934,10 +1020,10 @@ MonoBehaviour:
   Path: FMODAssets/fmodproject.fspr/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638645015781563527
+  lastModified: 638646267935453590
   FileSizes:
   - Name: Desktop
-    Value: 3946656
+    Value: 4280832
   Exists: 1
 --- !u!114 &8801964210159329628
 MonoBehaviour:
@@ -993,6 +1079,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 17472
+--- !u!114 &8996051578508919901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Dink
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Dink
+  Guid:
+    Data1: 1048599104
+    Data2: 1152055002
+    Data3: 897644173
+    Data4: 1912656027
+  Banks:
+  - {fileID: 7989323617726389955}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 30
+  Length: 0
 --- !u!114 &9180710691787683726
 MonoBehaviour:
   m_ObjectHideFlags: 0

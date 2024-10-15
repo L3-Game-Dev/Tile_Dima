@@ -56,4 +56,12 @@ public class TriggerHandler : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Transitions to the final boss phase
+    /// </summary>
+    public void FinalBoss()
+    {
+        AudioManager.instance.SwitchMusicTrack(MusicTrack.FINAL_BOSS);
+    }
 }

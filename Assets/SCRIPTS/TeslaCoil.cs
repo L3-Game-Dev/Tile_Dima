@@ -16,7 +16,7 @@ public class TeslaCoil : MonoBehaviour
     [Header("Values")]
     private bool isEnabled;
     private bool isOnCooldown;
-    private float attackCooldown;
+    public float attackCooldown;
 
     private void Awake()
     {
@@ -42,6 +42,12 @@ public class TeslaCoil : MonoBehaviour
     {
         // Show the attack warning stuff here
         tempZapWarning = Instantiate(zapWarning, target.position, new Quaternion(0, 0, 0, 0));
+
+        // Play zap warning sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.zapCharge, tempZapWarning.transform.position);
+
+        isOnCooldown = true;
+        Invoke("ReadyAttack", attackCooldown);
     }
 
     public void Zap()
@@ -49,8 +55,8 @@ public class TeslaCoil : MonoBehaviour
         // Do the attack functionality here
         GameObject obj = Instantiate(zap, tempZapWarning.transform.position, new Quaternion(0, 0, 0, 0));
 
-        isOnCooldown = true;
-        Invoke("ReadyAttack", attackCooldown);
+        // Play zap sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.zap, tempZapWarning.transform.position);
     }
 
     private void ReadyAttack()
@@ -58,7 +64,12 @@ public class TeslaCoil : MonoBehaviour
         isOnCooldown = false;
     }
 
-    public void SetEnabled(bool enabled)
+    public void SetEnabled()
+    {
+        Invoke("EnableZapping", 5f);
+    }
+
+    public void EnableZapping()
     {
         isEnabled = enabled;
     }

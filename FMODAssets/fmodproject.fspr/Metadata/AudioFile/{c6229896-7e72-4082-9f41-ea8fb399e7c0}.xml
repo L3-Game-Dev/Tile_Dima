@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c6229896-7e72-4082-9f41-ea8fb399e7c0}">
+		<property name="assetPath">
+			<value>SFX/Weapons/dink.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.6559999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{601739c7-d6fc-4fef-9870-bdd40dc3fb21}</destination>
+		</relationship>
+	</object>
+</objects>

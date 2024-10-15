@@ -33,11 +33,11 @@ public class PowerCell : MonoBehaviour
             if (health - amt > 0)
             {
                 newHealthAmount = health - amt;
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, transform.position);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.dink, transform.position);
             }
             else // 0 health = dead
             {
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath, transform.position);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.explosion, transform.position);
                 remaining--;
 
                 Destroy(gameObject);
