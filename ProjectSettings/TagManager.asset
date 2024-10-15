@@ -11,6 +11,7 @@ TagManager:
   - EnemyProjectile
   - Enemy
   - PlayerGrenadeThrower
+  - PowerCell
   layers:
   - Default
   - TransparentFX

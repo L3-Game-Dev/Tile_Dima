@@ -66,6 +66,11 @@ public class WeaponProjectile : MonoBehaviour
 
                 SpawnHitmarker(collision.gameObject);
             }
+            // If it hits a power cell
+            else if (collision.CompareTag("PowerCell"))
+            {
+                collision.GetComponent<PowerCell>().ModifyHealth('-', damage);
+            }
         }
         // Enemy projectiles
         else if (gameObject.CompareTag("EnemyProjectile"))

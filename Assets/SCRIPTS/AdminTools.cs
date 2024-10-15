@@ -61,7 +61,7 @@ public class AdminTools : MonoBehaviour
     /// </summary>
     public void MinibossTeleport()
     {
-        Vector3 teleportPos = new Vector3(-50, 0, 50);
+        Vector3 teleportPos = new Vector3(-90, 3, 4);
         player.transform.position = teleportPos;
 
         Debug.Log("Teleported");
