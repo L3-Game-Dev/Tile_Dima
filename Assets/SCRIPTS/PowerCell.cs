@@ -9,6 +9,9 @@ public class PowerCell : MonoBehaviour
     [Header("Stats")]
     public float health;
 
+    [Header("References")]
+    public GameObject explosionEffect;
+
     private void Awake()
     {
         remaining++;
@@ -40,13 +43,17 @@ public class PowerCell : MonoBehaviour
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.explosion, transform.position);
                 remaining--;
 
-                Destroy(gameObject);
-
                 if (remaining == 0)
                 {
                     // Do something
                     Debug.Log("All Destroyed");
+                    UiHandler.instance.VictoryScreen();
                 }
+
+                // Spawn explosion effect
+                Instantiate(explosionEffect, transform.position, transform.rotation, GameObject.Find("EnemyProjectiles").transform);
+
+                Destroy(gameObject);
             }
         }
 

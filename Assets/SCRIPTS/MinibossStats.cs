@@ -78,6 +78,8 @@ public class MinibossStats : MonoBehaviour
                 PostProcessing.instance.BeginColorTransition(Color.red, Color.white);
                 EnemySpawner.instance.spawningEnabled = false;
                 AudioManager.instance.SwitchMusicTrack(MusicTrack.DEFAULT);
+                // Delete minimap icon
+                Destroy(GameObject.Find("MinimapElements").transform.Find("MinimapIcons").Find("BossIcon(Clone)").gameObject);
                 nextDoor.interactable = true;
                 UiHandler.instance.ShowNotification("New Area Unlocked", 3f);
                 uiHandler.MinibossDeath();

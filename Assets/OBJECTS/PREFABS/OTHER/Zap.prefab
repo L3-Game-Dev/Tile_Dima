@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a26ceccc7014abab336533f0a52c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
+  zapEffect: {fileID: 5478349594569130838, guid: b5cefdf859b58431195e8c025fec92b8, type: 3}
 --- !u!95 &7507378966119547141
 Animator:
   serializedVersion: 5

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  explosionEffect: {fileID: 5478349594569130838, guid: 7569973c2b4ed4ff7ac5f2ac3e90dbfd, type: 3}
 --- !u!136 &-8737941344497255622
 CapsuleCollider:
   m_ObjectHideFlags: 0
