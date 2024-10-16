@@ -29,11 +29,14 @@ public class TeslaCoil : MonoBehaviour
 
     private void Update()
     {
-        if (isEnabled)
+        if (GameStateHandler.gameState == "PLAYING")
         {
-            if (!isOnCooldown)
+            if (isEnabled)
             {
-                StartZap();
+                if (!isOnCooldown)
+                {
+                    StartZap();
+                }
             }
         }
     }
