@@ -18,10 +18,12 @@ public class AdminTools : MonoBehaviour
     [HideInInspector] public UiHandler uiHandler;
 
     [Header("Admin Tools Enabled")]
-    [HideInInspector] public bool adminToolsEnabled = true;
+    [HideInInspector] public bool adminToolsEnabled;
 
     private void Start()
     {
+        adminToolsEnabled = false;
+
         player = GameObject.Find("PlayerCapsule");
         playerStats = player.GetComponent<PlayerStats>();
         playerController = player.GetComponent<FirstPersonController>();
