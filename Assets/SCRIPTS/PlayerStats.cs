@@ -116,8 +116,6 @@ public class PlayerStats : MonoBehaviour
                     StatisticsTracker.damageTaken += (amt / damageResistance);
                     AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, transform.position);
                     uiHandler.ShowBloodOverlay();
-                    //uiHandler.CancelInvoke("HideBloodOverlay");
-                    //uiHandler.Invoke("HideBloodOverlay", 2);
                 }
                 else // 0 health = dead
                 {

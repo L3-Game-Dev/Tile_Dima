@@ -22,7 +22,7 @@ public class AdminTools : MonoBehaviour
 
     private void Start()
     {
-        adminToolsEnabled = false;
+        adminToolsEnabled = true;
 
         player = GameObject.Find("PlayerCapsule");
         playerStats = player.GetComponent<PlayerStats>();

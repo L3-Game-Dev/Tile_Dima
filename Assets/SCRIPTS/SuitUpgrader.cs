@@ -94,6 +94,10 @@ public class SuitUpgrader : MonoBehaviour
 
             UpgradeSound1();
             UpdateStats();
+
+            // Update the stat bar UIs
+            UiHandler.instance.healthBar1.fillAmount = PlayerStats.instance.health / PlayerStats.instance.maxHealth;
+            UiHandler.instance.healthBarNumber.text = PlayerStats.instance.health.ToString();
         }
         else
         {

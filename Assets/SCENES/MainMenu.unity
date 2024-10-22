@@ -1322,204 +1322,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195906604}
   m_CullTransparentMesh: 1
---- !u!1 &202492730
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 202492731}
-  - component: {fileID: 202492732}
-  m_Layer: 0
-  m_Name: FMODEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &202492731
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202492730}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 260702234}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &202492732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202492730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2795863f25f4a9985b30df6a758963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerFootstepsMetal:
-    Guid:
-      Data1: -1128282648
-      Data2: 1198286097
-      Data3: -1540607323
-      Data4: -226217619
-    Path: event:/SFX/PlayerFootstepsMetal
-  enemyFootstepMetal:
-    Guid:
-      Data1: 738022763
-      Data2: 1169053849
-      Data3: -710313054
-      Data4: -1884346846
-    Path: event:/SFX/EnemyFootstepMetal
-  minibossFootstepMetal:
-    Guid:
-      Data1: -1410285285
-      Data2: 1171170025
-      Data3: 1765518763
-      Data4: -1816781453
-    Path: event:/SFX/MinibossFootstepMetal
-  zombieAttack:
-    Guid:
-      Data1: 1650170587
-      Data2: 1199561303
-      Data3: -1315142978
-      Data4: 1008429268
-    Path: event:/SFX/ZombieAttack
-  zombieHurt:
-    Guid:
-      Data1: -259639618
-      Data2: 1283797807
-      Data3: -77042011
-      Data4: -803129722
-    Path: event:/SFX/ZombieHurt
-  playerDeath:
-    Guid:
-      Data1: -1720646196
-      Data2: 1265031514
-      Data3: 811323824
-      Data4: -1376811996
-    Path: event:/SFX/PlayerDeath
-  playerHit:
-    Guid:
-      Data1: -187689122
-      Data2: 1093311803
-      Data3: 427223995
-      Data4: -1916716947
-    Path: event:/SFX/PlayerHit
-  kick:
-    Guid:
-      Data1: 1082257206
-      Data2: 1159974135
-      Data3: -675203411
-      Data4: 135976387
-    Path: event:/SFX/Kick
-  grenadeExplosion1:
-    Guid:
-      Data1: -1218166960
-      Data2: 1259390886
-      Data3: -1564620151
-      Data4: -1425401217
-    Path: event:/SFX/GrenadeExplosion1
-  grenadeThrow1:
-    Guid:
-      Data1: -91638374
-      Data2: 1093708075
-      Data3: -1692145258
-      Data4: 1533312609
-    Path: event:/SFX/GrenadeThrow1
-  beep:
-    Guid:
-      Data1: 954225216
-      Data2: 1081066980
-      Data3: 634145456
-      Data4: 561480561
-    Path: event:/SFX/Beep
-  success:
-    Guid:
-      Data1: 10965733
-      Data2: 1138604020
-      Data3: -766180417
-      Data4: -1547155914
-    Path: event:/SFX/Success
-  uiClick1:
-    Guid:
-      Data1: -699600002
-      Data2: 1085759952
-      Data3: 452721840
-      Data4: 45862287
-    Path: event:/SFX/UiClick1
-  uiClick2:
-    Guid:
-      Data1: -1380933200
-      Data2: 1233211891
-      Data3: 1358012080
-      Data4: 448508376
-    Path: event:/SFX/UiClick2
-  upgrade1:
-    Guid:
-      Data1: -611616337
-      Data2: 1319289065
-      Data3: -181068380
-      Data4: 318163722
-    Path: event:/SFX/Upgrade1
-  error1:
-    Guid:
-      Data1: 257524087
-      Data2: 1333413114
-      Data3: 1565425051
-      Data4: 1642961059
-    Path: event:/SFX/Error1
-  typing:
-    Guid:
-      Data1: 704781258
-      Data2: 1259692975
-      Data3: 1405903293
-      Data4: -507942362
-    Path: event:/SFX/Typing
-  victory:
-    Guid:
-      Data1: 1362289027
-      Data2: 1222324836
-      Data3: -2106049367
-      Data4: 373172292
-    Path: event:/SFX/Victory
-  defeat:
-    Guid:
-      Data1: 857710202
-      Data2: 1081351583
-      Data3: 782153864
-      Data4: 391602858
-    Path: event:/SFX/Defeat
-  musicTrack1:
-    Guid:
-      Data1: -620810491
-      Data2: 1196008679
-      Data3: -1227072622
-      Data4: 1188766181
-    Path: event:/Music/MusicTrack1
-  mainMenuTrack:
-    Guid:
-      Data1: 1697813670
-      Data2: 1342086016
-      Data3: 1439593356
-      Data4: 134220567
-    Path: event:/Music/MainMenuTrack
-  humAmbience:
-    Guid:
-      Data1: -1645468382
-      Data2: 1214042189
-      Data3: -1833405800
-      Data4: 34041744
-    Path: event:/Ambience/HumAmbience
 --- !u!1 &205032463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,51 +1546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257481044}
   m_CullTransparentMesh: 1
---- !u!1 &260702232
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 260702234}
-  - component: {fileID: 260702233}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &260702233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260702232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244ba3356162a47759490d110cb171fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &260702234
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260702232}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 202492731}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &262430329
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,6 +5240,246 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786013834}
   m_CullTransparentMesh: 1
+--- !u!1 &789245969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789245970}
+  - component: {fileID: 789245971}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &789245970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789245969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1882046619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &789245971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789245969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2795863f25f4a9985b30df6a758963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFootstepsMetal:
+    Guid:
+      Data1: -1128282648
+      Data2: 1198286097
+      Data3: -1540607323
+      Data4: -226217619
+    Path: event:/SFX/PlayerFootstepsMetal
+  enemyFootstepMetal:
+    Guid:
+      Data1: 738022763
+      Data2: 1169053849
+      Data3: -710313054
+      Data4: -1884346846
+    Path: event:/SFX/EnemyFootstepMetal
+  minibossFootstepMetal:
+    Guid:
+      Data1: -1410285285
+      Data2: 1171170025
+      Data3: 1765518763
+      Data4: -1816781453
+    Path: event:/SFX/MinibossFootstepMetal
+  zombieAttack:
+    Guid:
+      Data1: 1650170587
+      Data2: 1199561303
+      Data3: -1315142978
+      Data4: 1008429268
+    Path: event:/SFX/ZombieAttack
+  zombieHurt:
+    Guid:
+      Data1: -259639618
+      Data2: 1283797807
+      Data3: -77042011
+      Data4: -803129722
+    Path: event:/SFX/ZombieHurt
+  turretShoot:
+    Guid:
+      Data1: -1374677560
+      Data2: 1168663857
+      Data3: 777719221
+      Data4: -1186292789
+    Path: event:/SFX/TurretShoot
+  turretHurt:
+    Guid:
+      Data1: 1270576737
+      Data2: 1188742859
+      Data3: 1681155749
+      Data4: -1264502406
+    Path: event:/SFX/TurretHurt
+  playerDeath:
+    Guid:
+      Data1: -1720646196
+      Data2: 1265031514
+      Data3: 811323824
+      Data4: -1376811996
+    Path: event:/SFX/PlayerDeath
+  playerHit:
+    Guid:
+      Data1: -187689122
+      Data2: 1093311803
+      Data3: 427223995
+      Data4: -1916716947
+    Path: event:/SFX/PlayerHit
+  kick:
+    Guid:
+      Data1: 1082257206
+      Data2: 1159974135
+      Data3: -675203411
+      Data4: 135976387
+    Path: event:/SFX/Kick
+  grenadeExplosion1:
+    Guid:
+      Data1: -1218166960
+      Data2: 1259390886
+      Data3: -1564620151
+      Data4: -1425401217
+    Path: event:/SFX/GrenadeExplosion1
+  grenadeThrow1:
+    Guid:
+      Data1: -91638374
+      Data2: 1093708075
+      Data3: -1692145258
+      Data4: 1533312609
+    Path: event:/SFX/GrenadeThrow1
+  zapCharge:
+    Guid:
+      Data1: 1246127276
+      Data2: 1184235697
+      Data3: 1516874391
+      Data4: 361507744
+    Path: event:/SFX/ZapWarning
+  zap:
+    Guid:
+      Data1: 265430111
+      Data2: 1092066511
+      Data3: -940365179
+      Data4: -1877933641
+    Path: event:/SFX/Zap
+  explosion:
+    Guid:
+      Data1: -197755812
+      Data2: 1213791818
+      Data3: 1206620304
+      Data4: 787666048
+    Path: event:/SFX/Explosion
+  dink:
+    Guid:
+      Data1: 1048599104
+      Data2: 1152055002
+      Data3: 897644173
+      Data4: 1912656027
+    Path: event:/SFX/Dink
+  beep:
+    Guid:
+      Data1: 954225216
+      Data2: 1081066980
+      Data3: 634145456
+      Data4: 561480561
+    Path: event:/SFX/Beep
+  success:
+    Guid:
+      Data1: 10965733
+      Data2: 1138604020
+      Data3: -766180417
+      Data4: -1547155914
+    Path: event:/SFX/Success
+  uiClick1:
+    Guid:
+      Data1: -699600002
+      Data2: 1085759952
+      Data3: 452721840
+      Data4: 45862287
+    Path: event:/SFX/UiClick1
+  uiClick2:
+    Guid:
+      Data1: -1380933200
+      Data2: 1233211891
+      Data3: 1358012080
+      Data4: 448508376
+    Path: event:/SFX/UiClick2
+  upgrade1:
+    Guid:
+      Data1: -611616337
+      Data2: 1319289065
+      Data3: -181068380
+      Data4: 318163722
+    Path: event:/SFX/Upgrade1
+  error1:
+    Guid:
+      Data1: 257524087
+      Data2: 1333413114
+      Data3: 1565425051
+      Data4: 1642961059
+    Path: event:/SFX/Error1
+  typing:
+    Guid:
+      Data1: 704781258
+      Data2: 1259692975
+      Data3: 1405903293
+      Data4: -507942362
+    Path: event:/SFX/Typing
+  victory:
+    Guid:
+      Data1: 1362289027
+      Data2: 1222324836
+      Data3: -2106049367
+      Data4: 373172292
+    Path: event:/SFX/Victory
+  defeat:
+    Guid:
+      Data1: 857710202
+      Data2: 1081351583
+      Data3: 782153864
+      Data4: 391602858
+    Path: event:/SFX/Defeat
+  musicTrack1:
+    Guid:
+      Data1: -620810491
+      Data2: 1196008679
+      Data3: -1227072622
+      Data4: 1188766181
+    Path: event:/Music/MusicTrack1
+  mainMenuTrack:
+    Guid:
+      Data1: 1697813670
+      Data2: 1342086016
+      Data3: 1439593356
+      Data4: 134220567
+    Path: event:/Music/MainMenuTrack
+  humAmbience:
+    Guid:
+      Data1: -1645468382
+      Data2: 1214042189
+      Data3: -1833405800
+      Data4: 34041744
+    Path: event:/Ambience/HumAmbience
 --- !u!1 &796471448
 GameObject:
   m_ObjectHideFlags: 0
@@ -12868,6 +12865,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1882046617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882046619}
+  - component: {fileID: 1882046618}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1882046618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882046617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244ba3356162a47759490d110cb171fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1882046619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882046617}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 789245970}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891041054
 GameObject:
   m_ObjectHideFlags: 0
@@ -14119,4 +14161,4 @@ SceneRoots:
   - {fileID: 35631344}
   - {fileID: 1377373213}
   - {fileID: 1061152199}
-  - {fileID: 260702234}
+  - {fileID: 1882046619}

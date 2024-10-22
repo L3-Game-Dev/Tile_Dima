@@ -92,22 +92,25 @@ public class PlayerInventory : MonoBehaviour
     /// <param name="i">The index of weapon to equip</param>
     public void EquipWeapon(int i)
     {
-        if (!equippedWeapon.Equals(null))
+        if (equippedWeapon != heldWeapons[i])
         {
-            // Cancel previous weapon's reloading
-            equippedWeapon.CancelInvoke("ReloadFinished");
-            equippedWeapon.reloading = false;
+            if (!equippedWeapon.Equals(null))
+            {
+                // Cancel previous weapon's reloading
+                equippedWeapon.CancelInvoke("ReloadFinished");
+                equippedWeapon.reloading = false;
+            }
+            // Equip new weapon
+            equippedWeapon = heldWeapons[i];
+            UpdateEnabledWeapons();
+            equippedWeapon.gameObject.SetActive(true);
+
+            // Initialise the weapon's animations
+            equippedWeapon.InitialiseAnim();
+
+            // Hide reloading display
+            UiHandler.instance.ToggleUI(false, UiHandler.instance.reloadDisplay.gameObject);
         }
-        // Equip new weapon
-        equippedWeapon = heldWeapons[i];
-        UpdateEnabledWeapons();
-        equippedWeapon.gameObject.SetActive(true);
-
-        // Initialise the weapon's animations
-        equippedWeapon.InitialiseAnim();
-
-        // Hide reloading display
-        UiHandler.instance.ToggleUI(false, UiHandler.instance.reloadDisplay.gameObject);
     }
 
     /// <summary>
