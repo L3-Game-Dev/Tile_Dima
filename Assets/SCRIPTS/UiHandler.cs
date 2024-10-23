@@ -19,6 +19,7 @@ public class UiHandler : MonoBehaviour
     [Header("Uncategorised")]
     public TimerHandler timer;
     public TextMeshProUGUI creditDisplay;
+    public TextMeshProUGUI objectiveDisplay;
 
     [Header("Keycodes")]
     public KeyCode pauseKey;
@@ -438,6 +439,17 @@ public class UiHandler : MonoBehaviour
     {
         activeBoss = null;
         ToggleUI(false, bossBar);
+    }
+
+    /// <summary>
+    /// Sets the objectiveDisplay to show a new objective
+    /// </summary>
+    /// <param name="objective">The new objective</param>
+    public void NewObjective(string objective)
+    {
+        string text = "Current Objective: ";
+        text += objective;
+        objectiveDisplay.text = text;
     }
 
     /// <summary>

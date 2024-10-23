@@ -159,6 +159,7 @@ public class Turret : MonoBehaviour
             EnemySpawner.instance.spawningEnabled = false;
             GlobalReferences.instance.door3Button.interactable = true;
             UiHandler.instance.ShowNotification("New Area Unlocked", 3f);
+            UiHandler.instance.NewObjective("Proceed to containment");
         }
     }
 }

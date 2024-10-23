@@ -82,6 +82,7 @@ public class MinibossStats : MonoBehaviour
                 Destroy(GameObject.Find("MinimapElements").transform.Find("MinimapIcons").Find("BossIcon(Clone)").gameObject);
                 nextDoor.interactable = true;
                 UiHandler.instance.ShowNotification("New Area Unlocked", 3f);
+                UiHandler.instance.NewObjective("Proceed to laboratory");
                 uiHandler.MinibossDeath();
             }
         }
